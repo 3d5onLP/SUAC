@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+
 body {
     background-color: #1a3c34;
     display: flex;
@@ -13,7 +14,7 @@ body {
     padding: 10px;
 }
 
-.menu-container {
+.duvidas-container {
     background-color: #0d3433;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -22,26 +23,24 @@ body {
     max-width: 800px;
     text-align: center;
     overflow: hidden;
+    padding-bottom: 80px
 }
 
 header{
-    background-color: #e0e0e0;
+    background-color: #0d3433;
     padding: 15px;
+    margin-top: 15px;
     text-align: center;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 25px;
     position: relative;
-}
-
-a{
-   text-decoration: none;
-   color: black;
 }
 
 .button-retorno {
     position: absolute;
+    padding-bottom: 6px;
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
@@ -49,26 +48,31 @@ a{
     cursor: pointer;
 }
 
-.menu-list {
-    list-style: none;
-    padding: 10px;
-}
+.seta{
+    text-decoration: none;
+    color: black;
+ }
 
-.menu-item {
+.quests {
+    list-style: none;
+    padding: 15px;
     background-color: #ffffff;
     margin: 10px 0;
-    padding: 15px;
     border-radius: 5px;
     display: flex;
-    align-items: center;
-    font-size: 16px;
-    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.menu-item img {
-    margin-right: 10px;
-    width: 24px;
-    height: 24px;
+.questp{
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.textop1 {
+    margin-top: 10px; 
+    font-size: 16px; 
 }
 
 footer {
@@ -81,3 +85,5 @@ footer img {
     width: 24px;
     height: 24px;
   }
+
+

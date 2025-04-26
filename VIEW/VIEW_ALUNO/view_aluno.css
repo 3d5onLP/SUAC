@@ -1,0 +1,108 @@
+/*NO JEITO*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/*NO JEITO*/
+body {
+    background-color: #1a3c34;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+/*NO JEITO*/
+header{
+    background-color: #0d3433;
+    padding: 15px;
+    margin-top: 15px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-weight: bold;
+    font-size: 25px;
+    position: relative;
+    color: white;
+}
+
+/*NO JEITO*/
+.button-retorno {
+    position: absolute;
+    padding-bottom: 6px;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    cursor: pointer;
+}
+/*NO JEITO*/
+.seta{
+    text-decoration: none;
+    color: black;
+ }
+
+ .perfil-container {
+    background-color: #0d3433;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 200%;
+    min-width: 320px;
+    max-width: 800px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.menu-item{
+    background-color:white;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 16px;
+    width: 80%;
+    max-width: 600px; 
+    margin: 0 auto; 
+    margin-top: 30px;
+    list-style: none;
+}
+
+.quests {
+
+    flex-direction: column;
+    justify-content: center;
+    display: inline;
+
+}
+/*NO JEITO*/
+.p1{
+    font-weight: bold;
+    display: inline;
+}
+/*NO JEITO*/
+.p2{
+    display: inline;
+}
+
+.img-aluno {
+    width: 100px;  /* Tamanho da imagem */
+    height: 100px; /* Tamanho fixo */
+    border-radius: 50%;  /* Torna a imagem circular */
+    object-fit: cover;  /* Ajusta a imagem */
+    margin: 20px auto;  /* Margem superior e inferior e centralização */
+    display: block;  /* Garante que a imagem seja um bloco */
+}
+
+/*NO JEITO*/
+footer {
+    width: 100%; 
+    text-align: left; 
+    padding: 10px; 
+  }
+/*NO JEITO*/
+footer img {
+    width: 24px;
+    height: 24px;
+}

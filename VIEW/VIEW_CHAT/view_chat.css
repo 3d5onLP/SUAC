@@ -71,13 +71,10 @@ a{
     height: 24px;
 }
 
-footer {
-    width: 100%; 
-    text-align: left; 
-    padding: 10px; 
-  }
-  
-footer img {
+footer img{
+    margin-left: -760px;
     width: 24px;
     height: 24px;
-  }
+}
+
+
