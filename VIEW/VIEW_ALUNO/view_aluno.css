@@ -100,13 +100,24 @@ a{
     display: block;  
 }
 
-/*NO JEITO, ponto de interrogação*/
-footer {
-    width: 100%; 
-    text-align: left; 
-    padding: 10px; 
+/*Icones de interrogação e chat*/
+.footer-icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
-footer img {
+.footer-icons a {
+    display: flex;
+    align-items: center;
+}
+/*Tamanho icone de interrogação*/
+.img_interroga{
     width: 24px;
     height: 24px;
+}
+/*Tamanho icone de chat*/
+.img_chat{
+    width: 34px;
+    height: 34px;
 }

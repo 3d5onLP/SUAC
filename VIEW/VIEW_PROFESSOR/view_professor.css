@@ -93,22 +93,32 @@ a{
 
 /*NO JEITO, imagem do perfil*/
 .img-aluno {
-    width: 100px;  /* Tamanho da imagem */
-    height: 100px; /* Tamanho fixo */
-    border-radius: 50%;  /* Torna a imagem circular */
-    object-fit: cover;  /* Ajusta a imagem */
-    margin: 20px auto;  /* Margem superior e inferior e centralização */
-    display: block;  /* Garante que a imagem seja um bloco */
+    width: 100px;  
+    height: 100px; 
+    border-radius: 50%;  
+    object-fit: cover;  
+    margin: 20px auto; 
+    display: block; 
 }
 
-/*NO JEITO*/
-footer {
-    width: 100%; 
-    text-align: left; 
-    padding: 10px; 
-  }
-/*NO JEITO*/
-footer img {
+/*Icones de interrogação e chat*/
+.footer-icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.footer-icons a {
+    display: flex;
+    align-items: center;
+}
+/*Tamanho icone de interrogação*/
+.img_interroga{
     width: 24px;
     height: 24px;
+}
+/*Tamanho icone de chat*/
+.img_chat{
+    width: 34px;
+    height: 34px;
 }
