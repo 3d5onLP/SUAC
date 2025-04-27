@@ -13,7 +13,8 @@ body {
     padding: 10px;
 }
 
-.menu-container {
+/*Div Principal*/
+.chat-container {
     background-color: #0d3433;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -40,6 +41,7 @@ a{
    color: black;
 }
 
+/*NO JEITO, botão de retorno*/
 .button-retorno {
     position: absolute;
     left: 15px;
@@ -49,32 +51,13 @@ a{
     cursor: pointer;
 }
 
-.menu-list {
-    list-style: none;
-    padding: 10px;
+/*NO JEITO, ponto de interrogação*/
+footer {
+    width: 100%; 
+    text-align: left; 
+    padding: 10px; 
 }
-
-.menu-item {
-    background-color: #ffffff;
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.menu-item img {
-    margin-right: 10px;
+footer img {
     width: 24px;
     height: 24px;
 }
-
-footer img{
-    margin-left: -760px;
-    width: 24px;
-    height: 24px;
-}
-
-
