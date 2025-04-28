@@ -1,125 +1,173 @@
 /* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+  background-color: #e6f2ec;
+
+}
+
+/* Navbar */
+.bg-green {
+  background-color: #1a3c34 !important;
+}
+
+.navbar-brand .logo {
+  width: 40px;
+  height: 40px;
+}
+
+.navbar-brand span {
+  color: #a3d9c9;
+  font-size: 1.2rem;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff !important;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #a3d9c9 !important;
+}
+
+/* Dropdown */
+.dropdown-menu {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  min-width: 250px;
+}
+
+.dropdown-menu fieldset {
+  border: none;
+}
+
+.dropdown-menu legend {
+  font-size: 14px;
+  color: #1a3c34;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.dropdown-menu div {
+  margin-bottom: 8px;
+}
+
+.dropdown-menu label {
+  margin-left: 5px;
+  font-size: 13px;
+  color: #333;
+}
+
+.icon-filter {
+  width: 22px;
+  height: 22px;
+}
+
+/* Form */
+.form-control {
+  border-radius: 50px;
+  border: 1px solid #ced4da;
+  padding: 8px 20px;
+  font-size: 14px;
+}
+
+.btn-green {
+  border-radius: 50px;
+  background-color: #a3d9c9;
+  color: #1a3c34;
+  padding: 8px 20px;
+  border: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-green:hover {
+  background-color: #1a3c34;
+  color: #ffffff;
+}
+
+
+.card {
+  display: inline-block;
+  margin: 20px 40px;
+  padding: 10px;
+  max-width: 40%;
+  border-radius: 50px;
+
+}
+/* buttons-card */
+.btn-dowl{
+  margin-left: 120px;
+  background-color: blue;
+  padding: 7px 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.card-link-um{
+  text-decoration: none;
+  color: white;
   
-  /* Body */
-  body {
-    background-color: #e6f2ec;
-    font-family: 'Poppins', sans-serif;
-  }
+}
+
+.card-link-dois{
+  text-decoration: none;
+  color: white;
   
-  /* Navbar */
-  .bg-green {
-    background-color: #1a3c34 !important;
+}
+
+/*Icones de interrogação e chat*/
+.footer-icons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.footer-icons a {
+  display: flex;
+  align-items: center;
+}
+/*Tamanho icone de interrogação*/
+.img_interroga{
+  width: 24px;
+  height: 24px;
+}
+
+
+/* Responsivo */
+@media (max-width: 991px) {
+  .navbar-nav {
+    text-align: center;
   }
-  
-  .navbar-brand .logo {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .navbar-brand span {
-    color: #a3d9c9;
-    font-size: 1.2rem;
-  }
-  
-  .navbar-nav .nav-link {
-    color: #ffffff !important;
-    font-size: 1rem;
-    transition: 0.3s;
-  }
-  
-  .navbar-nav .nav-link:hover {
-    color: #a3d9c9 !important;
-  }
-  
-  /* Dropdown */
+
   .dropdown-menu {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
-    min-width: 250px;
+    width: 100%;
   }
-  
-  .dropdown-menu fieldset {
-    border: none;
+}
+
+@media (max-width: 576px) {
+  .navbar-brand span {
+    font-size: 1rem;
   }
-  
-  .dropdown-menu legend {
-    font-size: 14px;
-    color: #1a3c34;
-    font-weight: 600;
-    margin-bottom: 10px;
+
+  .dropdown-menu {
+    padding: 10px;
   }
-  
-  .dropdown-menu div {
-    margin-bottom: 8px;
-  }
-  
-  .dropdown-menu label {
-    margin-left: 5px;
-    font-size: 13px;
-    color: #333;
-  }
-  
-  .icon-filter {
-    width: 22px;
-    height: 22px;
-  }
-  
-  /* Form */
+
   .form-control {
-    border-radius: 50px;
-    border: 1px solid #ced4da;
-    padding: 8px 20px;
-    font-size: 14px;
+    font-size: 13px;
+    padding: 7px 15px;
   }
-  
+
   .btn-green {
-    border-radius: 50px;
-    background-color: #a3d9c9;
-    color: #1a3c34;
-    padding: 8px 20px;
-    border: none;
-    transition: background 0.3s, color 0.3s;
+    font-size: 13px;
+    padding: 7px 15px;
   }
-  
-  .btn-green:hover {
-    background-color: #1a3c34;
-    color: #ffffff;
-  }
-  
-  /* Responsivo */
-  @media (max-width: 991px) {
-    .navbar-nav {
-      text-align: center;
-    }
-  
-    .dropdown-menu {
-      width: 100%;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .navbar-brand span {
-      font-size: 1rem;
-    }
-  
-    .dropdown-menu {
-      padding: 10px;
-    }
-  
-    .form-control {
-      font-size: 13px;
-      padding: 7px 15px;
-    }
-  
-    .btn-green {
-      font-size: 13px;
-      padding: 7px 15px;
-    }
-  }
-  
+}
