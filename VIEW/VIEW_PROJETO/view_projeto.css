@@ -12,71 +12,62 @@ body {
 
 }
 
-/* Navbar */
-.bg-green {
-  background-color: #1a3c34 !important;
-}
-
-.navbar-brand .logo {
+/*MENU OVER*/
+.sidebar {
+  z-index: 2;
   width: 40px;
-  height: 40px;
+  background-color: rgb(221, 221, 221);
+  color: white;
+  transition: width 0.3s;
+  overflow: hidden;
+  height: 100vh;
+  position: fixed;
 }
 
-.navbar-brand span {
-  color: #a3d9c9;
-  font-size: 1.2rem;
+.sidebar:hover {
+  width: 200px;
 }
 
-.navbar-nav .nav-link {
-  color: #ffffff !important;
-  font-size: 1rem;
-  transition: 0.3s;
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.navbar-nav .nav-link:hover {
-  color: #a3d9c9 !important;
+.sidebar li {
+  padding: 15px 15px;
+  white-space: nowrap;
 }
 
-/* Dropdown */
-.dropdown-menu {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
-  min-width: 250px;
+.sidebar a {
+  color: black;
+  text-decoration: none;
+  display: block;
 }
 
-.dropdown-menu fieldset {
-  border: none;
+.sidebar li:hover {
+  background-color: #2d5b50;
 }
 
-.dropdown-menu legend {
-  font-size: 14px;
-  color: #1a3c34;
-  font-weight: 600;
-  margin-bottom: 10px;
+.sidebar img {
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
 }
 
-.dropdown-menu div {
-  margin-bottom: 8px;
+.buscar {
+  display: flex;
+  padding: 10%;
+  max-width: 50%;
 }
 
-.dropdown-menu label {
-  margin-left: 5px;
-  font-size: 13px;
-  color: #333;
-}
-
-.icon-filter {
-  width: 22px;
-  height: 22px;
-}
-
-/* Form */
-.form-control {
+.btn-buscar {
   border-radius: 50px;
-  border: 1px solid #ced4da;
+  background-color: white;
   padding: 8px 20px;
-  font-size: 14px;
+  margin-right: 5px;
+  border: none;
+  transition: background 0.3s, color 0.3s;
 }
 
 .btn-green {
@@ -88,10 +79,6 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-.btn-green:hover {
-  background-color: #1a3c34;
-  color: #ffffff;
-}
 
 
 .card {
@@ -102,8 +89,9 @@ body {
   border-radius: 50px;
 
 }
+
 /* buttons-card */
-.btn-dowl{
+.btn-dowl {
   margin-left: 120px;
   background-color: blue;
   padding: 7px 10px;
@@ -111,16 +99,16 @@ body {
   border: none;
 }
 
-.card-link-um{
+.card-link-um {
   text-decoration: none;
   color: white;
-  
+
 }
 
-.card-link-dois{
+.card-link-dois {
   text-decoration: none;
   color: white;
-  
+
 }
 
 /*Icones de interrogação e chat*/
@@ -130,12 +118,14 @@ body {
   justify-content: space-between;
   padding: 10px;
 }
+
 .footer-icons a {
   display: flex;
   align-items: center;
 }
+
 /*Tamanho icone de interrogação*/
-.img_interroga{
+.img_interroga {
   width: 24px;
   height: 24px;
 }

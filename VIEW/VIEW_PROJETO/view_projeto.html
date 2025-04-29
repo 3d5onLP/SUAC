@@ -12,56 +12,33 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-green shadow-sm">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="/VIEW/icon/logo_cientif.png" alt="Logo Cientif" class="logo">
-        <span class="ms-2 fw-bold">CIENTIF</span>
-      </a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" href="/VIEW/VIEW_MENU/view_menu.html">Home</a>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="filterDropdown" role="button" data-bs-toggle="dropdown">
-              <img src="/VIEW/icon/filtro-ativado.png" alt="Filtro" class="icon-filter">
-            </a>
-
-            <ul class="dropdown-menu p-3" aria-labelledby="filterDropdown">
-              <fieldset class="mb-3">
-                <legend>Status dos Projetos:</legend>
-                <div><input type="checkbox" id="abertos"> <label for="abertos">Projetos Abertos</label></div>
-                <div><input type="checkbox" id="andamento"> <label for="andamento">Projetos em Andamento</label></div>
-                <div><input type="checkbox" id="final"> <label for="final">Projetos Encerrados</label></div>
-              </fieldset>
-
-              <hr>
-
-              <fieldset>
-                <legend>Área dos Projetos:</legend>
-                <div><input type="checkbox" id="tec"> <label for="tec">Tecnologia</label></div>
-                <div><input type="checkbox" id="agro"> <label for="agro">Agronomia</label></div>
-                <div><input type="checkbox" id="agrotec"> <label for="agrotec">Agrotec</label></div>
-                <div><input type="checkbox" id="edu"> <label for="edu">Educação</label></div>
-              </fieldset>
-            </ul>
-          </li>
-        </ul>
-
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Buscar projeto..." aria-label="Buscar">
-          <button class="btn btn-green" type="submit">Buscar</button>
-        </form>
-      </div>
-    </div>
+  <nav class="sidebar">
+    <ul>
+      <li>
+        <a href="/VIEW/VIEW_MENU/view_menu.html"><img src="/VIEW/icon/botao-home.png" alt="Home Icon">Home</a>
+      </li>
+      <li>
+        <a href="https://www.ifto.edu.br/noticias/editais-de-apoio-a-pesquisa-no-ambito-do-ifto-sao-publicados/view"> <img src="/VIEW/icon/botao-home.png" alt="Home Icon">Editais</a>
+      </li>
+      <li>
+        <a href="/VIEW/VIEW_PROJETO/view_projeto.html"> <img src="/VIEW/icon/botao-home.png" alt="Home Icon">Projetos</a>
+      </li>
+      </li>
+      <li>
+        <a href="/VIEW/VIEW_PROFESSOR/view_professor.html"> <img src="/VIEW/icon/professor-icon.png" alt="Professores Icon"> Professores</a>
+      </li>
+      <li>
+        <a href="/VIEW/VIEW_ALUNO/view_aluno.html"><img src="/VIEW/icon/aluno-icon.png" alt="Alunos Icon">Alunos</a>
+      </li>
+    </ul>
   </nav>
+
+  <header class="buscar">
+    <form class="d-flex">
+      <input class="btn-buscar" type="search" placeholder="Buscar projeto..." aria-label="Buscar">
+      <button class="btn btn-green" type="submit">Buscar</button>
+    </form>
+  </header>
 
   <main>
     <div class="card">
@@ -71,7 +48,7 @@
         <p class="card-text">Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição.</p>
         <h6 class="card-area">Área: </h6>
         <button type="button" class="btn btn-success"><a href="#" class="card-link-um">Escrição</a></button>
-        <button type="button" class="btn-dowl"><a href="#" class="card-link-dois">Dowlnload</a></button>   
+        <button type="button" class="btn-dowl"><a href="#" class="card-link-dois">Dowlnload</a></button>
       </div>
     </div>
 
@@ -82,14 +59,14 @@
         <p class="card-text">Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição.</p>
         <h6 class="card-area">Área: </h6>
         <button type="button" class="btn btn-success"><a href="#" class="card-link-um">Escrição</a></button>
-        <button type="button" class="btn-dowl"><a href="#" class="card-link-dois">Dowlnload</a></button>      
+        <button type="button" class="btn-dowl"><a href="#" class="card-link-dois">Dowlnload</a></button>
       </div>
     </div>
   </main>
 
   <footer class="footer-icons">
     <a href="/VIEW/VIEW_DUVIDAS/view_duvidas.html" class="icone-interroga">
-        <img class="img_interroga" src="/VIEW/icon/ponto-de-interrogacao.png" alt="ponto de interrogação">
+      <img class="img_interroga" src="/VIEW/icon/ponto-de-interrogacao.png" alt="ponto de interrogação">
     </a>
   </footer>
 
