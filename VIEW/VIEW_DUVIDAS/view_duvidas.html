@@ -12,96 +12,101 @@
 </head>
 
 <body>
-  <div class="duvidas-container container mt-4 p-4 rounded border">
-    <header class="mb-4">
-      <span class="button-retorno">
-        <a class="seta" href="/VIEW/VIEW_MENU/view_menu.html">←</a>
-      </span>
-      <h2 class="d-inline">FAQS</h2>
-    </header>
-
-    <div class="accordion" id="accordionDuvidas">
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading1">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#duvida1" aria-expanded="true" aria-controls="duvida1">
-            1. Quem pode cadastrar projetos no sistema?
-          </button>
-        </h2>
-        <div id="duvida1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordionDuvidas">
-          <div class="accordion-body">
-            Alunos e professores regularmente matriculados ou vinculados ao Instituto podem cadastrar seus projetos científicos.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading2">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#duvida2" aria-expanded="false" aria-controls="duvida2">
-            2. Como faço para enviar um novo projeto?
-          </button>
-        </h2>
-        <div id="duvida2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordionDuvidas">
-          <div class="accordion-body">
-            Basta fazer login no sistema, clicar em "Cadastrar Projeto" e preencher o formulário com as informações solicitadas.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading3">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#duvida3" aria-expanded="false" aria-controls="duvida3">
-            3. Meu projeto precisa ser aprovado por alguém antes de ser publicado?
-          </button>
-        </h2>
-        <div id="duvida3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordionDuvidas">
-        <div class="accordion-body">
-            Sim, todos os projetos enviados passam por uma análise da coordenação antes de serem liberados para visualização pública.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading4">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#duvida4" aria-expanded="false" aria-controls="duvida4">
-            4. Posso editar um projeto depois de enviado?
-          </button>
-        </h2>
-        <div id="duvida4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordionDuvidas">
-        <div class="accordion-body">
-            Sim, enquanto o projeto estiver em análise, você pode editar as informações. Após a aprovação, alterações precisarão ser solicitadas à coordenação.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading5">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#duvida5" aria-expanded="false" aria-controls="duvida5">
-            5. Quem pode visualizar os projetos cadastrados?
-          </button>
-        </h2>
-        <div id="duvida5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#accordionDuvidas">
-          <div class="accordion-body">
-            Todos os alunos, professores e servidores do Instituto que tenham acesso ao sistema.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading6">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#duvida6" aria-expanded="false" aria-controls="duvida6">
-            6. Posso me inscrever como participante em um projeto?
-          </button>
-        </h2>
-        <div id="duvida6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#accordionDuvidas">
-          <div class="accordion-body">
-            Sim! Se o projeto permitir participação de outros alunos ou professores, você poderá se inscrever diretamente na página do projeto.
-          </div>
-        </div>
-      </div>
-
+    <div class="sidebar">
+        <ul>
+          <li><a href="/VIEW/VIEW_MENU/view_menu.html">🏠 Menu</a></li>
+          <li><a href="#">📁 Projetos</a></li>
+          <li><a href="#">❓ FAQ</a></li>
+          <li><a href="#">📞 Contato</a></li>
+        </ul>
     </div>
-  </div>
-</body>
+    
+    <div class="duvidas-container container mt-4 p-4 rounded border">
+        <header class="mb-4">
+            <h2 class="d-inline">FAQs</h2>
+        </header>
 
+        <div class="accordion" id="accordionDuvidas">
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#duvida1" aria-expanded="true" aria-controls="duvida1">
+                        1. Quem pode cadastrar projetos no sistema?
+                    </button>
+                </h2>
+                <div id="duvida1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordionDuvidas">
+                    <div class="accordion-body">
+                        Alunos e professores regularmente matriculados ou vinculados ao Instituto podem cadastrar seus projetos científicos.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#duvida2" aria-expanded="false" aria-controls="duvida2">
+                        2. Como faço para enviar um novo projeto?
+                    </button>
+                </h2>
+                <div id="duvida2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordionDuvidas">
+                    <div class="accordion-body">
+                        Basta fazer login no sistema, clicar em "Cadastrar Projeto" e preencher o formulário com as informações solicitadas.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#duvida3" aria-expanded="false" aria-controls="duvida3">
+                        3. Meu projeto precisa ser aprovado por alguém antes de ser publicado?
+                    </button>
+                </h2>
+                <div id="duvida3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordionDuvidas">
+                    <div class="accordion-body">
+                        Sim, todos os projetos enviados passam por uma análise da coordenação antes de serem liberados para visualização pública.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#duvida4" aria-expanded="false" aria-controls="duvida4">
+                        4. Posso editar um projeto depois de enviado?
+                    </button>
+                </h2>
+                <div id="duvida4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordionDuvidas">
+                    <div class="accordion-body">
+                        Sim, enquanto o projeto estiver em análise, você pode editar as informações. Após a aprovação, alterações precisarão ser solicitadas à coordenação.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading5">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#duvida5" aria-expanded="false" aria-controls="duvida5">
+                        5. Quem pode visualizar os projetos cadastrados?
+                    </button>
+                </h2>
+                <div id="duvida5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#accordionDuvidas">
+                    <div class="accordion-body">
+                        Todos os alunos, professores e servidores do Instituto que tenham acesso ao sistema.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading6">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#duvida6" aria-expanded="false" aria-controls="duvida6">
+                        6. Posso me inscrever como participante em um projeto?
+                    </button>
+                </h2>
+                <div id="duvida6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#accordionDuvidas">
+                    <div class="accordion-body">
+                        Sim! Se o projeto permitir participação de outros alunos ou professores, você poderá se inscrever diretamente na página do projeto.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
 </html>
