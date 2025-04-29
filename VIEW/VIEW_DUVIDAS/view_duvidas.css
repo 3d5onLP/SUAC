@@ -3,87 +3,93 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-}
-
-body {
+  }
+  
+  body {
     background-color: #1a3c34;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 10px;
-}
-
-.duvidas-container {
-    background-color: #0d3433;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 200%;
-    min-width: 320px;
+  }
+  
+  .duvidas-container {
+    background-color: rgb(221, 221, 221);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
     max-width: 800px;
-    text-align: center;
-    overflow: hidden;
-    padding-bottom: 80px
-}
-
-header{
-    background-color: #0d3433;
-    padding: 15px;
-    margin-top: 15px;
-    text-align: center;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+  }
+  
+  header {
+    background-color: rgb(221, 221, 221);
+    padding: 50px 15px 50px 50px;
+    text-align: left;
     font-weight: bold;
     font-size: 25px;
     position: relative;
-}
-
-.button-retorno {
+    color: black;
+    margin-bottom: 20px;
+  }
+  
+  .button-retorno {
     position: absolute;
     padding-bottom: 6px;
-    left: 15px;
+    left: 4px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 30px;
     cursor: pointer;
-}
-
-.seta{
-    text-decoration: none;
-    color: black;
- }
-
-.quests {
-    list-style: none;
-    padding: 15px;
-    background-color: #ffffff;
-    margin: 10px 0;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.questp{
-    text-decoration: underline;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.textop1 {
-    margin-top: 10px; 
-    font-size: 16px; 
-}
-
-footer {
-    width: 100%; 
-    text-align: left; 
-    padding: 10px; 
   }
   
-footer img {
+  .seta {
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* Accordion style customization */
+  .accordion-item {
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: none;
+  }
+  
+  .accordion-button {
+    background-color: #ffffff;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #000;
+  }
+  
+  .accordion-button:not(.collapsed) {
+    background-color: #e2e2e2;
+    color: #000;
+    box-shadow: none;
+  }
+  
+  .accordion-body {
+    background-color: #fff;
+    font-size: 16px;
+    color: #000;
+    text-align: left;
+  }
+  
+  .accordion-button:focus {
+    box-shadow: none;
+  }
+
+
+  footer {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+  }
+  
+  footer img {
     width: 24px;
     height: 24px;
   }
-
-
+  
