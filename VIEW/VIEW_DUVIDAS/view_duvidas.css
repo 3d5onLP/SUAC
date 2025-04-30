@@ -7,17 +7,11 @@
 
 body {
   background-color: #1a3c34;
-  /*display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 10px;*/
   margin: 0;
   padding: 0;
 }
 
-
-/*MENU OVER*/
+/*Menu para telas grandes/não responsivo*/
 .sidebar {
   z-index: 2;
   width: 40px;
@@ -28,50 +22,45 @@ body {
   height: 100vh;
   position: fixed;
 }
-
+/*Deixa abrir o menu lateral m 200px*/
 .sidebar:hover {
   width: 200px;
 }
-
+/*Removendo os padrões da lista, espaço interno e externos*/
 .sidebar ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
+/*Ajustando espaços internose a quebra de linha no elemento li*/
 .sidebar li {
-  padding: 15px 15px;
+  padding: 15px 8px;
   white-space: nowrap;
 }
-
 .sidebar a {
   color: black;
   text-decoration: none;
   display: block;
 }
-
 .sidebar li:hover {
   background-color: #2d5b50;
 }
-
 .sidebar img {
-  margin-right: 10px;
+  margin-right: 20px;
   width: 24px;
   height: 24px;
 }
-
 .content {
   margin-left: 60px;
   padding: 20px;
   transition: margin-left 0.3s;
   width: 100%;
-}
-
+} 
 .sidebar:hover~.content {
   margin-left: 200px;
 }
 
-
+/*Div branca do meio FAQs*/
 .duvidas-container {
   background-color: rgb(221, 221, 221);
   padding: 30px;
@@ -81,9 +70,10 @@ body {
   max-width: 800px;
 }
 
+/*Cabeçalho da Div .duvidas-container*/
 header {
   background-color: rgb(221, 221, 221);
-  padding: 50px 15px 50px 1px;
+  padding: 50px 15px 0px 1px;
   text-align: left;
   font-weight: bold;
   font-size: 25px;
@@ -92,60 +82,73 @@ header {
   margin-bottom: 20px;
 }
 
-.button-retorno {
-  position: absolute;
-  padding-bottom: 6px;
-  left: 4px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.seta {
-  text-decoration: none;
-  color: black;
-}
-
+/*DIV do FAQ de perguntas e respostas*/
 .accordion-item {
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 15px;
   border: none;
 }
-
+/*Botão para abrir a respostas do FAQ*/
 .accordion-button {
   background-color: #ffffff;
   font-weight: bold;
   text-decoration: underline;
   color: #000;
 }
-
+/*DIV do FAQ  especificamente da perguntas e respostas da 1*/
 .accordion-button:not(.collapsed) {
   background-color: #e2e2e2;
   color: #000;
   box-shadow: none;
 }
-
+/*DIV exclusivaente das respostas de cada pergunta*/
 .accordion-body {
   background-color: #fff;
   font-size: 16px;
   color: #000;
   text-align: left;
 }
-
+/*Remove a sombra visual que aparece ao redor do botão da pergunta/resposta*/
 .accordion-button:focus {
   box-shadow: none;
 }
 
-
-footer {
+/*Menu para celulares/responsivos*/
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  text-align: left;
-  padding: 10px;
+  background-color: rgb(221, 221, 221);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 0;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+/*Configuração dos itens do menu responsivo*/
+.bottom-nav .nav-item {
+  flex: 1;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 5px 0;
+  transition: background-color 0.2s;
+  font-weight: bold;  
 }
 
-footer img {
-  width: 24px;
-  height: 24px;
+/*Oculta em telas maiores o menu bottom-nav (Menu para celulares/responsivos)*/
+@media (min-width: 768px) {
+  .bottom-nav {
+    display: none;
+  }
+}
+/*Oculta em telas menores o menu Sidebar (Menu para computadores/telas maiores)*/
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
 }
