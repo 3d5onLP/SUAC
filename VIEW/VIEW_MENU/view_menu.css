@@ -114,10 +114,18 @@ a{
     height: 24px;
 }
 
-footer {
-    width: 100%; 
-    text-align: left; 
-    padding: 10px; 
-  }
-  
+footer{
+  padding-bottom: 10px;
 
+}
+
+.interrogacao{
+  margin-right: 40%;    
+ 
+}
+  
+.sair{
+  margin-left: 40%;
+  color: red;
+  
+}
