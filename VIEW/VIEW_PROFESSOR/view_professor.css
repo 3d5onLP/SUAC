@@ -148,19 +148,9 @@ a{
     display: block;  
 }
 
-/*Icones de interrogação e chat*/
-.footer-icons {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-}
-.footer-icons a {
-    display: flex;
-    align-items: center;
-}
-/*Tamanho icone de interrogação*/
-.img_interroga{
-    width: 24px;
-    height: 24px;
-}
+/*NO JEITO, botão bonito*/
+footer {
+    width: 100%; 
+    text-align: left; 
+    padding: 10px; 
+  }

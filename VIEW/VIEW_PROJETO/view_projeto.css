@@ -161,3 +161,10 @@ body {
     padding: 7px 15px;
   }
 }
+
+/*NO JEITO, botão bonito*/
+footer {
+  width: 100%; 
+  text-align: left; 
+  padding: 10px; 
+}
