@@ -3,7 +3,7 @@ function fazerLogin() {
     const senha = document.getElementById("senha").value.trim();
  
     const usuarioValido = "admin";
-    const senhaValida = "1234";
+    const senhaValida = "admin";
 
     if (usuario === usuarioValido && senha === senhaValida) {
         window.location.href = "/VIEW/VIEW_MENU/view_menu.html";
