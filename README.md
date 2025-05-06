@@ -7,7 +7,6 @@
 
 O objetivo principal do Cientif é democratizar o acesso à informação sobre projetos científicos em andamento, permitindo que:
 
-* Professores cadastrem seus projetos e indiquem a necessidade de novos participantes;
 * Alunos encontrem oportunidades de participação conforme suas áreas de interesse;
 * Ambas as partes se comuniquem de forma eficiente, promovendo o desenvolvimento acadêmico e científico.
 
@@ -23,8 +22,7 @@ Este projeto está sendo desenvolvido utilizando as seguintes tecnologias:
 
 ## 📌 Funcionalidades previstas
 
-* Cadastro e login de usuários (professores e alunos);
-* Cadastro de projetos científicos;
+* Login de usuários professores e alunos (Com base no https://suap.ifto.edu.br/);
 * Busca de projetos por área temática;
 * Sistema de inscrição em projetos;
 * Comunicação inicial entre aluno e professor;
