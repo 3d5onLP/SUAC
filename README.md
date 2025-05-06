@@ -43,13 +43,6 @@ Este projeto está sendo desenvolvido utilizando as seguintes tecnologias:
 └── README.md             # Documentação do projeto
 ```
 
-## 🚀 Como contribuir
-
-1. Faça um fork deste repositório;
-2. Crie uma branch para sua funcionalidade: `git checkout -b minha-funcionalidade`;
-3. Commit suas alterações: `git commit -m 'Adiciona nova funcionalidade'`;
-4. Envie para sua branch: `git push origin minha-funcionalidade`;
-5. Abra um Pull Request explicando as alterações feitas.
 
 ## 📄 Licença
 
