@@ -4,33 +4,23 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
-  text-decoration: none;
 }
 
-/* Body */
 body {
   background-color: #e6f2ec;
-
 }
 
 a {
   color: black;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-decoration: none;
 }
 
 .nav-header {
   display: flex;
-  background-color: #ffffff;
-  justify-content: space-around;
-  padding: 1rem 0;
+  justify-content: space-between;
   align-items: center;
-
-}
-
-ul {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
+  background-color: #fff;
+  padding: 1rem;
 }
 
 .logo {
@@ -41,56 +31,71 @@ ul {
 .logo img {
   width: 45px;
   border-radius: 50%;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
-.header-logo {
-  font-size: 20px;
-}
-
-.nav-item {
-  margin: 0 20px;
+.nav {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.nav-item .nav-link {
-  display: none;
-  text-align: center;
-  margin: 20px;
-  font-size: 0.8rem;
-}
-
-.nav-item:hover .nav-link {
-  display: block;
-  /* Mostra o nome ao passar o mouse */
+  flex-direction: row;
 }
 
 .nav-list {
+  list-style: none;
   display: flex;
+  gap: 1rem;
   align-items: center;
-  text-align: center;
-  margin: 20px;
 }
 
-.nav-list img {
-  max-width: 100%;
-  height: auto;
+.nav-list li {
+  position: relative;
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tooltip-img {
   width: 35px;
-  display: block;
-  margin: 0 auto;
+  height: 35px;
 }
 
-.nav-link {
-  padding: 5px;
-  font-size: 1rem;
+.tooltip-text {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 5px 10px;
   border-radius: 5px;
-  transition: 0.3s;
+  position: absolute;
+  top: 100%; /* posiciona abaixo da imagem */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  z-index: 999; /* garante visibilidade sobre outros elementos */
+  margin-top: 6px; /* espaço entre imagem e tooltip */
 }
 
-.nav-link:hover {
-  background-color: #ffffff;
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #333 transparent;
 }
 
 .toggle,
@@ -191,11 +196,6 @@ footer {
   padding: 10px;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .nav-item:hover .nav-link {
-    display: block;
-  }
-}
 
 @media screen and (max-width: 768px) {
   .nav-header {
@@ -238,43 +238,39 @@ footer {
     position: fixed;
     top: 0;
     right: -100%;
-    background-color: #ffffff;
+    background-color: #fff;
     width: 60%;
     height: 100vh;
-    padding: 24px;
-    z-index: 100;
+    flex-direction: column;
+    padding: 1.5rem;
     transition: 0.5s;
+    z-index: 100;
     overflow-y: auto; /* Permite rolagem vertical */
     overflow-y: scroll;     /* ainda permite a rolagem */
     -ms-overflow-style: none;  /* IE e Edge */
     scrollbar-width: none;     /* Firefox */
   }
-
   .nav-list {
-    display: flex;
     flex-direction: column;
-    gap: 1.5rem; /* Mais espaço entre os itens */
-
   }
 
-  .nav::-webkit-scrollbar {
-    display: none;  /* Chrome, Safari e Opera */
+  .show {
+    right: 0;
   }
 
-  .nav-item {
-    flex: 0 0 auto;
-  }
-
-  .nav-item .nav-link {
+  .toggle,
+  .close {
     display: block;
+    font-size: 1.5rem;
   }
 
-  .nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 2rem 0;
+  .close {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
   }
+ 
+
 
   .show {
     right: 0;

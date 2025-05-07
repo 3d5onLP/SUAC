@@ -13,25 +13,44 @@
 <body>
   <div class="nav-header">
     <div class="logo">
-        <img src="/VIEW/icon/logo_cientif.png" alt="">
-        <h1 class="header-logo">CIENTIF</h1>
+      <img src="/VIEW/icon/logo_cientif.png" alt="Logo CIENTIF">
+      <h1 class="header-logo">CIENTIF</h1>
     </div>
     <nav class="nav" id="nav-menu">
-        <i data-feather="x" class="close" id="close-menu"></i>
-        <ul class="nav-list">
-            <li class="nav-item"><img src="/VIEW/icon/botao-home.png" alt=""><a href="/VIEW/VIEW_MENU/view_menu.html" class="nav-link">Home</a></li>
-            <li class="nav-item"><img src="/VIEW/icon/pesquisa-edital.png" alt=""><a href="/VIEW/VIEW_EDITAL/view_edital.html" class="nav-link">Edital</a></li>
-            <li class="nav-item"><img src="/VIEW/icon/professor-icon.png" alt=""><a href="/VIEW/VIEW_PROFESSOR/view_professor.html" class="nav-link">Professores</a></li>
-            <li class="nav-item"><img src="/VIEW/icon/aluno-icon.png" alt=""><a href="/VIEW/VIEW_ALUNO/view_aluno.html" class="nav-link">Alunos</a></li>
-        </ul>
+      <i data-feather="x" class="close" id="close-menu"></i>
+      <ul class="nav-list">
+        <li>
+          <a href="/VIEW/VIEW_MENU/view_menu.html" class="tooltip-container" target="_blank">
+            <img src="/VIEW/icon/botao-home.png" alt="Home" class="tooltip-img">
+            <span class="tooltip-text">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="/VIEW/VIEW_EDITAL/view_edital.html" class="tooltip-container">
+            <img src="/VIEW/icon/pesquisa-edital.png" alt="Edital" class="tooltip-img">
+            <span class="tooltip-text">Edital</span>
+          </a>
+        </li>
+        <li>
+          <a href="/VIEW/VIEW_PROFESSOR/view_professor.html" class="tooltip-container">
+            <img src="/VIEW/icon/professor-icon.png" alt="Professores" class="tooltip-img">
+            <span class="tooltip-text">Professores</span>
+          </a>
+        </li>
+        <li>
+          <a href="/VIEW/VIEW_ALUNO/view_aluno.html" class="tooltip-container">
+            <img src="/VIEW/icon/aluno-icon.png" alt="Alunos" class="tooltip-img">
+            <span class="tooltip-text">Alunos</span>
+          </a>
+        </li>
+      </ul>
     </nav>
     <i data-feather="menu" class="toggle" id="toggle-menu"></i>
   </div>
-
-<script>
-  feather.replace();
-</script>
-<script src="view_projeto.js"></script>
+  <script>
+    feather.replace();
+  </script>
+  <script src="view_projeto.js"></script>
 
 
   <header class="buscar">
@@ -67,7 +86,7 @@
 
   <footer>
     <a href="/VIEW/VIEW_DUVIDAS/view_duvidas.html">❓</a>
-</footer>
+  </footer>
 
 </body>
 
