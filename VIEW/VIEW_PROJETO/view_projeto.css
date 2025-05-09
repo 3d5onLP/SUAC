@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #e6f2ec;
+  background-color: #245d56;
 }
 
 a {
@@ -17,10 +17,12 @@ a {
 
 .nav-header {
   display: flex;
+  margin: 10px;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
-  padding: 1rem;
+  background-color: #1f4943;
+  padding: 0.5rem;
+  border-radius: 10px;
 }
 
 .logo {
@@ -79,10 +81,10 @@ a {
   transition: opacity 0.3s ease;
   white-space: nowrap;
   font-size: 0.75rem;
+    /* garante visibilidade sobre outros elementos */
   z-index: 999;
-  /* garante visibilidade sobre outros elementos */
-  margin-top: 6px;
   /* espaço entre imagem e tooltip */
+  margin-top: 6px;
 }
 
 .tooltip-container:hover .tooltip-text {
@@ -114,7 +116,7 @@ header {
 .btn-buscar {
   border-radius: 50px;
   background-color: white;
-  padding: 8px 20px;
+  padding: 10px 40px;
   margin-right: 5px;
   border: none;
   transition: background 0.3s, color 0.3s;
@@ -122,19 +124,23 @@ header {
 
 .btn-green {
   border-radius: 50px;
-  background-color: #a3d9c9;
-  color: #1a3c34;
-  padding: 8px 20px;
+  background-color: #00ffbf;
+  padding: 10px 20px;
   border: none;
   transition: background 0.3s, color 0.3s;
+}
+
+.btn-green:hover{
+  background-color: #004643;
 }
 
 /* elementos da main */
 .container {
   display: flex;
+  margin: 10px;
   flex-wrap: wrap;
   gap: 20px;
-  background: #fff;
+  background:  #004643;
   padding: 40px;
   border-radius: 30px;
   justify-content: center;
@@ -142,8 +148,9 @@ header {
 
 .card {
   position: relative;
-  width: 200px;
-  height: 300px;
+  width: 500px;
+  height: 600px;
+  margin: 20px;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
@@ -181,6 +188,10 @@ header {
   transition: opacity 0.3s;
 }
 
+.font-info{
+  font-size: 10px;
+}
+
 .card .more-info {
   position: absolute;
   top: 0;
@@ -215,11 +226,11 @@ header {
 }
 
 .more-info a.info-link {
-  background: #ff9800;
+  background: #f9bc60;
 }
 
 .more-info a.info-link:hover {
-  background: #e68900;
+  background: #FF8C00;
 }
 
 .more-info a.download-link {
@@ -258,10 +269,11 @@ header {
   .card {
     width: 45%;
     height: 280px;
+    
   }
 }
 
-/* mobile */
+/* Mobile */
 @media screen and (max-width: 768px) {
   .nav-header {
     height: 50px;
@@ -304,30 +316,46 @@ header {
     position: fixed;
     top: 0;
     right: 0; 
+    /*O menu desliza e aparece na tela*/
     transform: translateX(100%); 
+    /*Delay do deslizamento*/
     transition: transform 0.3s ease;
     width: 20%;
     height: 100vh;
-    background-color: white;
+    background-color: #004643;
     z-index: 1000;
     flex-direction: column;
     padding: 1.5rem;
     -ms-overflow-style: none;
-    scrollbar-width: none;
     /* Permite rolagem vertical */
-    overflow-y: scroll;
-    /* ainda permite a rolagem */
-    -ms-overflow-style: none;
-    /* IE e Edge */
     scrollbar-width: none;
+    /* ainda permite a rolagem */
+    overflow-y: scroll;
+    /* IE e Edge */
+    -ms-overflow-style: none;
     /* Firefox */
+    scrollbar-width: none;
   }
+  /*O menu desliza para dentro da tela*/
   .nav.active {
     transform: translateX(0);
   }
 
   .nav-list {
     transform: translateX(0);
+  }
+  .tooltip-img{
+    padding: 0.3rem;
+    margin-top: 0.2rem;
+  }
+
+  .tooltip-text {
+    visibility: visible ;
+    opacity: 1 ;
+    position: absolute;
+    color: white;
+    background: none;
+    
   }
 
   .show {
@@ -370,7 +398,7 @@ header {
   }
 
   .card {
-    width: 100%;
+    width: 90%;
     height: 250px;
   }
 
@@ -398,6 +426,5 @@ header {
     width: 100%;
     margin-bottom: 10px;
   }
-
 
 }
