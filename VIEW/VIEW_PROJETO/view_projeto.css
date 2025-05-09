@@ -79,10 +79,10 @@ a {
   transition: opacity 0.3s ease;
   white-space: nowrap;
   font-size: 0.75rem;
+    /* garante visibilidade sobre outros elementos */
   z-index: 999;
-  /* garante visibilidade sobre outros elementos */
-  margin-top: 6px;
   /* espaço entre imagem e tooltip */
+  margin-top: 6px;
 }
 
 .tooltip-container:hover .tooltip-text {
@@ -261,7 +261,7 @@ header {
   }
 }
 
-/* mobile */
+/* Mobile */
 @media screen and (max-width: 768px) {
   .nav-header {
     height: 50px;
@@ -304,7 +304,9 @@ header {
     position: fixed;
     top: 0;
     right: 0; 
+    /*O menu desliza e aparece na tela*/
     transform: translateX(100%); 
+    /*Delay do deslizamento*/
     transition: transform 0.3s ease;
     width: 20%;
     height: 100vh;
@@ -313,15 +315,16 @@ header {
     flex-direction: column;
     padding: 1.5rem;
     -ms-overflow-style: none;
-    scrollbar-width: none;
     /* Permite rolagem vertical */
-    overflow-y: scroll;
-    /* ainda permite a rolagem */
-    -ms-overflow-style: none;
-    /* IE e Edge */
     scrollbar-width: none;
+    /* ainda permite a rolagem */
+    overflow-y: scroll;
+    /* IE e Edge */
+    -ms-overflow-style: none;
     /* Firefox */
+    scrollbar-width: none;
   }
+  /*O menu desliza para dentro da tela*/
   .nav.active {
     transform: translateX(0);
   }
@@ -398,6 +401,5 @@ header {
     width: 100%;
     margin-bottom: 10px;
   }
-
 
 }
