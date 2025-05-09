@@ -71,15 +71,18 @@ a {
   padding: 5px 10px;
   border-radius: 5px;
   position: absolute;
-  top: 100%; /* posiciona abaixo da imagem */
+  top: 100%;
+  /* posiciona abaixo da imagem */
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.3s ease;
   white-space: nowrap;
   font-size: 0.75rem;
-  z-index: 999; /* garante visibilidade sobre outros elementos */
-  margin-top: 6px; /* espaço entre imagem e tooltip */
+  z-index: 999;
+  /* garante visibilidade sobre outros elementos */
+  margin-top: 6px;
+  /* espaço entre imagem e tooltip */
 }
 
 .tooltip-container:hover .tooltip-text {
@@ -126,61 +129,98 @@ header {
   transition: background 0.3s, color 0.3s;
 }
 
+/* elementos da main */
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 30px;
+  justify-content: center;
+}
+
 .card {
-  display: inline-block;
-  margin: 20px 40px;
-  padding: 10px;
-  max-width: 40%;
-  border-radius: 50px;
-
-}
-
-.card button {
-  display: inline-block;
-  width: 45%;
-  margin-top: 10px;
-}
-
-/* buttons-card */
-.btn-success {
-
-  background-color: green;
-  padding: 7px 10px;
-  border-radius: 5px;
-  border: none;
-}
-
-.btn-dowl {
-
-  background-color: blue;
-  padding: 7px 10px;
-  border-radius: 5px;
-  border: none;
-}
-
-.card-link-um {
-  text-decoration: none;
+  position: relative;
+  width: 200px;
+  height: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   color: white;
-
+  cursor: pointer;
+  transition: transform 0.3s;
+  flex-shrink: 0;
 }
 
-.card-link-dois {
-  text-decoration: none;
-  color: white;
-
+.card:hover {
+  transform: scale(1.05);
 }
 
-/*Icones de interrogação e chat*/
-.footer-icons {
+.card img {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.footer-icons a {
+.card .info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  transition: opacity 0.3s;
+}
+
+.card .more-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  padding: 20px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.card:hover .more-info {
+  opacity: 1;
+}
+
+/* Estilo dos links */
+.more-info a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.more-info a.info-link {
+  background: #ff9800;
+}
+
+.more-info a.info-link:hover {
+  background: #e68900;
+}
+
+.more-info a.download-link {
+  background: #007bff;
+}
+
+.more-info a.download-link:hover {
+  background: #0056b3;
 }
 
 /*Tamanho icone de interrogação*/
@@ -196,7 +236,19 @@ footer {
   padding: 10px;
 }
 
+/* Tablets (768px a 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 30px;
+  }
 
+  .card {
+    width: 45%;
+    height: 280px;
+  }
+}
+
+/* mobile */
 @media screen and (max-width: 768px) {
   .nav-header {
     height: 50px;
@@ -245,11 +297,16 @@ footer {
     padding: 1.5rem;
     transition: 0.5s;
     z-index: 100;
-    overflow-y: auto; /* Permite rolagem vertical */
-    overflow-y: scroll;     /* ainda permite a rolagem */
-    -ms-overflow-style: none;  /* IE e Edge */
-    scrollbar-width: none;     /* Firefox */
+    overflow-y: auto;
+    /* Permite rolagem vertical */
+    overflow-y: scroll;
+    /* ainda permite a rolagem */
+    -ms-overflow-style: none;
+    /* IE e Edge */
+    scrollbar-width: none;
+    /* Firefox */
   }
+
   .nav-list {
     flex-direction: column;
   }
@@ -269,8 +326,6 @@ footer {
     bottom: 10px;
     right: 10px;
   }
- 
-
 
   .show {
     right: 0;
@@ -281,16 +336,6 @@ footer {
     padding: 7px 15px;
   }
 
-  .card {
-    display: block;
-    margin: 20px auto;
-    max-width: 90%;
-  }
-
-  .card button {
-    width: 100%;
-  }
-
   .buscar {
     display: flex;
     flex-direction: column;
@@ -299,9 +344,29 @@ footer {
     padding: 10% 5%;
   }
 
-  .btn-dowl {
-    margin-left: 0;
-    margin-top: 10px;
+  .container {
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .card {
+    width: 100%;
+    height: 250px;
+  }
+
+  .card .info {
+    font-size: 1.1rem;
+  }
+
+  .card .more-info {
+    font-size: 0.95rem;
+    padding: 15px;
+  }
+
+  .more-info a {
+    font-size: 12px;
+    padding: 6px 10px;
   }
 
   .d-flex {
