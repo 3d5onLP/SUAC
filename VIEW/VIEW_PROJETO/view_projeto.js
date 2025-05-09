@@ -24,5 +24,6 @@ document.addEventListener('click', (event) => {
   if (navMenu.classList.contains('active') && !isClickInsideMenu && !isClickOnOpenBtn) {
     navMenu.classList.remove('active');
 
+
   }
 });
