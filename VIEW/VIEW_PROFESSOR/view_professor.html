@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CIENTIF</title>
+
+    <!-- Adicione o CSS do Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="view_professor.css">
     <link rel="icon" href="/VIEW/icon/logo_cientif.png" type="image/png">
-
 </head>
 
 <body>
-    <!--Menu para celulares/responsivos-->
+    <!-- Menu para celulares/responsivos -->
     <nav class="bottom-nav d-md-none">
         <a href="/VIEW/VIEW_MENU/view_menu.html" class="nav-item active"><img src="/VIEW/icon/botao-home.png" alt="Home Icon"><br>Home</a>
         <a href="https://www.ifto.edu.br/noticias/editais-de-apoio-a-pesquisa-no-ambito-do-ifto-sao-publicados/view" class="nav-item"><img src="/VIEW/icon/pesquisa-edital.png" alt="Edital icon"><br>Editais</a>
@@ -19,52 +22,108 @@
         <a href="/VIEW/VIEW_ALUNO/view_aluno.html" class="nav-item"><img src="/VIEW/icon/aluno-icon.png" alt="Aluno icon"><br>Aluno</a>
         <a href="/VIEW/VIEW_DUVIDAS/view_duvidas.html" class="nav-item"><img src="/VIEW/icon/ponto-de-interrogacao.png" alt="Duvida icon"><br>Duvidas</a>          
     </nav>
-    <!--
-    <nav class="sidebar">
-        <ul>
-          <li>
-            <a href="/VIEW/VIEW_MENU/view_menu.html"><img src="/VIEW/icon/botao-home.png" alt="Home Icon">Home</a>
-          </li>
-          <li>
-            <a href="https://www.ifto.edu.br/noticias/editais-de-apoio-a-pesquisa-no-ambito-do-ifto-sao-publicados/view"> <img src="/VIEW/icon/botao-home.png" alt="Home Icon">Editais</a>
-          </li>
-          <li>
-            <a href="/VIEW/VIEW_PROJETO/view_projeto.html"> <img src="/VIEW/icon/botao-home.png" alt="Home Icon">Projetos</a>
-          </li>
-          </li>
-          <li>
-            <a href="/VIEW/VIEW_PROFESSOR/view_professor.html"> <img src="/VIEW/icon/professor-icon.png" alt="Professores Icon"> Professores</a>
-          </li>
-          <li>
-            <a href="/VIEW/VIEW_ALUNO/view_aluno.html"><img src="/VIEW/icon/aluno-icon.png" alt="Alunos Icon">Alunos</a>
-          </li>
-        </ul>
-      </nav>
-    -->
+
+    <!-- Cabeçalho de página com um botão de voltar e o título "PROFESSOR" -->
     <div class="container">
         <header>
             <span class="button-retorno"> <a href="/VIEW/VIEW_MENU/view_menu.html">←</a></span>
-            PERFIL
+            PROFESSORES
         </header>
 
         <div>
-            <img class="img-aluno" src="/VIEW/icon/aluno-icon.png" alt="Foto de Perfil">
+            <img class="img-professor" src="/VIEW/icon/professor-icon.png" alt="Foto de Perfil">
 
-            <ul class="perfil-list">
+<!------------------------------------------------------------------------------------------------->
+<div class="accordion" id="accordionprofessor">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="heading1">
+            <button class="accordion-button collapsed" 
+                    type="button"   
+                    data-bs-toggle="collapse"
+                    data-bs-target="#duvida1"
+                    aria-expanded="false"
+                    aria-controls="duvida1">
+                Iago Bezerra 
+            </button> 
+        </h2>
 
-                <section class="quests"></section>
+        <div id="duvida1" 
+             class="accordion-collapse collapse" 
+             aria-labelledby="heading1" 
+             data-bs-parent="#accordionprofessor">
+            <div class="accordion-body">
+                <p><strong>Nome:</strong> Iago Bezerra Arrais</p>
+                <p><strong>Área:</strong> A</p>
+                <p><strong>Matrícula:</strong> 0405061827</p>
+                <p><strong>Status:</strong> Disponível para projeto</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!------------------------------------------------------------------------------------------------->
+<div class="accordion" id="accordionprofessor">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="heading1">
+            <button class="accordion-button collapsed" 
+                    type="button"   
+                    data-bs-toggle="collapse"
+                    data-bs-target="#duvida1"
+                    aria-expanded="false"
+                    aria-controls="duvida1">
+                Iago Bezerra 
+            </button> 
+        </h2>
+
+        <div id="duvida1" 
+             class="accordion-collapse collapse" 
+             aria-labelledby="heading1" 
+             data-bs-parent="#accordionprofessor">
+            <div class="accordion-body">
+                <p><strong>Nome:</strong> Iago Bezerra Arrais</p>
+                <p><strong>Área:</strong> A</p>
+                <p><strong>Matrícula:</strong> 0405061827</p>
+                <p><strong>Status:</strong> Disponível para projeto</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!------------------------------------------------------------------------------------------------->
+            <!--<ul class="perfil-list">
+
+                <section class="quests">
                     <li class="menu-item">
-                        <p class ="p1">Professor: <p class ="p2"> Iago</p></p>
+                        <p class ="p1">Aluno: <p class ="p2"> Edson</p></p>
                     </li>
                 </section>
 
-                <section class="quests"></section>
+                <section class="quests">
                     <li class="menu-item">
-                        <p class ="p1">Formação Acadêmica: <p class ="p2"> Dr. em Sistema de Informação</p></p>
+                        <p class ="p1">Curso: <p class ="p2"> A.D.S. 4° Período</p></p>
                     </li>
                 </section>
 
-                <section class="quests"></section>
+                <section class="quests">
                     <li class="menu-item">
                         <p class ="p1">Matrícula: <p class ="p2"> 11111111</p> </p>
                     </li>
@@ -76,7 +135,7 @@
                     </li>
                 </section>
 
-            </ul>
+            </ul> -->
 
         </div>
 
@@ -85,6 +144,6 @@
         </footer>
 
     </div>
-</body>
 
+</body>
 </html>
