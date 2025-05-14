@@ -1,5 +1,5 @@
 
-# Cientif
+# Cientif(NOME PROVISÓRIO)
 
 **Cientif** é uma plataforma web dedicada à publicação, busca e participação em projetos científicos. A proposta visa facilitar a conexão entre **professores**, que estão em busca de alunos para colaborarem em seus projetos, e **alunos**, que desejam se engajar em iniciativas acadêmicas ou de pesquisa.
 
