@@ -5,28 +5,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CIENTIF</title>
-
     <!-- Adicione o CSS do Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="view_professor.css">
     <link rel="icon" href="/VIEW/icon/logo_cientif.png" type="image/png">
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body>
-    <!-- Menu para celulares/responsivos -->
-    <nav class="bottom-nav d-md-none">
-        <a href="/VIEW/VIEW_MENU/view_menu.html" class="nav-item active"><img src="/VIEW/icon/botao-home.png" alt="Home Icon"><br>Home</a>
-        <a href="https://www.ifto.edu.br/noticias/editais-de-apoio-a-pesquisa-no-ambito-do-ifto-sao-publicados/view" class="nav-item"><img src="/VIEW/icon/pesquisa-edital.png" alt="Edital icon"><br>Editais</a>
-        <a href="/VIEW/VIEW_PROJETO/view_projeto.html" class="nav-item"><img src="/VIEW/icon/pesquisa-projeto.png" alt="Projeto icon"><br>Projetos</a>
-        <a href="/VIEW/VIEW_ALUNO/view_aluno.html" class="nav-item"><img src="/VIEW/icon/aluno-icon.png" alt="Aluno icon"><br>Aluno</a>
-        <a href="/VIEW/VIEW_DUVIDAS/view_duvidas.html" class="nav-item"><img src="/VIEW/icon/ponto-de-interrogacao.png" alt="Duvida icon"><br>Duvidas</a>          
+   <div class="nav-header">  
+    <div class="logo">
+      <img src="/VIEW/icon/logo_cientif.png" alt="Logo CIENTIF">
+      <h1 class="header-logo">CIENTIF</h1>
+    </div>
+
+    <!--Menu para telas grandes-->
+    <nav class="nav" id="nav-menu">
+      <i data-feather="x" class="close" id="close-menu"></i>
+      <ul class="nav-list">
+        <li>
+          <a href="/VIEW/VIEW_MENU/view_menu.html" class="tooltip-container" >
+            <img src="/VIEW/icon/botao-home.png" alt="Home" class="tooltip-img">
+            <span class="tooltip-text">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="/VIEW/VIEW_EDITAL/view_edital.html"
+            class="tooltip-container">
+            <img src="/VIEW/icon/pesquisa-edital.png" alt="Edital" class="tooltip-img">
+            <span class="tooltip-text">Edital</span>
+          </a>
+        </li>
+        <li>
+          <a href="/VIEW/VIEW_PROJETO/view_projeto.html" class="tooltip-container">
+            <img src="/VIEW/icon/pesquisa-projeto.png" alt="Projeto" class="tooltip-img">
+            <span class="tooltip-text">Projeto</span>
+          </a>
+        </li>
+        <li>
+          <a href="/VIEW/VIEW_PROFESSOR/view_professor.html" class="tooltip-container">
+            <img src="/VIEW/icon/professor-icon.png" alt="Professores" class="tooltip-img">
+            <span class="tooltip-text">Professores</span>
+          </a>
+        </li>
+        <li>
+          <a href="/VIEW/VIEW_ALUNO/view_aluno.html" class="tooltip-container">
+            <img src="/VIEW/icon/aluno-icon.png" alt="Alunos" class="tooltip-img">
+            <span class="tooltip-text">Alunos</span>
+          </a>
+        </li>
+        <li>
+          <a href="/VIEW/VIEW_DUVIDAS/view_duvidas.html" class="tooltip-container">
+            <img src="/VIEW/icon/ponto-de-interrogacao.png" alt="Duvida" class="tooltip-img">
+            <span class="tooltip-text">Duvidas</span>
+          </a>
+        </li>
+        <li>
+          <a href="/VIEW/VIEW_LOGIN/view_login.html" class="tooltip-container">
+            <img src="/VIEW/icon/botao-de-close.png" alt="Sair" class="tooltip-img">
+            <span class="tooltip-text">Sair</span>
+          </a>
+        </li>
+      </ul>
     </nav>
+    <i data-feather="menu" class="toggle" id="toggle-menu"></i>
+
+  </div>
 
     <!-- Cabeçalho de página com um botão de voltar e o título "PROFESSOR" -->
     <div class="container">
         <header>
-            <span class="button-retorno"> <a href="/VIEW/VIEW_MENU/view_menu.html">←</a></span>
             PROFESSORES
         </header>
 
@@ -139,11 +187,11 @@
 
         </div>
 
-        <footer>
-            <a href="/VIEW/VIEW_DUVIDAS/view_duvidas.html">❓</a>
-        </footer>
+       
 
     </div>
 
+  <script> feather.replace(); </script>
+  <script src="view_professor.js"></script>
 </body>
 </html>
