@@ -1,24 +1,25 @@
-/*NO JEITO*/
+/* Aplica um reset e fonte padrão para todos os elementos */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-}
+ }
 
-/*NO JEITO*/
-body {
+/* Centraliza o conteúdo com fundo escuro */
+body
+  {
     background-color: #1a3c34;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 10px;
-}
+  }
 
-
-/*MENU OVER*/
-*.sidebar {
+/* Sidebar fixa com animação e fundo cinza */
+  .sidebar
+  {
     z-index: 2;
     width: 40px;
     background-color: rgb(221, 221, 221);
@@ -28,58 +29,75 @@ body {
     height: 100vh;
     position: fixed;
   }
-  
-  .sidebar:hover {
-    width: 200px;
+
+/* Expande a sidebar para 200px ao passar o mouse */
+.sidebar:hover 
+  {
+  width: 200px;
   }
-  
-  .sidebar ul {
+
+/* Remove espaçamentos e marcadores da lista na sidebar */
+.sidebar ul
+  {
     list-style: none;
     padding: 0;
     margin: 0;
   }
-  
-  .sidebar li {
+
+/* Adiciona espaçamento e impede quebra de linha nos itens da lista */
+.sidebar li
+  {
     padding: 15px 15px;
     white-space: nowrap;
   }
-  
-  .sidebar a {
+
+/* Link preto em bloco sem sublinhado */
+.sidebar a 
+  {
     color: black;
     text-decoration: none;
     display: block;
   }
-  
-  .sidebar li:hover {
+
+/* Muda o fundo ao passar o mouse */
+.sidebar li:hover 
+  {
     background-color: #2d5b50;
   }
-  
-  .sidebar img {
-    margin-right: 10px;
-    width: 24px;
-    height: 24px;
-  }
 
-/*NO JEITO*/
-header{
-    background-color: #0d3433;
-    padding: 15px;
-    margin-top: 15px;
-    text-align: center;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    font-weight: bold;
-    font-size: 25px;
-    position: relative;
-    color: white;
+/* Define tamanho e espaçamento da imagem na sidebar */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
-/*NO JEITO, Botão de retorno*/
-a{
+/* Cabeçalho com fundo verde e texto centralizado */
+header 
+  {
+    background-color: #0d3433;   /* Define o fundo do cabeçalho com uma cor verde escuro */
+    padding: 15px;                 /* Adiciona espaçamento interno de 15px ao redor do conteúdo */
+    margin-top: 15px;              /* Adiciona um espaçamento de 15px acima do cabeçalho */
+    text-align: center;            /* Alinha o texto no centro */
+    border-top-left-radius: 10px;  /* Arredonda o canto superior esquerdo */
+    border-top-right-radius: 10px; /* Arredonda o canto superior direito */
+    font-weight: bold;             /* Deixa o texto em negrito */
+    font-size: 25px;               /* Define o tamanho da fonte para 25px */
+    position: relative;            /* Define a posição como relativa para possível uso de posicionamento absoluto dentro */
+    color: white;                /* Define a cor do texto como branca */
+  }
+
+/* Link preto sem sublinhado */
+a
+  {
     text-decoration: none;
     color: black;
- } 
-.button-retorno {
+  } 
+
+/* Botão de retorno à esquerda central */
+.button-retorno
+  {
     position: absolute;
     padding-bottom: 6px;
     left: 15px;
@@ -87,123 +105,148 @@ a{
     transform: translateY(-50%);
     font-size: 30px;
     cursor: pointer;
-}
+  }
 
-/*NO JEITO*/
-.seta{
+/* Texto preto sem sublinhado */
+.seta
+  {
     text-decoration: none;
     color: black;
- }
+  }
 
-.container{
-    margin: 100px;
-    background-color: #0d3433;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 200%;
-    min-width: 320px;
-    max-width: 800px;
-    text-align: center;
-    overflow: hidden;
+/* Container centralizado com fundo escuro e arredondado */
+.container 
+  {
+    margin: 100px;                              /* Adiciona espaçamento externo em todos os lados */
+    background-color: #0d3433;                /* Define o fundo com cor verde escura */
+    border-radius: 10px;                        /* Arredonda os cantos em 10px */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Aplica sombra leve ao redor do container */
+    width: 100%;                                /* Define largura como o dobro do elemento pai */
+    min-width: 320px;                           /* Garante que o container não fique menor que 320px */
+    max-width: 800px;                           /* Limita a largura máxima a 800px */
+    text-align: center;                         /* Centraliza o texto dentro do container */
+    overflow: hidden;                           /* Esconde qualquer conteúdo que ultrapasse os limites */
+  }
+
+/* Centraliza o elemento horizontalmente */
+.perfil-list
+{
+  margin: 0 auto;
 }
 
-.perfil-list{
-    margin: 0 auto;
-}
+/* Item de menu com fundo branco, bordas arredondadas, e centralizado */
+.menu-item 
+  {
+    background-color: white;     /* Define o fundo branco para o item do menu */
+    border-radius: 5px;            /* Arredonda os cantos do item em 5px */
+    padding: 15px;                 /* Adiciona 15px de espaçamento interno */
+    font-size: 16px;               /* Define o tamanho da fonte para 16px */
+    width: 80%;                    /* Define a largura do item como 80% do seu contêiner pai */
+    max-width: 600px;              /* Limita a largura máxima a 600px */
+    margin: 0 auto;                /* Centraliza o item horizontalmente */
+    margin-top: 30px;              /* Adiciona 30px de espaço acima do item */
+    list-style: none;              /* Remove os marcadores padrão da lista (se for parte de uma lista) */
+  }
 
-.menu-item{
-    background-color:white;
-    border-radius: 5px;
-    padding: 15px;
-    font-size: 16px;
-    width: 80%;
-    max-width: 600px; 
-    margin: 0 auto; 
-    margin-top: 30px;
-    list-style: none;
-}
-
-.quests {
+/* Itens em coluna, centralizados e inline */
+.quests 
+  {
     flex-direction: column;
     justify-content: center;
     display: inline;
-}
-/*NO JEITO*/
-.p1{
+  }
+
+/* Texto em negrito e inline */
+.p1
+  {
     font-weight: bold;
     display: inline;
-}
-/*NO JEITO*/
-.p2{
-    display: inline;
-}
+  }
 
-/*NO JEITO, imagem do perfil*/
-.img-aluno {
-    width: 100px;  
-    height: 100px; 
-    border-radius: 50%;  
+/* Texto inline */
+.p2
+  {
+    display: inline;
+  }
+
+/* Imagem com tamanho fixo, bordas arredondadas e centralizada */
+.img-professor
+  {
+    width: 95px;  
+    height: 95px; 
+    border-radius: 20%;  
     object-fit: cover;  
     margin: 20px auto;  
     display: block;  
-}
+  }
 
-/*NO JEITO, botão bonito*/
-footer {
+/* Rodapé com largura total, texto à esquerda e espaço interno */
+footer 
+  {
     width: 100%; 
     text-align: left; 
     padding: 10px; 
   }
+
+/* Menu para celulares/responsivos */
+.bottom-nav 
+  {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(221, 221, 221);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+  }
+
+/* Configuração dos itens do menu responsivo */
+.bottom-nav .nav-item 
+  {
+    flex: 1;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    font-size: 80%;
+    padding: 5px 0;
+    transition: background-color 0.2s;
+    font-weight: bold;  
+  }
+
+/* Define o tamanho dos icones */
+.nav-item img
+  {
+    width: 25px;
+    height: 25px;
+  }
+
+/* Oculta em telas maiores o menu bottom-nav (Menu para celulares/responsivos) */
+@media (min-width: 768px)
+  {
+    .bottom-nav 
+      {
+        display: none;
+      }
+  }
   
-  
-/*Menu para celulares/responsivos*/
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgb(221, 221, 221);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 8px 0;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
-  z-index: 9999;
-}
+/* Oculta em telas menores o menu Sidebar (Menu para computadores/telas maiores) */
+@media (max-width: 768px) 
+  {
+    .sidebar 
+      {
+      display: none;
+      }
+  }
 
-/*Configuração dos itens do menu responsivo*/
-.bottom-nav .nav-item {
-  flex: 1;
-  text-align: center;
-  color: black;
-  text-decoration: none;
-  font-size: 80%;
-  padding: 5px 0;
-  transition: background-color 0.2s;
-  font-weight: bold;  
-}
-/*Define o tamanho dos icones*/
-.nav-item img{
-width: 25px;
-height: 25px;
-}
-
-/*Oculta em telas maiores o menu bottom-nav (Menu para celulares/responsivos)*/
-@media (min-width: 768px) {
-.bottom-nav {
+/* Teste de ocultação (Menu para computadores/telas maiores) */
+@media (max-width: 768px) 
+{
+  footer 
+  {
     display: none;
-}
-}
-/*Oculta em telas menores o menu Sidebar (Menu para computadores/telas maiores)*/
-@media (max-width: 768px) {
-  .sidebar {
-    display: none;
-}
-}
-
-/*Teste de ocultação (Menu para computadores/telas maiores)*/
-@media (max-width: 768px) {
-  footer {
-    display: none;
-}
+  }
 }
