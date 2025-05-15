@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CIENTIF</title>
-  <link rel="icon" href="/VIEW/icon/logo_cientif.png" type="image/png">
+  <title>SUAC</title>
+  <link rel="icon" href="/VIEW/icon/logo.png" type="image/png">
   <link rel="stylesheet" href="view_professor.css">
   <script src="https://unpkg.com/feather-icons"></script>
 </head>
@@ -13,19 +13,14 @@
 <body>
   <div class="nav-header">  
     <div class="logo">
-      <img src="/VIEW/icon/logo_cientif.png" alt="Logo CIENTIF">
-      <h1 class="header-logo">CIENTIF</h1>
+      <img src="/VIEW/icon/logo.png" alt="Logo SUAC">
+      <h1 class="header-logo">SUAC</h1>
     </div>
     <!--Menu para telas grandes-->
     <nav class="nav" id="nav-menu">
       <i data-feather="x" class="close" id="close-menu"></i>
       <ul class="nav-list">
-        <li>
-          <a href="/VIEW/VIEW_MENU/view_menu.html" class="tooltip-container" >
-            <img src="/VIEW/icon/botao-home.png" alt="Home" class="tooltip-img">
-            <span class="tooltip-text">Home</span>
-          </a>
-        </li>
+        
         <li>
           <a href="/VIEW/VIEW_PROJETO/view_projeto.html" class="tooltip-container">
             <img src="/VIEW/icon/pesquisa-projeto.png" alt="Icon Projeto" class="tooltip-img">
@@ -33,7 +28,7 @@
           </a>
         </li>
         <li>
-          <a href="https://www.ifto.edu.br/noticias/editais-de-apoio-a-pesquisa-no-ambito-do-ifto-sao-publicados/view"
+          <a href="/VIEW/VIEW_EDITAL/view_edital.html" target="_blank"
             class="tooltip-container">
             <img src="/VIEW/icon/pesquisa-edital.png" alt="Edital" class="tooltip-img">
             <span class="tooltip-text">Edital</span>
@@ -51,7 +46,7 @@
       
     </nav>
   <div class="profile-menu">
-      <img src="/VIEW/icon/eu.jpg" alt="Profile" class="profile-img" id="profileToggle">
+      <img src="/VIEW/icon/foto.perfil.jpg" alt="Profile" class="profile-img" id="profileToggle">
 
       <div class="dropdown" id="dropdownMenu">
         <h4>Edson Oliveira</h4>
@@ -72,15 +67,17 @@
   <!--Seleção de Busca de Projetos-->
   <header class="buscar">
     <form class="d-flex">
-      <input class="btn-buscar" type="search" placeholder="Buscar projeto..." aria-label="Buscar">
+      <input class="btn-buscar" type="search" placeholder="Buscar professor..." aria-label="Buscar">
       <button class="btn-green" type="submit">Buscar</button>
     </form>
+    
   </header>
 
   <!--Seleções de Aluno-->
   <main class="container">
+    
     <div class="card" onclick="toggleCard(event, this)">
-    <img src="/eu.jpg" alt="Perfil 1">
+    <img src="" alt="Perfil 1">
     <div class="image-overlay">
       <strong>Maria Clara</strong>
       <span>Área: ADS</span>
@@ -102,7 +99,7 @@
   </div>
 
   <div class="card" onclick="toggleCard(event, this)">
-    <img src="/eu.jpg" alt="Perfil 1">
+    <img src="" alt="Perfil 1">
     <div class="image-overlay">
       <strong>Luiz </strong>
       <span>Área: Agronomia</span>
@@ -124,7 +121,7 @@
 
   </div>
   <div class="card" onclick="toggleCard(event, this)">
-    <img src="/eu.jpg" alt="Perfil 1">
+    <img src="" alt="Perfil 1">
     <div class="image-overlay">
       <strong>Fernanda</strong>
       <span>Área: ADS</span>
@@ -146,7 +143,7 @@
   </div>
 
   <div class="card" onclick="toggleCard(event, this)">
-    <img src="/eu.jpg" alt="Perfil 1">
+    <img src="" alt="Perfil 1">
     <div class="image-overlay">
       <strong>Julia</strong>
       <span>Área: Pedagogia</span>

@@ -6,7 +6,7 @@ function fazerLogin() {
     const senhaValida = "admin";
 
     if (usuario === usuarioValido && senha === senhaValida) {
-        window.location.href = "/VIEW/VIEW_MENU/view_menu.html";
+        window.location.href = "/VIEW/VIEW_PROJETO/view_projeto.html";
     } else {
         alert("Usuário ou senha incorretos!");
     }

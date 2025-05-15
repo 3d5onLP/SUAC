@@ -26,23 +26,29 @@
 
   .left {
     flex: 1;
-    min-width: 300px;
+    min-width: 50px;
   }
 
 
   .left img.illustration {
     max-width: 100%;
     height: auto;
+    border-radius: 10px;
   }
 
   .right {
     flex: 1;
     min-width: 300px;
     background-color:#004643;
+    align-items:baseline;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    h2{
+      margin-top: 30%;
+    }
   }
+
 
   .right h2 {
     text-align: center;

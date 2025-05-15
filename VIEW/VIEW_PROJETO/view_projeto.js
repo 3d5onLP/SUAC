@@ -3,6 +3,10 @@ const toggleMenu = document.getElementById("toggle-menu");
 const closeMenu = document.getElementById("close-menu");
 const openBtn = document.getElementById('toggle-menu'); // Botão de abrir
 const closeBtn = document.getElementById('close-menu'); // Botão de fechar
+const profileToggle = document.getElementById('profileToggle');
+const dropdownMenu = document.getElementById('dropdownMenu');
+const menuToggle = document.getElementById('menuToggle');
+
 
 // Abrir o menu ao clicar no ícone de hambúrguer
 toggleMenu.addEventListener("click", () => {
@@ -25,5 +29,17 @@ document.addEventListener('click', (event) => {
     navMenu.classList.remove('active');
 
 
+  }
+});
+
+// Toggle do menu de perfil
+profileToggle.addEventListener('click', () => {
+  dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+});
+
+// Fecha dropdown clicando fora
+document.addEventListener('click', (e) => {
+  if (!profileToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+    dropdownMenu.style.display = 'none';
   }
 });

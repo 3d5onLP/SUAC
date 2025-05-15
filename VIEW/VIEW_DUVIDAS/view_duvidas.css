@@ -11,64 +11,7 @@ body {
   padding: 0;
 }
 
-/*Menu para telas grandes/não responsivo*/
-.sidebar {
-  z-index: 2;
-  width: 40px;
-  background-color: rgb(221, 221, 221);
-  color: white;
-  transition: width 0.3s;
-  overflow: hidden;
-  height: 100vh;
-  position: fixed;
-}
-/*Deixa abrir o menu lateral m 200px*/
-.sidebar:hover {
-  width: 200px;
-}
-/*Removendo os padrões da lista, espaço interno e externos*/
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-/*Ajustando espaços internose a quebra de linha no elemento li*/
-.sidebar li {
-  padding: 15px 8px;
-  white-space: nowrap;
-}
-.sidebar a {
-  color: black;
-  text-decoration: none;
-  display: block;
-}
-.sidebar li:hover {
-  background-color: #2d5b50;
-}
-.sidebar img {
-  margin-right: 20px;
-  width: 24px;
-  height: 24px;
-}
-.content {
-  margin-left: 60px;
-  padding: 20px;
-  transition: margin-left 0.3s;
-  width: 100%;
-} 
-.sidebar:hover~.content {
-  margin-left: 200px;
-}
 
-/*Div branca do meio FAQs*/
-.duvidas-container {
-  background-color: rgb(221, 221, 221);
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  max-width: 800px;
-}
 
 /*Cabeçalho da Div .duvidas-container*/
 header {
@@ -151,8 +94,7 @@ a {
 }
 
 .logo img {
-  width: 45px;
-  border-radius: 50%;
+  width: 35px;
   margin-right: 10px;
 }
 
