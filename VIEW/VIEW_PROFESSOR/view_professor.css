@@ -1,295 +1,20 @@
-/* Aplica um reset e fonte padrão para todos os elementos */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
- }
-
-/* Centraliza o conteúdo com fundo escuro */
-body
-  {
-    background-color: #1a3c34;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 10px;
-  }
-
-/* Sidebar fixa com animação e fundo cinza */
-  .sidebar
-  {
-    z-index: 2;
-    width: 40px;
-    background-color: rgb(221, 221, 221);
-    color: white;
-    transition: width 0.3s;
-    overflow: hidden;
-    height: 100vh;
-    position: fixed;
-  }
-
-/* Expande a sidebar para 200px ao passar o mouse */
-.sidebar:hover 
-  {
-  width: 200px;
-  }
-
-/* Remove espaçamentos e marcadores da lista na sidebar */
-.sidebar ul
-  {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-/* Adiciona espaçamento e impede quebra de linha nos itens da lista */
-.sidebar li
-  {
-    padding: 15px 15px;
-    white-space: nowrap;
-  }
-
-/* Link preto em bloco sem sublinhado */
-.sidebar a 
-  {
-    color: black;
-    text-decoration: none;
-    display: block;
-  }
-
-/* Muda o fundo ao passar o mouse */
-.sidebar li:hover 
-  {
-    background-color: #2d5b50;
-  }
-
-/* Define tamanho e espaçamento da imagem na sidebar */
-.profile-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-/* Cabeçalho com fundo verde e texto centralizado */
-header 
-  {
-    background-color: #0d3433;   /* Define o fundo do cabeçalho com uma cor verde escuro */
-    padding: 15px;                 /* Adiciona espaçamento interno de 15px ao redor do conteúdo */
-    margin-top: 15px;              /* Adiciona um espaçamento de 15px acima do cabeçalho */
-    text-align: center;            /* Alinha o texto no centro */
-    border-top-left-radius: 10px;  /* Arredonda o canto superior esquerdo */
-    border-top-right-radius: 10px; /* Arredonda o canto superior direito */
-    font-weight: bold;             /* Deixa o texto em negrito */
-    font-size: 25px;               /* Define o tamanho da fonte para 25px */
-    position: relative;            /* Define a posição como relativa para possível uso de posicionamento absoluto dentro */
-    color: white;                /* Define a cor do texto como branca */
-  }
-
-/* Link preto sem sublinhado */
-a
-  {
-    text-decoration: none;
-    color: black;
-  } 
-
-/* Botão de retorno à esquerda central */
-.button-retorno
-  {
-    position: absolute;
-    padding-bottom: 6px;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 30px;
-    cursor: pointer;
-  }
-
-/* Texto preto sem sublinhado */
-.seta
-  {
-    text-decoration: none;
-    color: black;
-  }
-
-/* Container centralizado com fundo escuro e arredondado */
-.container 
-  {
-    margin: 100px;                              /* Adiciona espaçamento externo em todos os lados */
-    background-color: #0d3433;                /* Define o fundo com cor verde escura */
-    border-radius: 10px;                        /* Arredonda os cantos em 10px */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Aplica sombra leve ao redor do container */
-    width: 100%;                                /* Define largura como o dobro do elemento pai */
-    min-width: 320px;                           /* Garante que o container não fique menor que 320px */
-    max-width: 800px;                           /* Limita a largura máxima a 800px */
-    text-align: center;                         /* Centraliza o texto dentro do container */
-    overflow: hidden;                           /* Esconde qualquer conteúdo que ultrapasse os limites */
-  }
-
-/* Centraliza o elemento horizontalmente */
-.perfil-list
-{
-  margin: 0 auto;
+body {
+  background-color: #245d56;
 }
 
-/* Item de menu com fundo branco, bordas arredondadas, e centralizado */
-.menu-item 
-  {
-    background-color: white;     /* Define o fundo branco para o item do menu */
-    border-radius: 5px;            /* Arredonda os cantos do item em 5px */
-    padding: 15px;                 /* Adiciona 15px de espaçamento interno */
-    font-size: 16px;               /* Define o tamanho da fonte para 16px */
-    width: 80%;                    /* Define a largura do item como 80% do seu contêiner pai */
-    max-width: 600px;              /* Limita a largura máxima a 600px */
-    margin: 0 auto;                /* Centraliza o item horizontalmente */
-    margin-top: 30px;              /* Adiciona 30px de espaço acima do item */
-    list-style: none;              /* Remove os marcadores padrão da lista (se for parte de uma lista) */
-  }
-
-/* Itens em coluna, centralizados e inline */
-.quests 
-  {
-    flex-direction: column;
-    justify-content: center;
-    display: inline;
-  }
-
-/* Texto em negrito e inline */
-.p1
-  {
-    font-weight: bold;
-    display: inline;
-  }
-
-/* Texto inline */
-.p2
-  {
-    display: inline;
-  }
-
-/* Imagem com tamanho fixo, bordas arredondadas e centralizada */
-.img-professor
-  {
-    width: 95px;  
-    height: 95px; 
-    border-radius: 20%;  
-    object-fit: cover;  
-    margin: 20px auto;  
-    display: block;  
-  }
-
-
-/*-------------------------------------------------------------------------------------------------------------------------------*/
-
-
-/*MENU OVER*/
-.sidebar {
-    z-index: 2;
-    width: 40px;
-    background-color: rgb(221, 221, 221);
-    color: white;
-    transition: width 0.3s;
-    overflow: hidden;
-    height: 100vh;
-    position: fixed;
-  }
-  
-  .sidebar:hover {
-    width: 200px;
-  }
-  
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .sidebar li {
-    padding: 15px 15px;
-    white-space: nowrap;
-  }
-  
-  .sidebar a {
-    color: black;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .sidebar li:hover {
-    background-color: #2d5b50;
-  }
-  
-  .sidebar img {
-    margin-right: 10px;
-    width: 24px;
-    height: 24px;
-  }
-
-.menu-container {
-    background-color: #0d3433;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    min-width: 320px;
-    max-width: 800px;
-    text-align: center;
-    overflow: hidden;
-        
+a {
+  color: black;
+  text-decoration: none;
 }
 
-header{
-    padding: 15px;
-    text-align: center;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    font-weight: bold;
-    font-size: 18px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    
-}
-
-a{
-   text-decoration: none;
-   color: black;
-}
-
-.button-retorno {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 30px;
-    cursor: pointer;
-}
-
-.menu-list {
-    list-style: none;
-    padding: 10px;
-}
-
-.menu-item {
-    background-color: #ffffff;
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.menu-item img {
-    margin-right: 10px;
-    width: 24px;
-    height: 24px;
-}
-
-
-/* Menu Responsivo */
 .nav-header {
   display: flex;
   margin: 10px;
@@ -297,13 +22,8 @@ a{
   align-items: center;
   background-color: #1f4943;
   padding: 0.5rem;
-  border-radius: 10px;  
-  position: fixed;        
-  top: 0;                 
-  left: 0;
-  width: 99%;       
-  z-index: 1000;     
- 
+  border-radius: 10px;
+  position: relative;
 }
 
 .logo {
@@ -317,6 +37,10 @@ a{
   margin-right: 10px;
 }
 
+.nav {
+  display: flex;
+  flex-direction: row;
+}
 
 .nav-list {
   list-style: none;
@@ -347,7 +71,7 @@ a{
   background-color: #333;
   color: #fff;
   text-align: center;
-  padding: 5px 10px;
+  padding: 10px 10px;
   border-radius: 5px;
   position: absolute;
   top: 100%;
@@ -357,9 +81,11 @@ a{
   opacity: 0;
   transition: opacity 0.3s ease;
   white-space: nowrap;
-  font-size: 0.75rem;    
-  z-index: 999; /* garante visibilidade sobre outros elementos */  
-  margin-top: 6px; /* espaço entre imagem e tooltip */
+  font-size: 0.75rem;
+    /* garante visibilidade sobre outros elementos */
+  z-index: 999;
+  /* espaço entre imagem e tooltip */
+  margin-top: 6px;
 }
 
 .tooltip-container:hover .tooltip-text {
@@ -377,35 +103,241 @@ a{
   border-style: solid;
   border-color: transparent transparent #333 transparent;
 }
+.profile-menu {
+  position: relative;
+}
 
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 60%;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 60px;
+  background: white;
+  color: #333;
+  width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+  display: none;
+  z-index: 999;
+}
+
+.dropdown h4 {
+  margin-bottom: 0.3rem;
+}
+
+.dropdown p {
+  color: gray;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.dropdown ul {
+  list-style: none;
+}
+
+.dropdown li {
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdown li:hover {
+  background: #f0f0f0;
+}
+
+.img-profile{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
 .toggle,
 .close {
   display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-buscar {
+  border-radius: 50px;
+  background-color: white;
+  padding: 10px 40px;
+  margin-right: 5px;
+  border: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-green {
+  border-radius: 50px;
+  background-color: #00ffbf;
+  padding: 10px 20px;
+  border: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-green:hover{
+  background-color: #004643;
+}
+
+/* elementos da main */
+.container {
+  display: flex;
+  margin: 10px;
+  flex-wrap: wrap;
+  gap: 20px;
+  background:  #004643;
+  padding: 40px;
+  border-radius: 30px;
+  justify-content: center;
+}
+
+.card {
+    width: 250px;
+    background: #1f4943;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.4s ease, height 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    height: 320px;
+}
+
+.card.expanded {
+    height: 460px;
+    z-index: 1;
+}
+
+.card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    transition: height 0.4s ease;
+    display: block;
+}
+
+.card.expanded img {
+    height: 150px;
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(30, 30, 30, 0.7);
+    color: white;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    font-size: 13px;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info {
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    display: none;
+}
+
+.card.expanded .info {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.info h2 {
+    margin: 10px 0 5px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.info p {
+    font-size: 14px;
+    color: #fce4ec;
+    margin-bottom: 10px;
+}
+
+.contact-btn {
+    display: inline-block;
+    background: #d32f2f;
+    color: #fff;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-btn:hover {
+    background: #b71c1c;
+    transform: scale(1.05);
+}
+
+.rating {
+    margin-top: 10px;
+}
+
+.rating-title {
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.stars {
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.star {
+    width: 24px;
+    height: 24px;
+    fill: #ccc;
+    transition: fill 0.2s ease;
+}
+
+.star.active {
+    fill: gold;
 }
 
 
-/*Icones de interrogação e chat*/
-.footer-icons {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+/* Tablets (768px a 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 30px;
+  }
 
-/*Tamanho icone de interrogação*/
-.img_interroga {
-  width: 24px;
-  height: 24px;
+ 
 }
-
 
 /* Mobile */
-@media screen and (max-width: 768px ) {
+@media screen and (max-width: 768px) {
   .nav-header {
     height: 50px;
     justify-content: space-between;
     padding: 0 30px;
-    width: 95%;
   }
 
   ul {
@@ -442,9 +374,11 @@ a{
   .nav {
     position: fixed;
     top: 0;
-    right: 0;     
-    transform: translateX(100%);  /*O menu desliza e aparece na tela*/    
-    transition: transform 0.3s ease; /*Delay do deslizamento*/
+    right: 0; 
+
+    transform: translateX(100%);
+ 
+    transition: transform 0.3s ease;
     width: 20%;
     height: 100vh;
     background-color: #004643;
@@ -452,13 +386,15 @@ a{
     flex-direction: column;
     padding: 1.5rem;
     -ms-overflow-style: none;
-    display: flex; /* Permite rolagem vertical */
-    scrollbar-width: none; /* ainda permite a rolagem */
-    overflow-y: scroll; /* IE e Edge */
-    -ms-overflow-style: none; /* Firefox */
+    /* Permite rolagem vertical */
+    scrollbar-width: none;
+    /* ainda permite a rolagem */
+    overflow-y: scroll;
+    /* IE e Edge */
+    -ms-overflow-style: none;
+    /* Firefox */
     scrollbar-width: none;
   }
-
   /*O menu desliza para dentro da tela*/
   .nav.active {
     transform: translateX(0);
@@ -484,6 +420,7 @@ a{
   .show {
     right: 0;
   }
+ 
 
   .toggle,
   .close {
@@ -499,6 +436,41 @@ a{
 
   .show {
     right: 0;
-  }  
+  }
+
+  .btn-green {
+    font-size: 13px;
+    padding: 7px 15px;
+  }
+
+  .buscar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90%;
+    padding: 10% 5%;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+  }
+ .card {
+        width: 100%;
+        max-width: 360px;
+    }
+  
+
+  .d-flex {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-buscar,
+  .btn-green {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 
 }
