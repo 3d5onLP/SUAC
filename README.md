@@ -1,11 +1,11 @@
 
-# Cientif(NOME PROVISÓRIO)
+# SUAC Sistema unificado de administração científica
 
-**Cientif** é uma plataforma web dedicada à publicação, busca e participação em projetos científicos. A proposta visa facilitar a conexão entre **professores**, que estão em busca de alunos para colaborarem em seus projetos, e **alunos**, que desejam se engajar em iniciativas acadêmicas ou de pesquisa.
+**SUAC** é uma plataforma web dedicada à publicação, busca e participação em projetos científicos. A proposta visa facilitar a conexão entre **professores**, que estão em busca de alunos para colaborarem em seus projetos, e **alunos**, que desejam se engajar em iniciativas acadêmicas ou de pesquisa.
 
 ## 💡 Objetivo
 
-O objetivo principal do Cientif é democratizar o acesso à informação sobre projetos científicos em andamento, permitindo que:
+O objetivo principal do SUAC é democratizar o acesso à informação sobre projetos científicos em andamento, permitindo que:
 
 * Alunos encontrem oportunidades de participação conforme suas áreas de interesse;
 * Ambas as partes se comuniquem de forma eficiente, promovendo o desenvolvimento acadêmico e científico.
