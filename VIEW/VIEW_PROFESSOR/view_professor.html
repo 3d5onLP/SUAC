@@ -1,24 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CIENTIF</title>
-    <!-- Adicione o CSS do Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="view_professor.css">
-    <link rel="icon" href="/VIEW/icon/logo_cientif.png" type="image/png">
-    <script src="https://unpkg.com/feather-icons"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CIENTIF</title>
+  <link rel="icon" href="/VIEW/icon/logo_cientif.png" type="image/png">
+  <link rel="stylesheet" href="view_professor.css">
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body>
-   <div class="nav-header">  
+  <div class="nav-header">  
     <div class="logo">
       <img src="/VIEW/icon/logo_cientif.png" alt="Logo CIENTIF">
       <h1 class="header-logo">CIENTIF</h1>
     </div>
-
     <!--Menu para telas grandes-->
     <nav class="nav" id="nav-menu">
       <i data-feather="x" class="close" id="close-menu"></i>
@@ -30,168 +27,153 @@
           </a>
         </li>
         <li>
-          <a href="/VIEW/VIEW_EDITAL/view_edital.html"
+          <a href="/VIEW/VIEW_PROJETO/view_projeto.html" class="tooltip-container">
+            <img src="/VIEW/icon/pesquisa-projeto.png" alt="Icon Projeto" class="tooltip-img">
+            <span class="tooltip-text">Projetos</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.ifto.edu.br/noticias/editais-de-apoio-a-pesquisa-no-ambito-do-ifto-sao-publicados/view"
             class="tooltip-container">
             <img src="/VIEW/icon/pesquisa-edital.png" alt="Edital" class="tooltip-img">
             <span class="tooltip-text">Edital</span>
           </a>
         </li>
-        <li>
-          <a href="/VIEW/VIEW_PROJETO/view_projeto.html" class="tooltip-container">
-            <img src="/VIEW/icon/pesquisa-projeto.png" alt="Projeto" class="tooltip-img">
-            <span class="tooltip-text">Projeto</span>
-          </a>
-        </li>
-        <li>
-          <a href="/VIEW/VIEW_PROFESSOR/view_professor.html" class="tooltip-container">
-            <img src="/VIEW/icon/professor-icon.png" alt="Professores" class="tooltip-img">
-            <span class="tooltip-text">Professores</span>
-          </a>
-        </li>
+      
         <li>
           <a href="/VIEW/VIEW_ALUNO/view_aluno.html" class="tooltip-container">
-            <img src="/VIEW/icon/aluno-icon.png" alt="Alunos" class="tooltip-img">
-            <span class="tooltip-text">Alunos</span>
+            <img src="/VIEW/icon/aluno-icon.png" alt="aluno icon" class="tooltip-img">
+            <span class="tooltip-text">Aluno</span>
           </a>
         </li>
-        <li>
-          <a href="/VIEW/VIEW_DUVIDAS/view_duvidas.html" class="tooltip-container">
-            <img src="/VIEW/icon/ponto-de-interrogacao.png" alt="Duvida" class="tooltip-img">
-            <span class="tooltip-text">Duvidas</span>
-          </a>
-        </li>
-        <li>
-          <a href="/VIEW/VIEW_LOGIN/view_login.html" class="tooltip-container">
-            <img src="/VIEW/icon/botao-de-close.png" alt="Sair" class="tooltip-img">
-            <span class="tooltip-text">Sair</span>
-          </a>
-        </li>
+        
       </ul>
+      
     </nav>
+  <div class="profile-menu">
+      <img src="/VIEW/icon/eu.jpg" alt="Profile" class="profile-img" id="profileToggle">
+
+      <div class="dropdown" id="dropdownMenu">
+        <h4>Edson Oliveira</h4>
+        <p>Análise e Desenvolvimento de Sistema</p>
+        <ul>
+          <li><span>👤</span>Meu Perfil</li>
+          <li><span>✏️</span>Editar Perfil</li>
+          <li><a href="/VIEW/VIEW_DUVIDAS/view_duvidas.html"><span>🛠️</span>  Duvidas</a></li>
+          <li><a href="/VIEW/VIEW_LOGIN/view_login.html"><span>🔓</span>   Deslogar</a></li>
+        </ul>
+      </div>
+    </div>
+
     <i data-feather="menu" class="toggle" id="toggle-menu"></i>
 
   </div>
 
-    <!-- Cabeçalho de página com um botão de voltar e o título "PROFESSOR" -->
-    <div class="container">
-        <header>
-            PROFESSORES
-        </header>
+  <!--Seleção de Busca de Projetos-->
+  <header class="buscar">
+    <form class="d-flex">
+      <input class="btn-buscar" type="search" placeholder="Buscar projeto..." aria-label="Buscar">
+      <button class="btn-green" type="submit">Buscar</button>
+    </form>
+  </header>
 
-        <div>
-            <img class="img-professor" src="/VIEW/icon/professor-icon.png" alt="Foto de Perfil">
-
-<!------------------------------------------------------------------------------------------------->
-<div class="accordion" id="accordionprofessor">
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="heading1">
-            <button class="accordion-button collapsed" 
-                    type="button"   
-                    data-bs-toggle="collapse"
-                    data-bs-target="#duvida1"
-                    aria-expanded="false"
-                    aria-controls="duvida1">
-                Iago Bezerra 
-            </button> 
-        </h2>
-
-        <div id="duvida1" 
-             class="accordion-collapse collapse" 
-             aria-labelledby="heading1" 
-             data-bs-parent="#accordionprofessor">
-            <div class="accordion-body">
-                <p><strong>Nome:</strong> Iago Bezerra Arrais</p>
-                <p><strong>Área:</strong> A</p>
-                <p><strong>Matrícula:</strong> 0405061827</p>
-                <p><strong>Status:</strong> Disponível para projeto</p>
-            </div>
-        </div>
+  <!--Seleções de Aluno-->
+  <main class="container">
+    <div class="card" onclick="toggleCard(event, this)">
+    <img src="/eu.jpg" alt="Perfil 1">
+    <div class="image-overlay">
+      <strong>Maria Clara</strong>
+      <span>Área: ADS</span>
     </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<!------------------------------------------------------------------------------------------------->
-<div class="accordion" id="accordionprofessor">
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="heading1">
-            <button class="accordion-button collapsed" 
-                    type="button"   
-                    data-bs-toggle="collapse"
-                    data-bs-target="#duvida1"
-                    aria-expanded="false"
-                    aria-controls="duvida1">
-                Iago Bezerra 
-            </button> 
-        </h2>
-
-        <div id="duvida1" 
-             class="accordion-collapse collapse" 
-             aria-labelledby="heading1" 
-             data-bs-parent="#accordionprofessor">
-            <div class="accordion-body">
-                <p><strong>Nome:</strong> Iago Bezerra Arrais</p>
-                <p><strong>Área:</strong> A</p>
-                <p><strong>Matrícula:</strong> 0405061827</p>
-                <p><strong>Status:</strong> Disponível para projeto</p>
-            </div>
+    <div class="info">
+      <p>SKILLS em java e php</p>
+      <div class="rating">
+        <div class="rating-title">Nível de Comprometimento</div>
+        <div class="stars" data-rating="0">
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
         </div>
+      </div>
+      <a href="https://workspace.google.com/intl/pt-BR/gmail/" target="_blank" class="contact-btn">Contact Me</a>
     </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!------------------------------------------------------------------------------------------------->
-            <!--<ul class="perfil-list">
-
-                <section class="quests">
-                    <li class="menu-item">
-                        <p class ="p1">Aluno: <p class ="p2"> Edson</p></p>
-                    </li>
-                </section>
-
-                <section class="quests">
-                    <li class="menu-item">
-                        <p class ="p1">Curso: <p class ="p2"> A.D.S. 4° Período</p></p>
-                    </li>
-                </section>
-
-                <section class="quests">
-                    <li class="menu-item">
-                        <p class ="p1">Matrícula: <p class ="p2"> 11111111</p> </p>
-                    </li>
-                </section>
-
-                <section class="quests">
-                    <li class="menu-item">
-                        <p class="p1">Projeto Atual:</p> <p class ="p2"> Projeto 1</p> 
-                    </li>
-                </section>
-
-            </ul> -->
-
+  <div class="card" onclick="toggleCard(event, this)">
+    <img src="/eu.jpg" alt="Perfil 1">
+    <div class="image-overlay">
+      <strong>Luiz </strong>
+      <span>Área: Agronomia</span>
+    </div>
+    <div class="info">
+      <p>AGronomia de Campo</p>
+      <div class="rating">
+        <div class="rating-title">Nível de Comprometimento</div>
+        <div class="stars" data-rating="0">
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
         </div>
-
-       
-
+      </div>
+      <a href="https://workspace.google.com/intl/pt-BR/gmail/" target="_blank" class="contact-btn">Contact Me</a>
     </div>
 
-  <script> feather.replace(); </script>
+  </div>
+  <div class="card" onclick="toggleCard(event, this)">
+    <img src="/eu.jpg" alt="Perfil 1">
+    <div class="image-overlay">
+      <strong>Fernanda</strong>
+      <span>Área: ADS</span>
+    </div>
+    <div class="info">
+      <p>Desenvolvedora criativa, apaixonada por design e tecnologia.</p>
+      <div class="rating">
+        <div class="rating-title">Nível de Comprometimento</div>
+        <div class="stars" data-rating="0">
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+      </div>
+      <a href="https://workspace.google.com/intl/pt-BR/gmail/" target="_blank" class="contact-btn">Contact Me</a>
+    </div>
+  </div>
+
+  <div class="card" onclick="toggleCard(event, this)">
+    <img src="/eu.jpg" alt="Perfil 1">
+    <div class="image-overlay">
+      <strong>Julia</strong>
+      <span>Área: Pedagogia</span>
+    </div>
+    <div class="info">
+      <p>Amo o ensino </p>
+      <div class="rating">
+        <div class="rating-title">Nível de Comprometimento</div>
+        <div class="stars" data-rating="0">
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+      </div>
+      <a href="https://workspace.google.com/intl/pt-BR/gmail/" target="_blank" class="contact-btn">Contact Me</a>
+    </div>
+  </div>
+  
+  </main>
+
+  <script>
+    feather.replace();
+  </script>
   <script src="view_professor.js"></script>
+
 </body>
+
 </html>
