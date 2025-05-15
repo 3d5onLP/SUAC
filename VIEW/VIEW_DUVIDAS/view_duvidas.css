@@ -96,6 +96,232 @@ header {
   text-decoration: underline;
   color: #000;
 }
+
+/*DIV do FAQ  especificamente da perguntas e respostas da 1*/
+.accordion-button:not(.collapsed) {
+  background-color: #e2e2e2;
+  color: #000;
+  box-shadow: none;
+}
+
+/*DIV exclusivaente das respostas de cada pergunta*/
+.accordion-body {
+  background-color: #fff;
+  font-size: 16px;
+  color: #000;
+  text-align: left;
+}
+
+/*Remove a sombra visual que aparece ao redor do botão da pergunta/resposta*/
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #245d56;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.nav-header {
+  display: flex;
+  margin: 10px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f4943;
+  padding: 0.5rem;
+  border-radius: 10px;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 45px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-list li {
+  position: relative;
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tooltip-img {
+  width: 35px;
+  height: 35px;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: 100%;
+  /* posiciona abaixo da imagem */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  /* garante visibilidade sobre outros elementos */
+  z-index: 999;
+  /* espaço entre imagem e tooltip */
+  margin-top: 6px;
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #333 transparent;
+}
+.profile-menu {
+  position: relative;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 60%;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 60px;
+  background: white;
+  color: #333;
+  width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+  display: none;
+  z-index: 999;
+}
+
+.dropdown h4 {
+  margin-bottom: 0.3rem;
+}
+
+.dropdown p {
+  color: gray;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.dropdown ul {
+  list-style: none;
+}
+
+.dropdown li {
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdown li:hover {
+  background: #f0f0f0;
+}
+
+.img-profile{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.toggle,
+.close {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+/*Div branca do meio FAQs*/
+.duvidas-container {
+  background-color: rgb(221, 221, 221);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 800px;
+}
+
+/*Cabeçalho da Div .duvidas-container*/
+header {
+  background-color: rgb(221, 221, 221);
+  padding: 50px 15px 0px 1px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 25px;
+  position: relative;
+  color: black;
+  margin-bottom: 20px;
+}
+
+/*DIV do FAQ de perguntas e respostas*/
+.accordion-item {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  border: none;
+}
+/*Botão para abrir a respostas do FAQ*/
+.accordion-button {
+  background-color: #ffffff;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #000;
+}
 /*DIV do FAQ  especificamente da perguntas e respostas da 1*/
 .accordion-button:not(.collapsed) {
   background-color: #e2e2e2;
@@ -109,55 +335,138 @@ header {
   color: #000;
   text-align: left;
 }
-/*Remove a sombra visual que aparece ao redor do botão da pergunta/resposta*/
+/*Remove a sombra visual que aparece ao redor do botão da pergunta resposta*/
 .accordion-button:focus {
   box-shadow: none;
 }
 
-/*Menu para celulares/responsivos*/
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgb(221, 221, 221);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 8px 0;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
-  z-index: 9999;
-}
 
-/*Configuração dos itens do menu responsivo*/
-.bottom-nav .nav-item {
-  flex: 1;
-  text-align: center;
-  color: black;
-  text-decoration: none;
-  font-size: 80%;
-  padding: 5px 0;
-  transition: background-color 0.2s;
-  font-weight: bold;  
-}
 
-/*Define o tamanho dos icones*/
-.nav-item img{
-  width: 25px;
-  height: 25px;
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .nav-header {
+    height: 50px;
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo h1 {
+    font-size: 1rem;
+  }
+
+  .logo img {
+    width: 30px;
+  }
+
+  .toggle {
+    display: inline;
+    font-size: 25px;
+  }
+
+  .close {
+    position: absolute;
+    right: 25px;
+    display: block;
+    font-size: 25px;
+    border-radius: 50%;
+  }
+
+  .close:hover {
+    background-color: #ffffff;
+  }
+
+  /*Menu Mobile*/
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: 0; 
+    /*O menu desliza e aparece na tela*/
+    transform: translateX (100%); 
+    /*Delay do deslizamento*/
+    transition: transform 0.3s ease;
+    width: 30%;
+    height: 100vh;
+    background-color: #004643;
+    z-index: 1000;
+    flex-direction: column;
+    padding: 0.3rem;
+    -ms-overflow-style: none;
+    /* Permite rolagem vertical */
+    scrollbar-width: none;
+    /* ainda permite a rolagem */
+    overflow-y: scroll;
+    /* IE e Edge */
+    -ms-overflow-style: none;
+    /* Firefox */
+    scrollbar-width: none;
   }
   
-
-/*Oculta em telas maiores o menu bottom-nav (Menu para celulares/responsivos)*/
-@media (min-width: 768px) {
-  .bottom-nav {
-    display: none;
+  /*O menu desliza para dentro da tela*/
+  .nav.active {
+    transform: translateX(0);
   }
+
+  .nav-list {
+    transform: translateX(0);
+  }
+  .tooltip-img{
+    padding: 0.3rem;
+    margin-top: 0.2rem;
+  }
+
+  .tooltip-text {
+    visibility: visible ;
+    opacity: 1 ;
+    position: absolute;
+    color: white;
+    background: none;
+    
+  }
+
+  .show {
+    right: 0;
+  }
+ 
+
+  .toggle,
+  .close {
+    display: block;
+    font-size: 1.5rem;
+  }
+
+  .close {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .show {
+    right: 0;
+  }
+
+  .btn-green {
+    font-size: 13px;
+    padding: 7px 15px;
+  }
+
+  .buscar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90%;
+    padding: 10% 5%;
+  }
+
+
+
+  .d-flex {
+    flex-direction: column;
+    width: 100%;
 }
-
-/*Oculta em telas menores o menu Sidebar (Menu para computadores/telas maiores)*/
-@media (max-width: 768px) {
-  .sidebar {
-    display: none;
-  }
 }
