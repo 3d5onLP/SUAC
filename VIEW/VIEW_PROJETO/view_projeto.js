@@ -7,7 +7,6 @@ const profileToggle = document.getElementById('profileToggle');
 const dropdownMenu = document.getElementById('dropdownMenu');
 const menuToggle = document.getElementById('menuToggle');
 
-
 // Abrir o menu ao clicar no ícone de hambúrguer
 toggleMenu.addEventListener("click", () => {
   navMenu.classList.toggle("active");

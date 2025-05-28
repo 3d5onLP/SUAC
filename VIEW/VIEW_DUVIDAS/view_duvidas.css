@@ -1,3 +1,4 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -6,12 +7,10 @@
 }
 
 body {
-  background-color: #1a3c34;
   margin: 0;
   padding: 0;
+  background-color: #245d56;
 }
-
-
 
 /*Cabeçalho da Div .duvidas-container*/
 header {
@@ -60,60 +59,56 @@ header {
   box-shadow: none;
 }
 
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-body {
-  background-color: #245d56;
-}
-
+/* Remove sublinhado dos links e define cor preta */
 a {
   color: black;
   text-decoration: none;
 }
 
+/* Cabeçalho de navegação principal */
 .nav-header {
   display: flex;
   margin: 10px;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #1f4943;
+  justify-content: space-between; /* espaça os elementos nas extremidades */
+  align-items: center; /* alinha verticalmente */
+  background-color: #1f4943; /* verde escuro */
   padding: 0.5rem;
   border-radius: 10px;
   position: relative;
 }
 
+/* Container do logo */
 .logo {
   display: flex;
   align-items: center;
 }
 
+/* Imagem do logo */
 .logo img {
   width: 35px;
   margin-right: 10px;
 }
 
+/* Navegação principal */
 .nav {
   display: flex;
   flex-direction: row;
 }
 
+/* Lista de itens de navegação */
 .nav-list {
-  list-style: none;
+  list-style: none; /* remove marcadores */
   display: flex;
-  gap: 1rem;
+  gap: 1rem; /* espaçamento entre itens */
   align-items: center;
 }
 
+/* Cada item de navegação */
 .nav-list li {
-  position: relative;
+  position: relative; /* necessário para posicionar tooltips */
 }
 
+/* Container para tooltips */
 .tooltip-container {
   position: relative;
   display: inline-flex;
@@ -122,11 +117,13 @@ a {
   flex-direction: column;
 }
 
+/* Imagem que ativa o tooltip */
 .tooltip-img {
   width: 35px;
   height: 35px;
 }
 
+/* Texto do tooltip (inicialmente invisível) */
 .tooltip-text {
   visibility: hidden;
   background-color: #333;
@@ -135,25 +132,24 @@ a {
   padding: 10px 10px;
   border-radius: 5px;
   position: absolute;
-  top: 100%;
-  /* posiciona abaixo da imagem */
+  top: 100%; /* posiciona abaixo do elemento pai */
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.3s ease;
-  white-space: nowrap;
+  white-space: nowrap; /* impede quebra de linha */
   font-size: 0.75rem;
-  /* garante visibilidade sobre outros elementos */
-  z-index: 999;
-  /* espaço entre imagem e tooltip */
-  margin-top: 6px;
+  z-index: 999; /* sobre outros elementos */
+  margin-top: 6px; /* espaço da imagem */
 }
 
+/* Exibe tooltip ao passar o mouse */
 .tooltip-container:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
 }
 
+/* Seta do tooltip */
 .tooltip-text::after {
   content: "";
   position: absolute;
@@ -164,17 +160,21 @@ a {
   border-style: solid;
   border-color: transparent transparent #333 transparent;
 }
+
+/* Container do menu do perfil */
 .profile-menu {
   position: relative;
 }
 
+/* Imagem do perfil */
 .profile-img {
   width: 40px;
   height: 40px;
-  border-radius: 60%;
+  border-radius: 60%; /* forma circular */
   cursor: pointer;
 }
 
+/* Dropdown do perfil (oculto por padrão) */
 .dropdown {
   position: absolute;
   right: 0;
@@ -189,20 +189,24 @@ a {
   z-index: 999;
 }
 
+/* Título dentro do menu dropdown */
 .dropdown h4 {
   margin-bottom: 0.3rem;
 }
 
+/* Texto de descrição no dropdown */
 .dropdown p {
   color: gray;
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
 
+/* Remove marcadores da lista no dropdown */
 .dropdown ul {
   list-style: none;
 }
 
+/* Estilo para cada item da lista no dropdown */
 .dropdown li {
   padding: 0.5rem 0;
   display: flex;
@@ -212,23 +216,28 @@ a {
   transition: background 0.2s;
 }
 
+/* Efeito hover em cada item da lista do dropdown */
 .dropdown li:hover {
   background: #f0f0f0;
 }
 
-.img-profile{
+/* Imagem de perfil no dropdown */
+.img-profile {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
 }
+
+/* Botões de abrir/fechar menu (ocultos por padrão em desktop) */
 .toggle,
 .close {
   display: none;
   font-size: 1.8rem;
   cursor: pointer;
 }
-/*Div branca do meio FAQs*/
+
+/* Container central das dúvidas (FAQ) */
 .duvidas-container {
   background-color: rgb(221, 221, 221);
   padding: 30px;
@@ -238,7 +247,7 @@ a {
   max-width: 800px;
 }
 
-/*Cabeçalho da Div .duvidas-container*/
+/* Cabeçalho do bloco de dúvidas */
 header {
   background-color: rgb(221, 221, 221);
   padding: 50px 15px 0px 1px;
@@ -250,66 +259,75 @@ header {
   margin-bottom: 20px;
 }
 
-/*DIV do FAQ de perguntas e respostas*/
+/* Cada item do acordeão (FAQ) */
 .accordion-item {
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 15px;
   border: none;
 }
-/*Botão para abrir a respostas do FAQ*/
+
+/* Botão de pergunta do FAQ */
 .accordion-button {
   background-color: #ffffff;
   font-weight: bold;
   text-decoration: underline;
   color: #000;
 }
-/*DIV do FAQ  especificamente da perguntas e respostas da 1*/
+
+/* Estilo do botão quando está aberto */
 .accordion-button:not(.collapsed) {
   background-color: #e2e2e2;
   color: #000;
   box-shadow: none;
 }
-/*DIV exclusivaente das respostas de cada pergunta*/
+
+/* Área de resposta das perguntas do FAQ */
 .accordion-body {
   background-color: #fff;
   font-size: 16px;
   color: #000;
   text-align: left;
 }
-/*Remove a sombra visual que aparece ao redor do botão da pergunta resposta*/
+
+/* Remove a sombra do botão quando em foco */
 .accordion-button:focus {
   box-shadow: none;
 }
 
-
-
-/* Mobile */
+/* --- Estilos para dispositivos móveis --- */
 @media screen and (max-width: 768px) {
+
+  /* Ajusta altura e espaçamento do cabeçalho no mobile */
   .nav-header {
     height: 50px;
     justify-content: space-between;
     padding: 0 30px;
   }
 
+  /* Torna listas verticais */
   ul {
     display: flex;
     flex-direction: column;
   }
 
+  /* Reduz o tamanho do texto do logo */
   .logo h1 {
     font-size: 1rem;
   }
 
+  /* Reduz o tamanho da imagem do logo */
   .logo img {
     width: 30px;
   }
 
+  /* Exibe o botão de menu hamburguer */
   .toggle {
     display: inline;
     font-size: 25px;
   }
 
+  /* Exibe botão de fechar menu com estilo */
   .close {
     position: absolute;
     right: 25px;
@@ -318,85 +336,105 @@ header {
     border-radius: 50%;
   }
 
+  /* Efeito hover no botão de fechar */
   .close:hover {
     background-color: #ffffff;
   }
 
-  /*Menu Mobile*/
-
+  /* Menu Mobile */
   .nav {
     position: fixed;
     top: 0;
-    right: 0; 
-    /*O menu desliza e aparece na tela*/
-    transform: translateX (100%); 
-    /*Delay do deslizamento*/
+    right: 0;
+
+    /* O menu começa fora da tela à direita */
+    transform: translateX(100%);
+
+    /* Animação suave ao deslizar */
     transition: transform 0.3s ease;
+
+    /* Largura do menu lateral */
     width: 30%;
+
+    /* Altura total da tela */
     height: 100vh;
+
+    /* Cor de fundo do menu */
     background-color: #004643;
+
+    /* Garante que fique acima de outros elementos */
     z-index: 1000;
+
+    /* Itens empilhados verticalmente */
     flex-direction: column;
+
+    /* Espaçamento interno */
     padding: 0.3rem;
+
+    /* Remove scroll padrão do IE, Edge e Firefox */
     -ms-overflow-style: none;
-    /* Permite rolagem vertical */
     scrollbar-width: none;
-    /* ainda permite a rolagem */
+
+    /* Habilita rolagem vertical manualmente */
     overflow-y: scroll;
-    /* IE e Edge */
-    -ms-overflow-style: none;
-    /* Firefox */
-    scrollbar-width: none;
   }
-  
-  /*O menu desliza para dentro da tela*/
+
+  /* Quando o menu está ativo, ele desliza para a tela */
   .nav.active {
     transform: translateX(0);
   }
 
+  /* Garante que a lista dentro do menu também esteja visível */
   .nav-list {
     transform: translateX(0);
   }
-  .tooltip-img{
+
+  /* Imagem no menu com espaçamento */
+  .tooltip-img {
     padding: 0.3rem;
     margin-top: 0.2rem;
   }
 
+  /* Texto do tooltip (dica de imagem) visível */
   .tooltip-text {
-    visibility: visible ;
-    opacity: 1 ;
+    visibility: visible;
+    opacity: 1;
     position: absolute;
     color: white;
     background: none;
-    
   }
 
+  /* Posição do menu visível */
   .show {
     right: 0;
   }
- 
 
+  /* Botão do menu (hamburger) e botão de fechar */
   .toggle,
   .close {
     display: block;
     font-size: 1.5rem;
   }
 
+  /* Botão de fechar no canto inferior direito do menu */
   .close {
     position: absolute;
     bottom: 10px;
     right: 10px;
   }
 
+  /* Redundância para garantir visibilidade */
   .show {
     right: 0;
   }
 
+  /* Botão verde com padding e tamanho de fonte */
   .btn-green {
     font-size: 13px;
     padding: 7px 15px;
   }
 
+  /* Container de busca centralizado e com espaçamento interno */
   .buscar {
     display: flex;
     flex-direction: column;
@@ -405,10 +443,9 @@ header {
     padding: 10% 5%;
   }
 
-
-
+  /* Flexbox com orientação em coluna ocupando toda a largura */
   .d-flex {
     flex-direction: column;
     width: 100%;
-}
+  }
 }

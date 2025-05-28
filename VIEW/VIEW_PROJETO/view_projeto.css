@@ -1,5 +1,4 @@
-
-/* Reset */
+/* Estilo base para todos os elementos */
 * {
   margin: 0;
   padding: 0;
@@ -7,15 +6,18 @@
   font-family: Arial, sans-serif;
 }
 
+/* Fundo da página */
 body {
   background-color: #245d56;
 }
 
+/* Estilo dos links */
 a {
   color: black;
   text-decoration: none;
 }
 
+/* Cabeçalho de navegação */
 .nav-header {
   display: flex;
   margin: 10px;
@@ -27,21 +29,25 @@ a {
   position: relative;
 }
 
+/* Container da logo */
 .logo {
   display: flex;
   align-items: center;
 }
 
+/* Imagem da logo */
 .logo img {
   width: 35px;
   margin-right: 10px;
 }
 
+/* Navegação principal */
 .nav {
   display: flex;
   flex-direction: row;
 }
 
+/* Lista de navegação */
 .nav-list {
   list-style: none;
   display: flex;
@@ -49,10 +55,12 @@ a {
   align-items: center;
 }
 
+/* Item da lista */
 .nav-list li {
   position: relative;
 }
 
+/* Container do ícone e texto */
 .tooltip-container {
   position: relative;
   display: inline-flex;
@@ -61,11 +69,13 @@ a {
   flex-direction: column;
 }
 
+/* Ícone do menu */
 .tooltip-img {
   width: 35px;
   height: 35px;
 }
 
+/* Texto que aparece ao passar o mouse */
 .tooltip-text {
   visibility: hidden;
   background-color: #333;
@@ -75,24 +85,23 @@ a {
   border-radius: 5px;
   position: absolute;
   top: 100%;
-  /* posiciona abaixo da imagem */
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.3s ease;
   white-space: nowrap;
   font-size: 0.75rem;
-    /* garante visibilidade sobre outros elementos */
   z-index: 999;
-  /* espaço entre imagem e tooltip */
   margin-top: 6px;
 }
 
+/* Mostra o texto quando passar o mouse */
 .tooltip-container:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
 }
 
+/* Setinha do tooltip */
 .tooltip-text::after {
   content: "";
   position: absolute;
@@ -103,10 +112,12 @@ a {
   border-style: solid;
   border-color: transparent transparent #333 transparent;
 }
+/* Container do menu de perfil */
 .profile-menu {
   position: relative;
 }
 
+/* Imagem do perfil */
 .profile-img {
   width: 40px;
   height: 40px;
@@ -114,6 +125,7 @@ a {
   cursor: pointer;
 }
 
+/* Menu suspenso do perfil */
 .dropdown {
   position: absolute;
   right: 0;
@@ -128,20 +140,24 @@ a {
   z-index: 999;
 }
 
+/* Título do menu suspenso */
 .dropdown h4 {
   margin-bottom: 0.3rem;
 }
 
+/* Texto abaixo do título no menu suspenso */
 .dropdown p {
   color: gray;
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
 
+/* Lista do menu suspenso */
 .dropdown ul {
   list-style: none;
 }
 
+/* Itens do menu suspenso */
 .dropdown li {
   padding: 0.5rem 0;
   display: flex;
@@ -151,16 +167,20 @@ a {
   transition: background 0.2s;
 }
 
+/* Hover nos itens do menu suspenso */
 .dropdown li:hover {
   background: #f0f0f0;
 }
 
-.img-profile{
+/* Outra imagem de perfil (repetição com classe diferente) */
+.img-profile {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
 }
+
+/* Ícones do menu mobile (hamburguer e fechar) */
 .toggle,
 .close {
   display: none;
@@ -168,11 +188,13 @@ a {
   cursor: pointer;
 }
 
+/* Estilo do header principal */
 header {
   display: flex;
   justify-content: center;
 }
 
+/* Botão de busca */
 .btn-buscar {
   border-radius: 50px;
   background-color: white;
@@ -182,6 +204,7 @@ header {
   transition: background 0.3s, color 0.3s;
 }
 
+/* Botão verde */
 .btn-green {
   border-radius: 50px;
   background-color: #00ffbf;
@@ -190,22 +213,24 @@ header {
   transition: background 0.3s, color 0.3s;
 }
 
-.btn-green:hover{
+/* Hover do botão verde */
+.btn-green:hover {
   background-color: #004643;
 }
 
-/* elementos da main */
+/* Container principal da seção main */
 .container {
   display: flex;
   margin: 10px;
   flex-wrap: wrap;
   gap: 20px;
-  background:  #004643;
+  background: #004643;
   padding: 40px;
   border-radius: 30px;
   justify-content: center;
 }
 
+/* Cartão de conteúdo */
 .card {
   position: relative;
   width: 500px;
@@ -220,10 +245,12 @@ header {
   flex-shrink: 0;
 }
 
+/* Efeito ao passar o mouse sobre o card */
 .card:hover {
   transform: scale(1.05);
 }
 
+/* Estilo inicial da imagem do card */
 .card img {
   color: white;
   cursor: pointer;
@@ -231,7 +258,7 @@ header {
   flex-shrink: 0;
 }
 
-
+/* Ajustes de tamanho e exibição da imagem */
 .card img {
   width: 100%;
   height: 100%;
@@ -239,6 +266,7 @@ header {
   display: block;
 }
 
+/* Informações básicas visíveis no rodapé do card */
 .card .info {
   position: absolute;
   bottom: 0;
@@ -248,10 +276,12 @@ header {
   transition: opacity 0.3s;
 }
 
-.font-info{
+/* Tamanho da fonte para informações pequenas */
+.font-info {
   font-size: 10px;
 }
 
+/* Informações detalhadas exibidas ao passar o mouse */
 .card .more-info {
   position: absolute;
   top: 0;
@@ -269,12 +299,12 @@ header {
   transition: opacity 0.4s;
 }
 
+/* Mostra as informações detalhadas ao passar o mouse */
 .card:hover .more-info {
   opacity: 1;
 }
 
-
-/* Estilo dos links */
+/* Estilo geral dos links dentro do card */
 .more-info a {
   display: inline-block;
   margin-top: 10px;
@@ -286,23 +316,27 @@ header {
   transition: background 0.3s;
 }
 
+/* Estilo do botão de informações */
 .more-info a.info-link {
   background: #f9bc60;
 }
 
+/* Hover no botão de informações */
 .more-info a.info-link:hover {
   background: #FF8C00;
 }
 
+/* Estilo do botão de download */
 .more-info a.download-link {
   background: #007bff;
 }
 
+/* Hover no botão de download */
 .more-info a.download-link:hover {
   background: #0056b3;
 }
 
-/*Icones de interrogação e chat*/
+/* Estilo dos ícones no rodapé (ex: interrogação, chat) */
 .footer-icons {
   width: 100%;
   height: 100%;
@@ -310,56 +344,64 @@ header {
   display: block;
 }
 
-/*Tamanho icone de interrogação*/
+/* Tamanho do ícone de interrogação */
 .img_interroga {
   width: 24px;
   height: 24px;
 }
 
-/* Tablets (768px a 1024px) */
+/* Responsividade para tablets (768px a 1024px) */
 @media (max-width: 1024px) {
   .container {
     padding: 30px;
   }
 
+  /* Ajuste do tamanho dos cards para tablet */
   .card {
     width: 45%;
     height: 280px;
   }
 
+  /* (Repetido) Ajuste do tamanho dos cards para tablet */
   .card {
     width: 45%;
     height: 280px;
-    
   }
 }
 
-/* Mobile */
+/* Estilos para telas Mobile (largura máxima de 768px) */
 @media screen and (max-width: 768px) {
+
+  /* Ajuste do cabeçalho de navegação */
   .nav-header {
     height: 50px;
     justify-content: space-between;
     padding: 0 30px;
   }
 
+  /* Navegação vertical */
   ul {
     display: flex;
     flex-direction: column;
   }
 
+  /* Reduz o tamanho do texto da logo */
   .logo h1 {
     font-size: 1rem;
   }
 
+  /* Reduz o tamanho da imagem da logo */
   .logo img {
     width: 30px;
   }
 
+  /* Mostra o botão de abrir menu (hambúrguer) */
   .toggle {
     display: inline;
     font-size: 25px;
   }
 
+  /* Botão de fechar o menu lateral */
   .close {
     position: absolute;
     right: 25px;
@@ -368,18 +410,17 @@ header {
     border-radius: 50%;
   }
 
+  /* Hover no botão de fechar */
   .close:hover {
     background-color: #ffffff;
   }
 
-  /*Menu Mobile*/
+  /* Estilização do menu lateral mobile */
   .nav {
     position: fixed;
     top: 0;
-    right: 0; 
-    /*O menu desliza e aparece na tela*/
-    transform: translateX(100%); 
-    /*Delay do deslizamento*/
+    right: 0;
+    transform: translateX(100%); /* escondido inicialmente */
     transition: transform 0.3s ease;
     width: 20%;
     height: 100vh;
@@ -387,64 +428,67 @@ header {
     z-index: 1000;
     flex-direction: column;
     padding: 1.5rem;
-    -ms-overflow-style: none;
-    /* Permite rolagem vertical */
-    scrollbar-width: none;
-    /* ainda permite a rolagem */
     overflow-y: scroll;
-    /* IE e Edge */
-    -ms-overflow-style: none;
-    /* Firefox */
-    scrollbar-width: none;
+    -ms-overflow-style: none; /* IE e Edge */
+    scrollbar-width: none;    /* Firefox */
   }
-  /*O menu desliza para dentro da tela*/
+
+  /* Exibe o menu ao ativá-lo */
   .nav.active {
     transform: translateX(0);
   }
 
+  /* Lista da navegação visível */
   .nav-list {
     transform: translateX(0);
   }
-  .tooltip-img{
+
+  /* Ajusta o padding e margem dos ícones do menu */
+  .tooltip-img {
     padding: 0.3rem;
     margin-top: 0.2rem;
   }
 
+  /* Exibe o texto da tooltip no mobile */
   .tooltip-text {
-    visibility: visible ;
-    opacity: 1 ;
+    visibility: visible;
+    opacity: 1;
     position: absolute;
     color: white;
     background: none;
-    
   }
 
+  /* Reposicionamento do menu com a classe show */
   .show {
     right: 0;
   }
- 
 
+  /* Exibe os botões de abrir/fechar */
   .toggle,
   .close {
     display: block;
     font-size: 1.5rem;
   }
 
+  /* Posiciona o botão de fechar no rodapé do menu */
   .close {
     position: absolute;
     bottom: 10px;
     right: 10px;
   }
 
+  /* Reafirma o posicionamento do menu ativo */
   .show {
     right: 0;
   }
 
+  /* Ajusta o tamanho do botão verde */
   .btn-green {
     font-size: 13px;
     padding: 7px 15px;
   }
 
+  /* Estiliza a barra de busca */
   .buscar {
     display: flex;
     flex-direction: column;
@@ -453,36 +497,43 @@ header {
     padding: 10% 5%;
   }
 
+  /* Cards empilhados verticalmente */
   .container {
     flex-direction: column;
     padding: 20px;
     gap: 15px;
   }
 
+  /* Reduz o tamanho do card */
   .card {
     width: 90%;
     height: 250px;
   }
 
+  /* Ajusta o tamanho do texto nas informações do card */
   .card .info {
     font-size: 1.1rem;
   }
 
+  /* Ajusta o texto das informações adicionais do card */
   .card .more-info {
     font-size: 0.95rem;
     padding: 15px;
   }
 
+  /* Ajusta tamanho dos links nos cards */
   .more-info a {
     font-size: 12px;
     padding: 6px 10px;
   }
 
+  /* Alinha elementos em coluna */
   .d-flex {
     flex-direction: column;
     width: 100%;
   }
 
+  /* Botões em largura total no mobile */
   .btn-buscar,
   .btn-green {
     width: 100%;

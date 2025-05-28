@@ -1,14 +1,15 @@
 <?php
-$host = "localhost";
-$banco = "suac_db";
-$usuario = "root";
-$senha = "";
 
-try {
-    $conn = new PDO("mysql:host=$host;dbname=$banco;charset=utf8", $usuario, $senha);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Conexão bem-sucedida!";
-} catch (PDOException $e) {
-    echo "Falha na conexão: " . $e->getMessage();
+// conexao.php
+$host = 'localhost';
+$usuario = 'root';
+$senha = '';
+$banco = 'suac_db';
+
+$conexao = new mysqli($host, $usuario, $senha, $banco);
+
+// Verifica erro na conexão
+if ($conexao->connect_error) {
+    die("Erro de conexão: " . $conexao->connect_error); 
 }
 ?>

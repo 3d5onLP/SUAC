@@ -1,4 +1,4 @@
-/* Reset */
+/* CSS Reset */
 * {
   margin: 0;
   padding: 0;
@@ -6,15 +6,18 @@
   font-family: Arial, sans-serif;
 }
 
+/* Define a cor de fundo do corpo da página */
 body {
   background-color: #245d56;
 }
 
+/* Define estilo padrão para todos os links */
 a {
   color: black;
   text-decoration: none;
 }
 
+/* Estiliza o cabeçalho de navegação */
 .nav-header {
   display: flex;
   margin: 10px;
@@ -26,21 +29,25 @@ a {
   position: relative;
 }
 
+/* Alinha a logo horizontalmente no centro */
 .logo {
   display: flex;
   align-items: center;
 }
 
+/* Define o tamanho da imagem da logo */
 .logo img {
   width: 35px;
   margin-right: 10px;
 }
 
+/* Exibe a navegação em linha (horizontal) */
 .nav {
   display: flex;
   flex-direction: row;
 }
 
+/* Estiliza a lista de navegação */
 .nav-list {
   list-style: none;
   display: flex;
@@ -48,10 +55,12 @@ a {
   align-items: center;
 }
 
+/* Cada item da lista é posicionado relativamente */
 .nav-list li {
   position: relative;
 }
 
+/* Container dos ícones com tooltip */
 .tooltip-container {
   position: relative;
   display: inline-flex;
@@ -60,11 +69,13 @@ a {
   flex-direction: column;
 }
 
+/* Define tamanho dos ícones do menu */
 .tooltip-img {
   width: 35px;
   height: 35px;
 }
 
+/* Estilo do texto da tooltip (oculto por padrão) */
 .tooltip-text {
   visibility: hidden;
   background-color: #333;
@@ -74,24 +85,23 @@ a {
   border-radius: 5px;
   position: absolute;
   top: 100%;
-  /* posiciona abaixo da imagem */
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.3s ease;
   white-space: nowrap;
   font-size: 0.75rem;
-    /* garante visibilidade sobre outros elementos */
   z-index: 999;
-  /* espaço entre imagem e tooltip */
   margin-top: 6px;
 }
 
+/* Exibe a tooltip ao passar o mouse sobre o ícone */
 .tooltip-container:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
 }
 
+/* Triângulo da tooltip apontando para o ícone */
 .tooltip-text::after {
   content: "";
   position: absolute;
@@ -102,10 +112,13 @@ a {
   border-style: solid;
   border-color: transparent transparent #333 transparent;
 }
+
+/* Container para o menu do perfil (posição relativa para dropdown) */
 .profile-menu {
   position: relative;
 }
 
+/* Estilo da imagem do perfil */
 .profile-img {
   width: 40px;
   height: 40px;
@@ -113,6 +126,7 @@ a {
   cursor: pointer;
 }
 
+/* Estilo do menu dropdown do perfil (inicialmente oculto) */
 .dropdown {
   position: absolute;
   right: 0;
@@ -127,20 +141,24 @@ a {
   z-index: 999;
 }
 
+/* Título no dropdown */
 .dropdown h4 {
   margin-bottom: 0.3rem;
 }
 
+/* Subtítulo ou texto informativo no dropdown */
 .dropdown p {
   color: gray;
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
 
+/* Remove marcadores da lista no dropdown */
 .dropdown ul {
   list-style: none;
 }
 
+/* Estilo de cada item do menu no dropdown */
 .dropdown li {
   padding: 0.5rem 0;
   display: flex;
@@ -150,16 +168,20 @@ a {
   transition: background 0.2s;
 }
 
+/* Efeito hover nos itens do menu */
 .dropdown li:hover {
   background: #f0f0f0;
 }
 
+/* Imagem de perfil com bordas arredondadas */
 .img-profile{
   width: 40px;
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
 }
+
+/* Botões de abrir e fechar menu (ocultos por padrão) */
 .toggle,
 .close {
   display: none;
@@ -167,11 +189,13 @@ a {
   cursor: pointer;
 }
 
+/* Estiliza o cabeçalho (header) para centralizar conteúdo */
 header {
   display: flex;
   justify-content: center;
 }
 
+/* Botão de busca (estilo branco) */
 .btn-buscar {
   border-radius: 50px;
   background-color: white;
@@ -181,6 +205,7 @@ header {
   transition: background 0.3s, color 0.3s;
 }
 
+/* Botão verde */
 .btn-green {
   border-radius: 50px;
   background-color: #00ffbf;
@@ -189,11 +214,12 @@ header {
   transition: background 0.3s, color 0.3s;
 }
 
+/* Efeito hover do botão verde */
 .btn-green:hover{
   background-color: #004643;
 }
 
-/* elementos da main */
+/* Container principal que agrupa os cards */
 .container {
   display: flex;
   margin: 10px;
@@ -205,6 +231,7 @@ header {
   justify-content: center;
 }
 
+/* Estilo base dos cards */
 .card {
     width: 250px;
     background: #1f4943;
@@ -216,11 +243,13 @@ header {
     height: 320px;
 }
 
+/* Estilo do card expandido (aumenta a altura) */
 .card.expanded {
     height: 460px;
     z-index: 1;
 }
 
+/* Imagem dentro do card (modo normal) */
 .card img {
     width: 100%;
     height: 320px;
@@ -229,10 +258,12 @@ header {
     display: block;
 }
 
+/* Imagem do card quando expandido (fica menor) */
 .card.expanded img {
     height: 150px;
 }
 
+/* Sobreposição na parte inferior da imagem do card */
 .image-overlay {
     position: absolute;
     bottom: 0;
@@ -249,6 +280,7 @@ header {
     justify-content: center;
 }
 
+/* Área de informações extras do card (oculta por padrão) */
 .info {
     padding: 20px;
     opacity: 0;
@@ -257,24 +289,28 @@ header {
     display: none;
 }
 
+/* Quando o card é expandido, mostra a info com transição */
 .card.expanded .info {
     display: block;
     opacity: 1;
     transform: translateY(0);
 }
 
+/* Título dentro da info */
 .info h2 {
     margin: 10px 0 5px;
     font-size: 20px;
     color: #fff;
 }
 
+/* Parágrafo dentro da info */
 .info p {
     font-size: 14px;
     color: #fce4ec;
     margin-bottom: 10px;
 }
 
+/* Botão de contato */
 .contact-btn {
     display: inline-block;
     background: #d32f2f;
@@ -289,27 +325,32 @@ header {
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
+/* Efeito ao passar o mouse no botão de contato */
 .contact-btn:hover {
     background: #b71c1c;
     transform: scale(1.05);
 }
 
+/* Contêiner da avaliação */
 .rating {
     margin-top: 10px;
 }
 
+/* Título da seção de avaliação */
 .rating-title {
     color: #fff;
     font-size: 14px;
     margin-bottom: 5px;
 }
 
+/* Linha das estrelas */
 .stars {
     display: flex;
     gap: 5px;
     cursor: pointer;
 }
 
+/* Estilo base de cada estrela */
 .star {
     width: 24px;
     height: 24px;
@@ -317,46 +358,48 @@ header {
     transition: fill 0.2s ease;
 }
 
+/* Estrela ativada (selecionada) */
 .star.active {
     fill: gold;
 }
 
-
-/* Tablets (768px a 1024px) */
+/* Responsivo para tablets  (768px a 1024px) */
 @media (max-width: 1024px) {
   .container {
     padding: 30px;
   }
-
- 
 }
 
-/* Mobile */
+/* Responsivo para dispositivos móveis */
 @media screen and (max-width: 768px) {
+  /* Cabeçalho mais compacto */
   .nav-header {
     height: 50px;
     justify-content: space-between;
     padding: 0 30px;
   }
-
+   /* Menu em coluna no mobile */
   ul {
     display: flex;
     flex-direction: column;
   }
-
+  /* Reduz o tamanho do texto do logo */
   .logo h1 {
     font-size: 1rem;
   }
-
+  /* Reduz o tamanho da imagem do logo */
   .logo img {
     width: 30px;
   }
+}
 
+  /* Ícone do menu (hambúrguer) visível no mobile */
   .toggle {
     display: inline;
     font-size: 25px;
   }
 
+  /* Ícone de fechar o menu mobile */
   .close {
     position: absolute;
     right: 25px;
@@ -365,18 +408,17 @@ header {
     border-radius: 50%;
   }
 
+  /* Hover do botão de fechar - adiciona fundo branco ao passar o mouse*/
   .close:hover {
     background-color: #ffffff;
   }
 
- 
+  /* Menu lateral responsivo (mobile) */
   .nav {
     position: fixed;
     top: 0;
     right: 0; 
-  
     transform: translateX(100%); 
-  
     transition: transform 0.3s ease;
     width: 20%;
     height: 100vh;
@@ -384,64 +426,68 @@ header {
     z-index: 1000;
     flex-direction: column;
     padding: 1.5rem;
-    -ms-overflow-style: none;
-    /* Permite rolagem vertical */
-    scrollbar-width: none;
-    /* ainda permite a rolagem */
-    overflow-y: scroll;
-    /* IE e Edge */
-    -ms-overflow-style: none;
-    /* Firefox */
-    scrollbar-width: none;
+   /* Remove barra de rolagem visual */
+    -ms-overflow-style: none;  /* IE e Edge */
+    scrollbar-width: none;     /* Firefox */
+    overflow-y: scroll;        /* permite rolagem vertical */
   }
 
+  /* Ativa o menu, trazendo-o para a tela */
   .nav.active {
     transform: translateX(0);
   }
 
+  /* Garante que os itens da lista não estejam deslocados */
   .nav-list {
     transform: translateX(0);
   }
+
+  /* Imagem dentro de tooltip no mobile */
   .tooltip-img{
     padding: 0.3rem;
     margin-top: 0.2rem;
   }
 
+  /* Tooltip sempre visível no mobile */
   .tooltip-text {
     visibility: visible ;
     opacity: 1 ;
     position: absolute;
     color: white;
     background: none;
-    
   }
 
+  /* Classe auxiliar para forçar menu a aparecer */
   .show {
     right: 0;
   }
  
-
+  /* Ícones de menu toggle e fechar visíveis e estilizados no mobile */
   .toggle,
   .close {
     display: block;
     font-size: 1.5rem;
   }
 
+  /* Reposiciona o botão de fechar no canto inferior direito */
   .close {
     position: absolute;
     bottom: 10px;
     right: 10px;
   }
 
+  /* Redundância para garantir que elementos com .show estejam à direita */
   .show {
     right: 0;
   }
 
+  /* Botão verde adaptado para mobile */
   .btn-green {
     font-size: 13px;
     padding: 7px 15px;
   }
 
+  /* Estilização da área de busca no mobile */
   .buscar {
     display: flex;
     flex-direction: column;
@@ -450,26 +496,28 @@ header {
     padding: 10% 5%;
   }
 
+  /* Container principal com layout em coluna para mobile */
   .container {
     flex-direction: column;
     padding: 20px;
     gap: 15px;
   }
- .card {
+
+  /* Card ocupa 100% da largura com limite máximo */
+  .card {
         width: 100%;
         max-width: 360px;
-    }
+  }
   
-
+  /* Layout flexível em coluna */
   .d-flex {
     flex-direction: column;
     width: 100%;
   }
 
+  /* Botões de busca e verde ocupam largura total com espaçamento */
   .btn-buscar,
   .btn-green {
     width: 100%;
     margin-bottom: 10px;
   }
-
-}

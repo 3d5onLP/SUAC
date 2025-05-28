@@ -128,4 +128,9 @@ INSERT INTO usuarios (matricula, nome, email, senha, tipo, departamento, curso) 
 ('PROF001', 'João Silva', 'joao.silva@exemplo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'professor', 'Departamento de Tecnologia', NULL),
 ('PROF002', 'Maria Santos', 'maria.santos@exemplo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'professor', 'Departamento de Ciências', NULL),
 ('ALU001', 'Pedro Oliveira', 'pedro.oliveira@exemplo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'aluno', NULL, 'Ciência da Computação'),
-('ALU002', 'Ana Souza', 'ana.souza@exemplo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'aluno', NULL, 'Engenharia Elétrica');
+('ALU002', 'Ana Souza', 'ana.souza@exemplo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'aluno', NULL, 'Engenharia Elétrica'),
+('202322170010', 'Igor Gabriel', 'igor@exemplo.com', '123456', 'aluno', NULL, 'ADS'),
+('202322170007', 'Edson Lopes', 'Edson@exemplo.com', '123456', 'aluno', NULL, 'ADS'),
+('202322170011', 'Iago Bezerra', 'Iago@exemplo.com', '123456', 'aluno', NULL, 'ADS'),
+('202322170025', 'Vitor Marques', 'Vitor@exemplo.com', '123456', 'aluno', NULL, 'ADS');
+
