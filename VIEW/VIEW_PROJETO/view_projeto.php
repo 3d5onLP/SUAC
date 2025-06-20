@@ -36,7 +36,7 @@
         </li>
         <!-- li do botão de Alunos -->
         <li>
-          <a href="../VIEW_ALUNO/view_aluno.html" class="tooltip-container">
+          <a href="../VIEW_ALUNO/view_aluno.php" class="tooltip-container">
             <img src="../icon/aluno-icon.png" alt="Alunos" class="tooltip-img">
             <span class="tooltip-text">Alunos</span>
           </a>
