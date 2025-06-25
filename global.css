@@ -169,6 +169,14 @@ body.dark-mode .loading-text {
     color: var(--dark-mode-text);
 }
 
+.container-view{
+    background-color: rgb(221, 221, 221);
+    width: 40%;
+    height: 550px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
 /* Animação do fundo no modo escuro */
 @keyframes darkFadeIn {
     from {

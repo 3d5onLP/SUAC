@@ -1,0 +1,138 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* BODY GERAL */
+body {
+    display: flex;
+    flex-direction: column; /* Importante para que nav-header e wrapper se empilhem */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    justify-content: flex-start; /* Inicia o conteúdo do topo, não do centro */
+    min-height: 100vh; 
+    background-color: #245d56;
+    /* Padding padrão para desktop - 80px (height do nav-header) + 20px (10px margin top + 10px margin bottom) */
+    padding-top: 100px; /* Ajuste para a altura exata do seu nav-header no desktop */
+}
+
+.title-text{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+.select-container{
+    appearance: none; /* Remove o estilo padrão do sistema */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #f0f0f0;
+    border: 2px solid #1f4943;
+    border-radius: 10px;
+    padding: 5px 14px;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23007bff' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+/* Esconde o checkbox padrão */
+.checkbox-wrapper input[type="checkbox"] {
+  display: none;
+}
+
+/* Estilo visual do checkbox customizado */
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border: 2px solid #1f4943;
+  border-radius: 4px;
+  margin-right: 8px;
+  vertical-align: middle;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+/* Check visual ao marcar */
+.checkbox-wrapper input[type="checkbox"]:checked + .custom-checkbox::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+/* Fundo azul quando marcado */
+.checkbox-wrapper input[type="checkbox"]:checked + .custom-checkbox {
+  background-color: #007bff;
+}
+/* Estilo geral do */
+.checkbox-wrapper {
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 8px;
+  color: #000000;
+  align-items: center;
+  justify-items: center;
+  margin-left: 12%;
+}
+
+/*Label de arquivo*/
+.file-label {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 24px;
+  margin-left: 7%;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+.file-label:hover {
+  background-color: #0056b3;
+}
+.file-input {
+  display: none;
+}
+
+.submit{
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Botao de adicionar arquivo*/
+.btn-attach {
+  background-color: #000000;    
+  color: #fff;                    /* texto branco */
+  border: none;
+  padding: 5px 24px;
+  font-size: 16px;
+  border-radius: 10px;             /* cantos arredondados */
+  cursor: pointer;
+  transition: background-color 0.5s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+.btn-attach:hover {
+  background-color: #ffffff;      /* azul mais escuro no hover */
+  color: #000000;                /* muda a cor da fonte no hover*/
+  transform: scale(1.05);         /* leve aumento ao passar o mouse */
+  font-weight: bold;
+}
+.btn-attach:active {
+  transform: scale(0.97);         /* leve contração ao clicar */
+}

@@ -1,0 +1,20 @@
+.btn-send {
+  background-color: #007bff;    
+  color: #fff;                    /* texto branco */
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 10px;             /* cantos arredondados */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+.btn-send:hover {
+  background-color: #0056b3;      /* azul mais escuro no hover */
+  color: #fff;                /* muda a cor da fonte no hover*/
+  transform: scale(1.05);         /* leve aumento ao passar o mouse */
+  font-weight: bold;
+}
+.btn-send:active {
+  transform: scale(0.97);         /* leve contração ao clicar */
+}

@@ -1,0 +1,21 @@
+/*Botao de adicionar arquivo*/
+.btn-attach {
+  background-color: #000000;    
+  color: #fff;                    /* texto branco */
+  border: none;
+  padding: 5px 24px;
+  font-size: 16px;
+  border-radius: 10px;             /* cantos arredondados */
+  cursor: pointer;
+  transition: background-color 0.5s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+.btn-attach:hover {
+  background-color: #ffffff;      /* azul mais escuro no hover */
+  color: #000000;                /* muda a cor da fonte no hover*/
+  transform: scale(1.05);         /* leve aumento ao passar o mouse */
+  font-weight: bold;
+}
+.btn-attach:active {
+  transform: scale(0.97);         /* leve contração ao clicar */
+}
