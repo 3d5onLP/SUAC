@@ -1,85 +1,89 @@
 <?php
 // Inclui o arquivo de conexão com o banco de dados
-require_once '../../model/conexao.php'; // Certifique-se de que o caminho está correto
+require_once '../../model/conexao.php';
 
-// Verifica se a requisição é do tipo POST
+// Verifica se o método da requisição é POST (ou seja, se o formulário foi enviado)
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // 1. Recebe os dados do formulário
-    $nome = $_POST['nome'] ?? '';
+    // Recebe os dados enviados pelo formulário (com fallback para vazio)
+    $nome = $_POST['nome'] ?? ''; 
     $matricula = $_POST['matricula'] ?? '';
     $senha = $_POST['senha'] ?? '';
     $email = $_POST['email'] ?? '';
     $curso = $_POST['curso'] ?? '';
-    $tipo = $_POST['tipo'] ?? ''; // <--- Recebendo o valor do select com name="tipo"
+    $tipo = $_POST['tipo'] ?? ''; 
 
-    // 2. Validação básica dos dados
+    // Cria um array para armazenar mensagens de erro
     $erros = [];
 
+    // Validações dos campos do formulário
+
+    // Verifica se o nome foi preenchido
     if (empty($nome)) {
         $erros[] = "O nome completo é obrigatório.";
     }
+
+    // Verifica se a matrícula foi preenchida
     if (empty($matricula)) {
         $erros[] = "A matrícula é obrigatória.";
     }
+
+    // Verifica se a senha foi preenchida
     if (empty($senha)) {
         $erros[] = "A senha é obrigatória.";
-    } elseif (strlen($senha) < 6) {
+    } 
+    // Verifica se a senha tem pelo menos 6 caracteres
+    elseif (strlen($senha) < 6) {
         $erros[] = "A senha deve ter pelo menos 6 caracteres.";
     }
+
+    // Verifica se o e-mail foi preenchido e se é válido
     if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $erros[] = "O e-mail é obrigatório e deve ser um formato válido.";
     }
-    // Esta validação irá funcionar corretamente se o HTML enviar os valores "aluno" ou "professor"
+
+    // Verifica se o tipo de acesso é válido (aluno ou professor)
     if (empty($tipo) || ($tipo != 'aluno' && $tipo != 'professor')) {
         $erros[] = "O tipo de acesso é obrigatório e deve ser 'Aluno' ou 'Professor'.";
     }
 
-    // 3. Verifica se a matrícula ou e-mail já existem no banco de dados
+    // Se não houve erro até agora, verifica se a matrícula ou e-mail já existem
     if (empty($erros)) {
         $stmt_check = $conexao->prepare("SELECT id FROM usuarios WHERE matricula = ? OR email = ? LIMIT 1");
         $stmt_check->bind_param("ss", $matricula, $email);
         $stmt_check->execute();
         $stmt_check->store_result();
 
+        // Se já existir, adiciona erro
         if ($stmt_check->num_rows > 0) {
             $erros[] = "Matrícula ou e-mail já cadastrados.";
         }
         $stmt_check->close();
     }
 
-    // Se houver erros, exibe-os
+    // Se houver erros, mostra todos e link para voltar
     if (!empty($erros)) {
         foreach ($erros as $erro) {
             echo "<p style='color: red;'>Erro: " . $erro . "</p>";
         }
         echo "<p><a href='view_cadastro.html'>Voltar para o cadastro</a></p>";
     } else {
-        // 4. Criptografa a senha antes de armazenar no banco de dados
+        // Criptografa a senha antes de salvar
         $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
-        // O campo 'departamento' não está no seu formulário, mas está na sua tabela.
-        // Se 'tipo' for 'professor', você pode definir um departamento padrão, caso contrário, NULL.
-        // A sua query SQL e bind_param precisam incluir 'departamento' se for inserido.
-        // No SQL que você me enviou do processa_cadastro.php, 'departamento' não está na lista de colunas, mas estava em versões anteriores.
-        // Vou assumir que o 'departamento' não será inserido a menos que o formulário o envie, ou que você tem uma lógica específica para ele.
-        // Se precisar inserir 'departamento', a query e o bind_param precisam ser ajustados.
-        
-        // Exemplo: Se for para inserir departamento quando 'professor':
-        $departamento = ($tipo === 'professor') ? 'Departamento Padrão' : NULL; // Defina um valor padrão ou NULL
+        // Define um valor padrão para professores (caso precise)
+        $departamento = ($tipo === 'professor') ? 'Departamento Padrão' : NULL;
 
-        // A query SQL DEVE corresponder EXATAMENTE ao número de colunas e ao tipo de parâmetros.
-        // Sua query atual: INSERT INTO usuarios (nome, matricula, senha, email, tipo, curso) VALUES (?, ?, ?, ?, ?, ?);
-        // Não inclui 'departamento'. Se quiser incluir, mude a query e o bind_param.
+        // Cria a query de inserção no banco
         $sql = "INSERT INTO usuarios (nome, matricula, senha, email, tipo, curso) VALUES (?, ?, ?, ?, ?, ?)";
         
         $stmt = $conexao->prepare($sql);
 
+        // Se a preparação da query funcionar
         if ($stmt) {
-            // Se 'departamento' for incluído, o bind_param seria: "sssssss", $nome, $matricula, $senha_hash, $email, $tipo, $departamento, $curso
-            // Como a query atual não o inclui, mantém 6 's'.
             $stmt->bind_param("ssssss", $nome, $matricula, $senha_hash, $email, $tipo, $curso);
 
+            // Executa a inserção e redireciona para o login
             if ($stmt->execute()) {
                 header("Location: ../VIEW_LOGIN/view_login.php"); 
                 exit(); 
@@ -92,9 +96,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
+    // Fecha a conexão com o banco
     $conexao->close();
 
 } else {
+    // Se não for POST, redireciona para o formulário de cadastro
     header("Location: view_cadastro.html");
     exit();
 }

@@ -1,43 +1,72 @@
 <?php
+// Carrega o autoload do Composer para usar bibliotecas externas
+require_once __DIR__ . '/../vendor/autoload.php'; 
 
-require_once __DIR__ . '/../vendor/autoload.php';
-
+// Importa as classes do PHPMailer
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+// Função que envia um e-mail com os dados fornecidos
 function sendEmail($toEmail, $toName, $subject, $body) {
+    // Cria uma nova instância do PHPMailer
     $mail = new PHPMailer(true); 
 
     try {
-        // Configurações do Servidor SMTP
-        $mail->isSMTP();                                            // Enviar usando SMTP
-        $mail->Host       = 'smtp.gmail.com';                     // Servidor SMTP (ex: smtp.gmail.com, smtp.outlook.com)
-        $mail->SMTPAuth   = true;                                   // Habilitar autenticação SMTP
-        $mail->Username   = 'suportesuac@gmail.com';                // Seu e-mail completo
-        $mail->Password   = 'puhoizzgeizhoutj';                   // Senha do seu e-mail ou senha de aplicativo (se usar Gmail/Outlook)
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            // Habilitar criptografia TLS implícita (ssl)
-        $mail->Port       = 465;                                    // Porta TCP para conectar (465 para SMTPS)
+        // Habilita o uso de SMTP
+        $mail->isSMTP();                                            
 
-        // Remetente
-        $mail->setFrom('suportesuac@gmail.com', 'SUAC - Redefinição de Senha'); // E-mail de quem envia, Nome de quem envia
+        // Define o servidor SMTP do Gmail
+        $mail->Host = 'smtp.gmail.com';                             
 
-        // Destinatário
-        $mail->addAddress($toEmail, $toName); // Adiciona um destinatário
+        // Ativa a autenticação SMTP
+        $mail->SMTPAuth = true;                                     
 
-        // Conteúdo
-        $mail->isHTML(true);                                  // Definir formato do e-mail para HTML
-        $mail->CharSet = 'UTF-8';                             // Setar o charset para UTF-8
+        // E-mail que será usado para enviar
+        $mail->Username = 'suportesuac@gmail.com';                  
+
+        // Senha do aplicativo (gerada no Gmail)
+        $mail->Password = 'puhoizzgeizhoutj';                       
+
+        // Criptografia segura (SSL)
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
+
+        // Porta usada pelo servidor SMTP com SSL
+        $mail->Port = 465;                                          
+
+        // Define o e-mail e nome do remetente
+        $mail->setFrom('suportesuac@gmail.com', 'SUAC - Redefinição de Senha'); 
+
+        // Define o e-mail e nome do destinatário
+        $mail->addAddress($toEmail, $toName);                       
+
+        // Define que o corpo do e-mail será em HTML
+        $mail->isHTML(true);            
+
+        // Define o charset para evitar problemas com acentuação
+        $mail->CharSet = 'UTF-8';       
+
+        // Define o assunto do e-mail
         $mail->Subject = $subject;
-        $mail->Body    = nl2br($body); // `nl2br` converte quebras de linha em <br/> para HTML
-        $mail->AltBody = $body;        // Texto puro para clientes que não suportam HTML
 
+        // Define o corpo do e-mail (com quebras de linha convertidas em <br>)
+        $mail->Body = nl2br($body);     
+
+        // Corpo alternativo (em texto simples) para e-mails que não suportam HTML
+        $mail->AltBody = $body;        
+
+        // Envia o e-mail
         $mail->send();
-        return true; // E-mail enviado com sucesso
+
+        // Retorna verdadeiro se o e-mail foi enviado com sucesso
+        return true;
+
     } catch (Exception $e) {
-        // Logar o erro para depuração 
+        // Em caso de erro, grava no log
         error_log("Erro ao enviar e-mail: {$mail->ErrorInfo}");
-        return false; // Falha no envio
+
+        // Retorna falso indicando falha
+        return false;
     }
 }
 ?>

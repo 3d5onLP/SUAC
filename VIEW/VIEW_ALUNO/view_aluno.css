@@ -6,10 +6,6 @@
     font-family: Arial, sans-serif;
 }
 
-/* ========================================================= */
-/* ESTILOS GLOBAIS / DESKTOP FIRST (APLICAM-SE A TODAS AS TELAS POR PADRÃO) */
-/* ========================================================= */
-
 /* BODY GERAL */
 body {
     display: flex;
@@ -18,7 +14,6 @@ body {
     justify-content: flex-start; /* Inicia o conteúdo do topo, não do centro */
     min-height: 100vh;
     background-color: #245d56;
-    /* Padding padrão para desktop - 80px (height do nav-header) + 20px (10px margin top + 10px margin bottom) */
     padding-top: 100px; /* Ajuste para a altura exata do seu nav-header no desktop */
 }
 

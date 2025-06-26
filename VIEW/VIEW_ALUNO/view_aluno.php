@@ -11,8 +11,9 @@
 </head>
 
 <body>
-  <div class="nav-header">
 
+  <!-- Navbar (BARRA DE NAVEGAÇÃO) -->
+  <div class="nav-header">
     <div class="nav-left">
       <div class="logo">
         <img src="../icon/logo.png" alt="Logo CIENTIF">
@@ -20,6 +21,7 @@
       </div>
     </div>
 
+    <!-- Formulario de busca de alunos -->
     <div class="nav-center">
       <form class="d-flex">
         <input class="btn-buscar" type="search" placeholder="Buscar alunos..." aria-label="Buscar">
@@ -27,8 +29,10 @@
       </form>
     </div>
 
+    <!-- Botão Hamburgue (APARECE SOMENTE EM TELAS MENORES) -->
     <button id="fab-menu" class="fab-bottom-left">☰</button>
 
+    <!-- Menu de navegação e perfil -->
     <div class="nav-right">
       <ul class="nav-list">
         <li>
@@ -50,6 +54,7 @@
           </a>
         </li>
         <li>
+          <!-- Perfil do usuário -->
           <div class="profile-menu">
             <img src="../icon/foto.perfil.jpg" alt="Profile" class="profile-img" id="profileToggle">
             <div class="dropdown" id="dropdownMenu">
@@ -69,6 +74,7 @@
     </div>
   </div>
 
+  <!-- Cards de Alunos -->
   <main class="container">
     <div class="wrapper">
       <div class="card">
@@ -77,6 +83,7 @@
           <h1>Igor Gabriel</h1>
           <h2>Analise e desenvolvimento de Sistemas</h2>
           <div class="rating">
+            <!-- Estrelas de avaliação -->
             <div class="stars" data-rating="4">
               <i class="fas fa-star star"></i>
               <i class="fas fa-star star"></i>
@@ -98,6 +105,7 @@
           <h1>Iago Bezerra</h1>
           <h2>Analise e desenvolvimento de Sistemas</h2>
           <div class="rating">
+            <!-- Estrelas de avaliação -->
             <div class="stars" data-rating="4">
               <i class="fas fa-star star"></i>
               <i class="fas fa-star star"></i>
@@ -119,6 +127,7 @@
           <h1>Vitor Marques</h1>
           <h2>Analise e desenvolvimento de Sistemas</h2>
           <div class="rating">
+            <!-- Estrelas de avaliação -->
             <div class="stars" data-rating="3">
               <i class="fas fa-star star"></i>
               <i class="fas fa-star star"></i>
@@ -140,6 +149,7 @@
           <h1>Edson Oliveira</h1>
           <h2>Analise e desenvolvimento de Sistemas</h2>
           <div class="rating">
+            <!-- Estrelas de avaliação -->
             <div class="stars" data-rating="5">
               <i class="fas fa-star star"></i>
               <i class="fas fa-star star"></i>

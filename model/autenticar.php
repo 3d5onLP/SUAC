@@ -1,8 +1,12 @@
 <?php
-// Inicio / retomada da sessão
+// Inicia a sessão
 session_start();
-require_once 'conexao.php'; // Inclui a conexão com o banco de dados
-require_once 'send_email.php'; // Inclui o arquivo PHPMailer helper
+
+// Inclui a conexão com o banco de dados
+require_once 'conexao.php';
+
+// Inclui o script para envio de e-mails com PHPMailer
+require_once 'send_email.php';
 
 // Função para gerar um token seguro
 function generateToken($length = 64) {
@@ -11,48 +15,48 @@ function generateToken($length = 64) {
 
 // --- LÓGICA DE SOLICITAÇÃO DE REDEFINIÇÃO DE SENHA ---
 if (isset($_POST['solicitar_redefinicao'])) {
+    // Captura a matrícula ou e-mail enviado pelo formulário
     $matricula_ou_email = $_POST['matricula_ou_email'] ?? '';
 
+    // Se o campo estiver vazio, redireciona com mensagem de erro
     if (empty($matricula_ou_email)) {
         header("Location: ../VIEW/view_troca_senha/troca_senha.php?status=error&message=" . urlencode("Por favor, informe sua matrícula ou e-mail."));
         exit();
     }
 
-    // Busca o usuário pela matrícula OU e-mail
-    $stmt = $conexao->prepare("SELECT id, email, nome FROM usuarios WHERE matricula = ? OR email = ?"); // Adicionei 'nome' para usar no sendEmail
+    // Consulta o usuário no banco por matrícula ou e-mail
+    $stmt = $conexao->prepare("SELECT id, email, nome FROM usuarios WHERE matricula = ? OR email = ?");
     $stmt->bind_param("ss", $matricula_ou_email, $matricula_ou_email);
     $stmt->execute();
     $resultado = $stmt->get_result();
 
+    // Se o usuário for encontrado
     if ($resultado->num_rows > 0) {
         $usuario = $resultado->fetch_assoc();
         $user_id = $usuario['id'];
         $user_email = $usuario['email'];
-        $user_nome = $usuario['nome']; // Obtendo o nome do usuário
+        $user_nome = $usuario['nome'];
 
-        // Gerar um token e definir o tempo de expiração
+        // Gera token e define o tempo de expiração (1 hora)
         $token = generateToken();
         $expires_at = date('Y-m-d H:i:s', strtotime('+1 hour'));
 
-        // Salvar o token e a data de expiração no banco de dados
+        // Atualiza o token no banco de dados
         $update_stmt = $conexao->prepare("UPDATE usuarios SET reset_token = ?, reset_token_expires_at = ? WHERE id = ?");
         $update_stmt->bind_param("ssi", $token, $expires_at, $user_id);
-        
+
         if ($update_stmt->execute()) {
-            // --- ENVIAR E-MAIL COM O LINK DE REDEFINIÇÃO USANDO PHPMailer ---
-            
-            // O caminho correto para o link de redefinição.
-            // Se o seu projeto estiver em um subdiretório (ex: "http://localhost/suac/"),
-            // você precisará ajustar para algo como "/suac/VIEW/view_troca_senha/troca_senha.php"
-            $reset_link = "http://" . $_SERVER['HTTP_HOST'] . "/VIEW/view_troca_senha/troca_senha.php?token=" . $token; 
-            
+            // Monta o link de redefinição com o token
+            $reset_link = "http://" . $_SERVER['HTTP_HOST'] . "/VIEW/view_troca_senha/troca_senha.php?token=" . $token;
+
+            // Mensagem do e-mail
             $assunto = "Redefinição de Senha - SUAC";
             $mensagem = "Olá " . $user_nome . ",\n\nVocê solicitou a redefinição de senha para sua conta SUAC. Clique no link abaixo para redefinir sua senha:\n\n";
-            $mensagem .= '<a href="' . $reset_link . '">' . $reset_link . '</a>' . "\n\n"; // Link em HTML
-            $mensagem .= "Este link expirará em 1 hora.\n\nSe você não solicitou isso, por favor, ignore este e-mail.\n\nAtenciosamente,\nEquipe SUAC";
+            $mensagem .= '<a href="' . $reset_link . '">' . $reset_link . '</a>' . "\n\n";
+            $mensagem .= "Este link expirará em 1 hora.\n\nSe você não solicitou isso, ignore este e-mail.\n\nAtenciosamente,\nEquipe SUAC";
 
-            // Chamar a função sendEmail (do send_email.php)
-            if (sendEmail($user_email, $user_nome, $assunto, $mensagem)) { 
+            // Envia o e-mail com o link de redefinição
+            if (sendEmail($user_email, $user_nome, $assunto, $mensagem)) {
                 header("Location: ../VIEW/view_troca_senha/troca_senha.php?status=success");
                 exit();
             } else {
@@ -61,47 +65,48 @@ if (isset($_POST['solicitar_redefinicao'])) {
                 exit();
             }
         } else {
-            error_log("Falha ao salvar token de redefinição para user_id: " . $user_id . " Erro: " . $conexao->error);
+            error_log("Erro ao salvar token para o usuário ID: " . $user_id);
             header("Location: ../VIEW/view_troca_senha/troca_senha.php?status=error&message=" . urlencode("Erro interno. Tente novamente."));
             exit();
         }
         $update_stmt->close();
     } else {
-        // Usuário não encontrado, mas por segurança, damos uma resposta genérica para não vazar informações
-        header("Location: ../VIEW/view_troca_senha/troca_senha.php?status=success"); 
+        // Usuário não encontrado, mas redireciona como se tivesse funcionado (segurança)
+        header("Location: ../VIEW/view_troca_senha/troca_senha.php?status=success");
         exit();
     }
+
     $stmt->close();
     $conexao->close();
-    exit(); 
+    exit();
 }
 
-// RESTANTE DO CÓDIGO (LÓGICA DE REDEFINIÇÃO DE SENHA E LÓGICA DE LOGIN) ABAIXO...
-// (Não alterado nesta correção)
-
-// --- LÓGICA DE REDEFINIÇÃO DE SENHA (USANDO TOKEN) ---
+// --- LÓGICA DE REDEFINIÇÃO DE SENHA COM TOKEN ---
 if (isset($_POST['redefinir_senha'])) {
+    // Recebe os dados do formulário
     $token = $_POST['token'] ?? '';
     $nova_senha = $_POST['nova_senha'] ?? '';
     $confirmar_nova_senha = $_POST['confirmar_nova_senha'] ?? '';
 
+    // Verifica se todos os campos foram preenchidos
     if (empty($token) || empty($nova_senha) || empty($confirmar_nova_senha)) {
-        header("Location: ../VIEW/view_troca_senha/troca_senha.php?token=" . urlencode($token) . "&status=error_reset&message=" . urlencode("Todos os campos são obrigatórios."));
+        header("Location: ../VIEW/view_troca_senha/troca_senha.php?token=$token&status=error_reset&message=" . urlencode("Todos os campos são obrigatórios."));
         exit();
     }
 
+    // Verifica se a senha e a confirmação são iguais
     if ($nova_senha !== $confirmar_nova_senha) {
-        header("Location: ../VIEW/view_troca_senha/troca_senha.php?token=" . urlencode($token) . "&status=error_reset&message=" . urlencode("A nova senha e a confirmação não coincidem."));
+        header("Location: ../VIEW/view_troca_senha/troca_senha.php?token=$token&status=error_reset&message=" . urlencode("A nova senha e a confirmação não coincidem."));
         exit();
     }
 
-    // Adicione validações de complexidade para a nova senha
-    if (strlen($nova_senha) < 8) { // Mantenha 8 caracteres como mínimo
-        header("Location: ../VIEW/view_troca_senha/troca_senha.php?token=" . urlencode($token) . "&status=error_reset&message=" . urlencode("A nova senha deve ter no mínimo 8 caracteres."));
+    // Valida o tamanho da nova senha
+    if (strlen($nova_senha) < 6) {
+        header("Location: ../VIEW/view_troca_senha/troca_senha.php?token=$token&status=error_reset&message=" . urlencode("A nova senha deve ter no mínimo 8 caracteres."));
         exit();
     }
 
-    // Validar o token no banco de dados
+    // Verifica se o token é válido e ainda está no prazo
     $stmt = $conexao->prepare("SELECT id FROM usuarios WHERE reset_token = ? AND reset_token_expires_at > NOW()");
     $stmt->bind_param("s", $token);
     $stmt->execute();
@@ -111,37 +116,40 @@ if (isset($_POST['redefinir_senha'])) {
         $usuario = $resultado->fetch_assoc();
         $user_id = $usuario['id'];
 
-        // Gerar o hash da nova senha
+        // Criptografa a nova senha
         $nova_senha_hash = password_hash($nova_senha, PASSWORD_DEFAULT);
 
-        // Atualizar a senha e invalidar o token
+        // Atualiza a senha e remove o token
         $update_stmt = $conexao->prepare("UPDATE usuarios SET senha = ?, reset_token = NULL, reset_token_expires_at = NULL WHERE id = ?");
         $update_stmt->bind_param("si", $nova_senha_hash, $user_id);
 
         if ($update_stmt->execute()) {
-            header("Location: ../VIEW/VIEW_LOGIN/view_login.php?status=success_reset"); // Redireciona para o login com sucesso
+            header("Location: ../VIEW/VIEW_LOGIN/view_login.php?status=success_reset");
             exit();
         } else {
-            error_log("Falha ao atualizar senha para user_id: " . $user_id . " Erro: " . $conexao->error);
-            header("Location: ../VIEW/view_troca_senha/troca_senha.php?token=" . urlencode($token) . "&status=error_reset&message=" . urlencode("Erro ao redefinir a senha."));
+            error_log("Erro ao atualizar senha para usuário ID: " . $user_id);
+            header("Location: ../VIEW/view_troca_senha/troca_senha.php?token=$token&status=error_reset&message=" . urlencode("Erro ao redefinir a senha."));
             exit();
         }
         $update_stmt->close();
     } else {
+        // Token inválido ou expirado
         header("Location: ../VIEW/view_troca_senha/troca_senha.php?status=error_reset&message=" . urlencode("Link de redefinição inválido ou expirado."));
         exit();
     }
+
     $stmt->close();
     $conexao->close();
-    exit(); 
+    exit();
 }
 
 // --- LÓGICA DE LOGIN ---
 $matricula = $_POST['matricula'] ?? '';
 $senha_digitada = $_POST['senha'] ?? '';
 
-// Verifica se os parâmetros de login estão presentes
+// Verifica se os campos de login foram preenchidos
 if (!empty($matricula) && !empty($senha_digitada)) {
+    // Busca o usuário pela matrícula
     $stmt = $conexao->prepare("SELECT id, matricula, nome, email, senha, tipo, departamento, curso FROM usuarios WHERE matricula = ?");
     $stmt->bind_param("s", $matricula);
     $stmt->execute();
@@ -151,24 +159,25 @@ if (!empty($matricula) && !empty($senha_digitada)) {
         $usuario = $resultado->fetch_assoc();
         $senha_hash_do_banco = $usuario['senha'];
 
+        // Verifica se a senha digitada está correta
         if (password_verify($senha_digitada, $senha_hash_do_banco)) {
+            // Login bem-sucedido: salva os dados do usuário na sessão
             $_SESSION['usuario'] = $usuario;
             header("Location: ../VIEW/VIEW_PROJETO/view_projeto.php");
             exit;
         } else {
+            // Senha incorreta
             echo "<script>
                     alert('Matrícula ou senha incorretos!');
                     window.location.href = '../VIEW/VIEW_LOGIN/view_login.php';
                   </script>";
         }
     } else {
+        // Usuário não encontrado
         echo "<script>
                 alert('Matrícula ou senha incorretos!');
                 window.location.href = '../VIEW/VIEW_LOGIN/view_login.php';
               </script>";
     }
 }
-// Não feche a conexão aqui se houver mais código abaixo
-// $stmt->close(); 
-// $conexao->close();
 ?>
