@@ -22,6 +22,17 @@ body {
     padding-top: 100px; /* Ajuste para a altura exata do seu nav-header no desktop */
 }
 
+.container1{
+    background-color: rgb(221, 221, 221);
+    width: 40%;
+    height: 550px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
+}
+
+
+
 .title-text{
     text-align: center;
     margin-top: 20px;

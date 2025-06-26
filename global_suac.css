@@ -1,9 +1,9 @@
-.container{
+.container1{
     background-color: rgb(221, 221, 221);
     width: 40%;
     height: 550px;
     border: 1px solid black;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
