@@ -36,7 +36,7 @@
               <button class="acessar" onclick="fazerLogin()">Acessar</button> 
               <a href="../view_troca_senha/troca_senha.php" target="_blank">Esqueceu sua senha?</a>
 
-              <a href="../view_cad_users/view_cadastro.php" target="_blank">Cadastre-se</a>
+              <a href="../view_cad_users/view_cadastro.html" target="_blank">Cadastre-se</a>
 
                 
           </div>

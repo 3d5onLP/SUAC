@@ -22,12 +22,9 @@ document.addEventListener('click', (event) => {
   const isClickInsideMenu = navMenu.contains(event.target);
   const isClickOnOpenBtn = openBtn.contains(event.target);
 
-
   // Fechar o menu se não for dentro do menu e não for o botão de abrir
   if (navMenu.classList.contains('active') && !isClickInsideMenu && !isClickOnOpenBtn) {
     navMenu.classList.remove('active');
-
-
   }
 });
 

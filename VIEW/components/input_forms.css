@@ -1,10 +1,11 @@
 
 
-/*Labels de formulario*/
+/* Estilo para os rótulos de texto (Nome Completo:, Matrícula:, etc.) */
 .cad-text{
-    margin-left: 12%;
+    margin-left: 10%;
     font-size: 1rem;
-    font-weight: bold;
+    display: block; /* Garante que cada rótulo ocupe sua própria linha */ 
+    font-weight: bold; /* Deixa o texto em negrito */
 }
 
 /* Formulario de cadastro de projeto */
@@ -23,7 +24,7 @@
     font-size: 1rem;
     flex-grow: 1;
     padding: 5px 15px;
-    border-radius: 50px;
+    border-radius: 10px;
     border: 2px solid #1f4943;
     background-color: white;
     font-size: 16px;

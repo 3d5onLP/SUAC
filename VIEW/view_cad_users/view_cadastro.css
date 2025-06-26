@@ -9,7 +9,6 @@
 /* ========================================================= */
 /* ESTILOS GLOBAIS / DESKTOP FIRST (APLICAM-SE A TODAS AS TELAS POR PADRÃO) */
 /* ========================================================= */
-
 /* BODY GERAL */
 body {
     display: flex;
@@ -22,42 +21,75 @@ body {
     padding-top: 100px; /* Ajuste para a altura exata do seu nav-header no desktop */
 }
 
-.container{
-    background-color: rgb(221, 221, 221);
-    width: 40%;
-    height: 550px;
-    border: 1px solid black;
-}
-.title-text{
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 35px;
-}
-
-.select-container{
-    appearance: none; /* Remove o estilo padrão do sistema */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-color: #f0f0f0;
-    border: 2px solid #007bff;
-    border-radius: 10px;
-    padding: 5px 14px;
-    font-size: 1rem;
-    color: #000000;
-    cursor: pointer;
-    background-image: url("data:image/svg+xml;utf8,<svg fill='%23007bff' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 16px;
-    padding-right: 40px;
+/* Estilo para o grupo de radio buttons */
+.radio-group {
+  margin-top: 5px; /* Espaço entre o título "Tipo de Acesso" e os radios */
+  margin-bottom: 15px; /* Espaço entre os radios e o botão Enviar */
+  text-align: left; /* Alinha os radios à esquerda */
+  /* Você pode usar flexbox para controlar o layout interno dos radios e labels */
+  /* display: flex; */  
+  /* flex-direction: column; */
+  margin-left: 7%;
 }
 
-.submit{
-    display: flex;
-    margin-top: 50px;
-    align-items: center;
-    justify-content: center;
+.radio-group input[type="radio"] {
+  margin-right: 5px; /* Espaço entre o radio e o label */
 }
 
+/* Estilo para o título dentro do contêiner */
+.title-text {
+    text-align: center; /* Centraliza o texto */
+    color: #000000; /* Cor do título */
+    margin: 10 0 20 0; 
+}
 
+/* Estilo para os campos de input e o select */
+.input-form, .select-container {
+    width: 85%; 
+    margin-left: 8%;
+    margin-bottom: 15px; /* Espaço entre o rótulo e o campo de input */
+    padding: 10px; /* Espaçamento interno */
+    margin-bottom: 10px; /* Espaçamento abaixo de cada campo */
+    border: 1px solid #ccc; /* Borda fina e clara */
+    border-radius: 10px; /* Cantos arredondados */
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura total */
+    font-size: 14px; /* Tamanho da fonte do texto digitado/selecionado */
+}
 
+/* Estilo específico para o select para remover a aparência padrão e adicionar seta personalizada */
+.select-container {
+    width: 85%; 
+    appearance: none; /* Remove a seta padrão do navegador */
+    -webkit-appearance: none; /* Para compatibilidade com WebKit (Chrome, Safari) */
+    -moz-appearance: none; /* Para compatibilidade com Mozilla (Firefox) */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>'); /* Seta personalizada em SVG */
+    background-repeat: no-repeat; /* Não repete a imagem de fundo */
+    background-position: right 10px top 50%; /* Posição da seta (10px da direita, centralizada verticalmente) */
+    background-size: 16px; /* Tamanho da seta */
+    cursor: pointer; /* Indica que é clicável */
+}
+
+/* Estilo para o contêiner do botão de envio */
+.submit {
+    text-align: center; /* Centraliza o botão */
+}
+
+/* Estilo para o botão de envio */
+.btn-send {
+    background-color: #007bff; /* Cor de fundo azul, comum para botões primários */
+    color: white; /* Cor do texto do botão */
+    padding: 10px 20px; /* Espaçamento interno */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Cantos arredondados */
+    cursor: pointer; /* Indica que é clicável */
+    font-size: 16px; /* Tamanho da fonte do botão */
+    transition: background-color 0.5s ease; /* Transição suave para o efeito hover */
+    margin-top: 5%; /* Espaçamento acima do botão */
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.btn-send:hover {
+    background-color: #0056b3; /* Cor mais escura ao passar o mouse */
+    font-weight: bold;
+    padding: 12px 24px;
+}

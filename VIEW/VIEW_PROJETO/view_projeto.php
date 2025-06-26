@@ -55,6 +55,8 @@
           <li><span>✏️</span>Editar Perfil</li>
           <li><a href="../VIEW_DUVIDAS/view_duvidas.html"><span>🛠️</span> Duvidas</a></li>
           <li><a href="../logout.php"><span>🔓</span href="../logout.php"> Deslogar</a></li>
+          <li><a href="#" id="excluirContaBtn"><span>❌</span> Excluir Conta</a></li>
+
         </ul>
       </div>
     </div>
@@ -135,6 +137,19 @@
   <script>
     feather.replace();
   </script>
+
+  <script>
+      document.getElementById('excluirContaBtn').addEventListener('click', function(event) {
+          event.preventDefault(); // Impede o comportamento padrão do link
+
+          // Exibe a caixa de diálogo de confirmação
+          if (confirm("Tem certeza que deseja excluir sua conta? Esta ação é irreversível.")) {
+              // Se o usuário confirmar, redireciona para o script de exclusão
+              window.location.href = '../../excluir_conta.php';
+          }
+      });
+  </script>
+
   <script src="view_projeto.js"></script>
 
 </body>
