@@ -1,3 +1,10 @@
+<?php
+  require_once '../../model/auth_check.php';
+?>
+
+// Resto do seu código PHP e HTML da página restrita
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 

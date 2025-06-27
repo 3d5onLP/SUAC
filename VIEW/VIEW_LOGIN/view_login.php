@@ -1,3 +1,7 @@
+<?php
+  require_once '../../model/auth_check.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
