@@ -26,7 +26,7 @@
         setTimeout(() => {
             document.body.classList.add('fade-out');
             setTimeout(() => {
-                window.location.href = './VIEW/VIEW_LOGIN/view_login.php';
+                window.location.href = 'VIEW/VIEW_LOGIN/view_login.php';
             }, 1000); // Sincronizar com a animação de fade out
         }, 1000);
     </script>

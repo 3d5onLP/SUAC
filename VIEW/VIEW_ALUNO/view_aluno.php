@@ -1,5 +1,5 @@
 <?php
-  require_once '../../model/auth_check.php';
+  require_once '../../model/finish_session.php';
 ?>
 
 <!DOCTYPE html>
