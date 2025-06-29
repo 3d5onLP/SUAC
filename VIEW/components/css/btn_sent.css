@@ -1,6 +1,6 @@
 /*Botão de Enviar*/
 .btn-send {
-  background-color: #007bff;    
+  background-color: #4CAF50;    
   color: #fff;                    /* texto branco */
   border: none;
   padding: 12px 24px;
@@ -11,7 +11,7 @@
   box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
 }
 .btn-send:hover {
-  background-color: #0056b3;      /* azul mais escuro no hover */
+  background-color: #338736;     
   color: #fff;                /* muda a cor da fonte no hover*/
   transform: scale(1.05);         /* leve aumento ao passar o mouse */
   font-weight: bold;

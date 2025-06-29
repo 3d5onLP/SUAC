@@ -16,4 +16,4 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Uma data no passado
 
 header('Location: ../index.php'); // Verifique se este é o caminho correto para sua tela de login
 exit;
-?>
+?>  

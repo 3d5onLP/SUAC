@@ -7,6 +7,8 @@
 }
 
 /* BODY GERAL */
+/* Este padding-top deve ser ajustado para a altura real do seu nav-header no desktop,
+   e pode ser mantido aqui ou movido para o global_suac.css se for consistente em todas as páginas. */
 body {
     display: flex;
     flex-direction: column; /* Importante para que nav-header e wrapper se empilhem */
@@ -14,589 +16,113 @@ body {
     justify-content: flex-start; /* Inicia o conteúdo do topo, não do centro */
     min-height: 100vh;
     background-color: #245d56;
-    padding-top: 100px; /* Ajuste para a altura exata do seu nav-header no desktop */
+    padding-top: 100px; /* **IMPORTANTE:** Ajuste este valor para a altura exata do seu nav-header, mais margem, no desktop. */
 }
 
-/* BARRA DE NAVEGAÇÃO PRINCIPAL (NAV-HEADER) */
-.nav-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    background-color: #1f4943;
-    position: fixed;
-    z-index: 1000;
-    border-radius: 10px;
-    margin: 10px; /* Margem externa no desktop */
-    top: 10px; /* Alinha ao topo com margem */
-    left: 10px;
-    right: 10px;
-    height: 80px; /* Altura fixa no desktop */
-}
 
-.nav-left,
-.nav-center,
-.nav-right {
-    display: flex;
-    align-items: center;
-}
-
-.nav-right {
-    justify-content: flex-end;
-    flex: 1;
-}
-
-.nav-left {
-    flex: 1;
-}
-
-.nav-center {
-    flex: 2;
-    justify-content: center;
-}
-
-/* LISTA DO MENU (NAVEGAÇÃO INTERNA DO HEADER) */
-.nav-list {
-    display: flex; /* Visível por padrão no desktop */
-    align-items: center;
-    list-style: none;
-    gap: 20px;
-}
-
-.nav-list li {
-    margin-left: 20px;
-    display: inline-block;
-}
-
-/* LOGO E TÍTULO DO SISTEMA */
-.logo {
-    float: left;
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    width: 50px;
-    height: auto;
-    margin-right: 10px;
-}
-
-.header-logo {
-    font-size: 34px;
-    margin: 0;
-}
-
-/* LIGAÇÃO DOS MENUS (LINKS E IMAGENS) */
-.tooltip-container {
-    text-decoration: none;
-    color: white;
-}
-
-.tooltip-img {
-    width: 40px;
-    height: auto;
-    margin-right: 10px;
-}
-
-.tooltip-text {
-    display: flex;
-}
-
-/* PERFIL DO USUÁRIO (DROPDOWN) */
-.profile-menu {
-    position: relative;
-    display: inline-block;
-}
-
-.profile-img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-}
-
-.dropdown {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    right: 0;
-    top: 60px;
-    border-radius: 5px;
-    padding: 10px 0;
-}
-
-.dropdown h4,
-.dropdown p {
-    padding: 0 15px;
-    margin: 5px 0;
-    text-align: center;
-}
-
-.dropdown ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.dropdown ul li {
-    padding: 8px 15px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    display: flex;
-    align-items: center;
-}
-
-.dropdown ul li a {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-.dropdown ul li span {
-    margin-right: 10px;
-}
-
-.dropdown ul li:hover {
-    background-color: #ddd;
-}
-
-.dropdown.show {
-    display: block;
-}
-
-/* CAMPO E BOTÃO DE BUSCA */
-.buscar {
-    width: auto;
-    padding: 0;
-    margin: 0 20px;
-}
-
-.d-flex {
-    display: flex;
-    gap: 10px;
-    max-width: 600px;
-    width: 100%;
-    padding: 0 20px;
-}
-
-.btn-buscar {
-    width: 80%;
-    font-size: 1rem;
-    flex-grow: 1;
-    padding: 12px 20px;
-    border-radius: 50px;
-    border: 2px solid #1f4943;
-    background-color: white;
-    font-size: 16px;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-.btn-buscar:focus {
-    border-color: #00ffbf;
-    box-shadow: 0 0 0 2px rgba(0, 255, 191, 0.2);
-}
-
-.btn-green {
-    padding: 12px 25px;
-    border-radius: 50px;
-    background-color: #00ffbf;
-    color: #004643;
-    border: none;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-}
-
-.btn-green i {
-    width: 18px;
-    height: 18px;
-    vertical-align: middle;
-    margin-right: 8px;
-}
-
-.btn-green:hover {
-    background-color: #00e6ac;
-    transform: translateY(-2px);
-}
-
-/* DIV DOS CARDS DOS PERFIS */
+/* WRAPPER (CONTAINER DOS CARDS/CONTEÚDO PRINCIPAL) */
 .wrapper {
-    position: relative;
-    width: 100%;
-    height: auto; /* Alterado de 100% para auto para o wrapper se adaptar ao conteúdo */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
     padding: 20px;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    gap: 24px;
-    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+    margin-top: 20px; /* Espaço abaixo da navbar fixa */
 }
 
+
+
+/* ESTILO DOS CARDS DE ALUNO */
 .card {
+    background-color: #e2e2e2; /* Cor dos cards (mesma da navbar para consistência) */
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Garante que o conteúdo não vaze */
+    padding: 20px;
+    text-align: center;
     position: relative;
-    width: 325px;
-    height: 450px;
-    background: #000;
-    border-radius: 18px;
-    overflow: hidden;
-}
-
-.poster {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.poster::before {
-    content: '';
-    position: absolute;
-    bottom: -45%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    transition: .3s;
-}
-
-.card:hover .poster::before {
-    bottom: 0;
-}
-
-.poster img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: .3s;
-}
-
-.details {
-    position: absolute;
-    bottom: -100%;
-    left: 0;
-    width: 100%;
-    height: auto;
-    padding: 1.5em 1.5em 2em;
-    background: rgba(0, 0, 0, 0.7);
-    transition: bottom 0.3s ease;
-    color: #fff;
-    z-index: 2;
-}
-
-.card:hover .details {
-    bottom: 0;
-}
-
-.details h1,
-.details h2 {
-    font-weight: 700;
-}
-
-.details h1 {
-    font-size: 1.5em;
-    margin-bottom: 5px;
-}
-
-.details h2 {
-    font-weight: 400;
-    font-size: 1em;
-    margin-bottom: 10px;
-    opacity: .6;
-}
-
-.details .rating {
-    position: relative;
-    margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, height 0.4s ease-out; /* Adicionado height para transição suave */
+    height: 380px; /* Altura inicial do card (ajuste conforme necessário) */
     display: flex;
-    gap: .25em;
-}
-
-.details .rating i {
-    color: #e3c414;
-}
-
-.details .rating span {
-    margin-left: 0.25em;
-}
-
-.details .desc {
-    color: #fff;
-    opacity: .8;
-    line-height: 1.5;
-    margin-bottom: 1em;
-}
-
-/* ÍCONE DE HAMBÚRGUER ORIGINAL (ESCONDIDO POR PADRÃO NO DESKTOP) */
-#toggle-menu {
-    display: none;
-}
-
-/* BOTÃO DE AÇÃO FLUTUANTE (FAB) - ESCONDIDO POR PADRÃO NO DESKTOP */
-.fab-bottom-left {
-    display: none; /* ESCONDE O FAB POR PADRÃO (em telas maiores que 1024px) */
-    position: fixed;
-    bottom: 20px;
-    right: 20px; /* POSICIONADO À DIREITA */
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #00ffbf;
-    color: #004643;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    font-size: 24px;
-    cursor: pointer;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 1001;
-    border: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    justify-content: flex-start;
 }
 
-.fab-bottom-left:hover {
-    background-color: #00e6ac;
-    transform: translateY(-2px);
-}
 
-.details .rating {
-    position: relative;
+.card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
     margin-bottom: 15px;
-    display: flex;
-    gap: .25em;
-    align-items: center; /* Alinhe os itens verticalmente no div de classificação */
+    border: 3px solid #4CAF50;
 }
 
-/* Novos estilos para o sistema de classificação por estrelas */
-.details .rating .stars {
-    display: flex;
-    gap: 2px; /* Pequeno espaço entre as estrelas */
+.card h3 {
+    margin-bottom: 5px;
+    color: #4CAF50;
+    font-size: 22px;
 }
 
-.details .rating .star {
-    color: #e3c414; /* Cor padrão para estrelas inativas */
+.card p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+/* Sistema de Avaliação com Estrelas */
+.stars {
+    margin: 10px 0;
+    font-size: 24px;
+    color: #ccc; /* Cor das estrelas inativas */
+    display: inline-block; /* Para centralizar se necessário */
+}
+
+.star {
     cursor: pointer;
+    transition: color 0.2s;
 }
 
-.details .rating .star.active {
-    color: #e3c414; /* Cor para estrelas ativas */
-}
-
-.details .rating span {
-    margin-left: 0.5em; /* Margem ajustada para melhor espaçamento */
-    color: #fff;
-}
-
-
-/* ========================================================= */
-/* RESPONSIVIDADE (MEDIA QUERIES) */
-/* ========================================================= */
-
-/* --------------------------------------------------------- */
-/* Tablets e Telas Médias (max-width: 1024px) */
-/* --------------------------------------------------------- */
-@media (max-width: 1024px) {
-
-    /* BODY */
-    body {
-        /* Ajuste este valor após inspecionar a altura real do nav-header em 1024px e abaixo */
-        padding-top: 190px; /* EXEMPLE: Valor para o padding-top em tablets */
-        /* display: flex, flex-direction: column, align-items: center, justify-content: flex-start */
-        /* Estas propriedades já estão no body global, não precisam ser repetidas aqui a menos que mudem */
-    }
-
-    /* BARRA DE NAVEGAÇÃO (NAV-HEADER) */
-    .nav-header {
-        flex-direction: column; /* Itens do header empilhados verticalmente */
-        height: auto; /* Permite que a altura se ajuste ao conteúdo */
-        padding: 10px;
-        align-items: center; /* Centraliza itens dentro do nav-header */
-        top: 0; /* Cola o header no topo da tela */
-        left: 0;
-        right: 0;
-        border-radius: 0; /* Remove border-radius para ser canto a canto */
-        border-radius: 10px;
-        margin: 10px; 
-    }
-
-    .nav-left,
-    .nav-center,
-    .nav-right {
-        width: 100%; /* Blocos internos ocupam a largura total */
-        justify-content: center; /* Centraliza conteúdo dentro dos blocos */
-        margin-bottom: 10px; /* Espaçamento entre os blocos internos */
-    }
-
-    /* OCULTAR O ÍCONE DE HAMBÚRGUER ORIGINAL NA BARRA DE NAVEGAÇÃO SUPERIOR */
-    #toggle-menu {
-        display: none; /* Oculta o ícone se o FAB for o principal ativador */
-    }
-
-    /* BOTÃO DE AÇÃO FLUTUANTE (FAB) */
-    .fab-bottom-left {
-        display: flex; /* O FAB agora aparece em telas <= 1024px */
-    }
-
-    /* LISTA DO MENU (NAV-LIST) - Preparação para o menu lateral */
-    .nav-list {
-        display: none; /* Escondido por padrão, será ativado via JS */
-        flex-direction: column; /* Itens empilhados verticalmente no menu lateral */
-        background-color: #1f4943;
-        position: fixed; /* Fixado na tela */
-        top: 0; /* Começa no topo */
-        left: 0; /* Desliza da esquerda */
-        height: 100vh; /* Ocupa a altura total da viewport */
-        width: 250px; /* Largura do menu lateral */
-        padding: 20px;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-        z-index: 999;
-        transform: translateX(-100%); /* Escondido fora da tela */
-        transition: transform 0.3s ease-in-out;
-        list-style: none;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .nav-list.active { /* Classe adicionada por JS para mostrar */
-        display: flex;
-        transform: translateX(0);
-    }
-
-    .nav-list li {
-        width: 100%; /* Faz os itens ocuparem a largura total do menu */
-        margin-left: 0; /* Garante que não haja margem extra */
-        display: block; /* Garante que todos os itens apareçam no menu lateral */
-    }
-
-    .nav-list li a {
-        color: white;
-        text-decoration: none;
-        padding: 10px 0;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .nav-list li a:hover {
-        background-color: #245d56;
-        border-radius: 5px;
-    }
-
-    .profile-menu {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .profile-img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        cursor: pointer;
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    /* Ajuste o dropdown para parecer "abaixo" da imagem */
-    .profile-menu .dropdown {
-        display: none;
-        position: absolute;
-        background-color: #fff;
-        width: 200px;
-        padding: 12px;
-        border-radius: 10px;
-        top: 60px; /* distância da imagem de perfil */
-        right: 0;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        z-index: 1002;
-    }
-
-    .dropdown.show {
-        display: block;
-    }
-
-    /* OCULTA ALGUNS ELEMENTOS ESPECÍFICOS SE NECESSÁRIO NO TABLET */
-    /* Ex: Se a lista de navegação global deve desaparecer completamente */
-    /* .nav-list { display: none; } */
-    /* Neste caso, os estilos acima já tratam como menu lateral */
+.star.active {
+    color: gold; /* Cor das estrelas ativas */
 }
 
 
 /* --------------------------------------------------------- */
-/* Mobile (max-width: 768px) */
+/* Media Queries - Layout Responsivo (Específicas da página Aluno/  s) */
 /* --------------------------------------------------------- */
+
+/* Tablets e Celulares (max-width: 768px) */
 @media (max-width: 768px) {
     /* BODY */
+    /* Este padding-top pode ser mantido aqui, em global_suac.css ou nas páginas individuais */
     body {
-        /* Ajuste este valor após inspecionar a altura real do nav-header em 768px */
-        padding-top: 140px; /* EXEMPLE: Valor para o padding-top em mobile */
-        /* As propriedades flex do body já são herdadas */
+        padding-top: 90px; /* Ajuste para a altura da navbar em mobile */
     }
 
-    /* BARRA DE NAVEGAÇÃO (NAV-HEADER) */
-    .nav-header {
-        /* Já definido em 1024px, mas pode precisar de ajustes finos */
-        align-items: center; /* Centraliza tudo no header */
+    /* WRAPPER (CARDS) */
+    .wrapper {
+        grid-template-columns: 1fr; /* Coluna única em telas menores */
+        padding: 15px;
+        margin-top: 10px; /* Espaço abaixo da navbar em mobile */
     }
 
-    /* LOGO E TÍTULO (NAV-LEFT) */
-    .nav-left {
-        display: none; /* Esconde a logo no mobile */
+    .card {
+        padding: 15px;
+        height: auto; /* Altura flexível para cards em mobile */
     }
+ 
+}
 
-    /* CENTRO (BUSCA) E DIREITA (PERFIL) DO HEADER */
-    .nav-center,
-    .nav-right {
-        flex-direction: column; /* Empilha busca e perfil */
-        align-items: center; /* Centraliza */
-        margin-bottom: 10px; /* Espaçamento entre eles */
-    }
-
-    /* CAMPO E BOTÃO DE BUSCA */
-    .d-flex {
-        flex-direction: row; /* Input e botão lado a lado */
-        justify-content: space-between;
-        padding: 0 10px;
-        gap: 6px;
-        width: 100%; /* Ocupa a largura total disponível */
-    }
-
-    .btn-buscar {
-        flex-grow: 1;
-        padding: 8px 10px;
-        border-radius: 20px;
-        font-size: 12px;
-        height: 40px;
-    }
-
-    .btn-green {
-        padding: 8px 10px;
-        border-radius: 20px;
-        font-size: 12px;
-        height: 35px;
-        flex-shrink: 0;
-        white-space: nowrap;
-    }
-
-    /* FAB (Floating Action Button) */
-    .fab-bottom-left {
-        width: 50px; /* Menor em mobile */
-        height: 50px;
-        font-size: 20px;
-        bottom: 15px; /* Mais perto da borda */
-        right: 15px; /* Mais perto da borda */
+/* Celulares Pequenos (max-width: 480px) */
+@media (max-width: 480px) {
+    /* BODY */
+    /* Este padding-top pode ser mantido aqui, em global_suac.css ou nas páginas individuais */
+    body {
+        padding-top: 140px; /* EXEMPLE: Valor para o padding-top em celulares pequenos */
     }
 
     /* WRAPPER (CARDS) */
@@ -604,47 +130,5 @@ body {
         padding: 10px; /* Menor padding em mobile */
     }
 
-    /* LISTA DO MENU (NAV-LIST) - Menu Lateral */
-    .nav-list {
-        /* Altura e largura podem ser ajustadas para mobile se necessário */
-        width: 70%; /* Exemplo: ocupa 70% da largura da tela no mobile */
-        max-width: 280px; /* Limita a largura máxima mesmo em telas grandes */
-    }
+    
 }
-
-/* --------------------------------------------------------- */
-/* Celulares Pequenos (max-width: 480px) */
-/* --------------------------------------------------------- */
-@media (max-width: 480px) {
-
-    /* BODY */
-    body {
-        /* Ajuste este valor após inspecionar a altura real do nav-header em 480px */
-        padding-top: 110px; /* EXEMPLE: Valor para o padding-top em celulares pequenos */
-    }
-
-    /* LOGO E TÍTULO (NAV-LEFT) */
-    .header-logo {
-        font-size: 20px;
-    }
-
-    .logo img {
-        width: 35px;
-    }
-
-    /* LISTA DO MENU (NAV-LIST) */
-    .nav-list {
-        gap: 5px; /* Reduz o espaçamento entre itens do menu */
-    }
-
-    /* CAMPO E BOTÃO DE BUSCA */
-    .btn-buscar {
-        padding: 6px 8px;
-        font-size: 11px;
-    }
-
-    .btn-green {
-        padding: 6px 10px;
-        font-size: 11px;
-    }
-}   

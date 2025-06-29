@@ -1,0 +1,372 @@
+/* BARRA DE NAVEGAÇÃO PRINCIPAL (NAV-HEADER) */
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #1f4943;
+    position: fixed; /* Mantém a navbar no topo */
+    z-index: 1000;
+    border-radius: 10px;
+    margin: 10px; /* Margem externa no desktop */
+    top: 10px; /* Alinha ao topo com margem */
+    left: 10px;
+    right: 10px;
+    height: 80px; /* Altura fixa no desktop */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    
+}
+
+/* ESQUERDA DA NAVBAR (LOGO) */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.header-logo {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* CENTRO DA NAVBAR (FORMULÁRIO DE BUSCA) */
+.nav-center {
+    flex-grow: 1; /* Permite que o campo de busca ocupe espaço */
+    max-width: 500px; /* Limita a largura máxima */
+    margin: 0 20px;
+}
+
+/* Formulários Flexíveis */
+.d-flex {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os itens */
+}
+
+.btn-buscar {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    background-color: #e2e2e2;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.btn-buscar::placeholder {
+    color: #a0a0a0;
+}
+
+.btn-green {
+    background-color: #4CAF50; /* Um verde mais vibrante */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-green:hover {
+    background-color: #45a049; /* Escurece um pouco no hover */
+}
+
+/* DIREITA DA NAVBAR (MENU DE NAVEGAÇÃO E PERFIL) */
+.nav-right {
+    display: flex;
+    align-items: center;
+    position: relative; /* Para posicionar o dropdown do perfil */
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    margin-left: 20px;
+    position: relative; /* Para os tooltips */
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espaço entre imagem e texto no link, se houver */
+}
+
+.nav-list a:hover {
+    color: #4CAF50;
+}
+
+.nav-list img {
+    vertical-align: middle;
+}
+
+/* Tooltips */
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip-img {
+    height: 30px; /* Tamanho dos ícones do tooltip */
+    transition: transform 0.2s ease;
+}
+
+.tooltip-container:hover .tooltip-img {
+    transform: scale(1.1);
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 80px; /* Largura do tooltip */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Posição acima da imagem */
+    left: 50%;
+    margin-left: -40px; /* Metade da largura */
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+}
+
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Perfil do Usuário e Dropdown */
+.profile-menu {
+    position: relative;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #4CAF50;
+    transition: border-color 0.3s ease;
+}
+
+.profile-img:hover {
+    border-color: #45a049;
+}
+
+.dropdown {
+    position: absolute;
+    top: calc(100% + 10px); /* Posição abaixo da imagem de perfil */
+    right: 0;
+    background-color: #1f4943;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    min-width: 200px;
+    padding: 15px;
+    z-index: 1001; /* Acima da navbar */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown h4 {
+    color: #4CAF50;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.dropdown p {
+    color: #ccc;
+    font-size: 14px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #33665e;
+    padding-bottom: 10px;
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown ul li:hover {
+    background-color: #2a6f66;
+    border-radius: 4px;
+}
+
+.dropdown ul li span {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.dropdown ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex; /* Para alinhar ícone e texto */
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.dropdown ul li a:hover {
+    color: white; /* Mantém a cor no hover para links dentro do dropdown */
+}
+
+/* Botão Hamburguer (APARECE SOMENTE EM TELAS MENORES) */
+.fab-bottom-left {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    display: none; /* Escondido por padrão, mostrado em mobile */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Acima de outros conteúdos */
+    transition: background-color 0.3s ease;
+}
+
+.fab-bottom-left:hover {
+    background-color: #45a049;
+}
+
+/* --------------------------------------------------------- */
+/* Media Queries para Responsividade da Navbar */
+/* --------------------------------------------------------- */
+
+/* Tablets e Celulares 768px */
+@media (max-width: 768px) {
+    .nav-header {
+        flex-wrap: wrap; /* Permite que os itens quebrem linha */
+        height: auto; /* Altura flexível */
+        padding: 10px 15px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .nav-left, .nav-center, .nav-right {
+        width: 100%; /* Ocupam toda a largura */
+        margin: 5px 0;
+        justify-content: center;
+    }
+
+    .nav-center {
+        order: 3; /* Coloca a busca por último em telas pequenas */
+    }
+
+    .nav-right {
+        order: 2; /* Move o menu e perfil para o meio */
+        justify-content: space-between; /* Espaço entre menu principal e perfil */
+    }
+
+    .nav-list {
+        display: none; /* Esconde a lista de navegação principal por padrão */
+        width: 100%;
+        text-align: left;
+        margin-top: 10px;
+        background-color: #1f4943; /* Fundo do menu expandido */
+        padding: 10px 0;
+        border-radius: 5px;
+    }
+
+    .nav-list.active {
+        display: flex; /* Mostra a lista de navegação quando a classe 'active' é adicionada */
+    }
+
+    .nav-list li {
+        margin: 10px 0;
+        width: 100%;
+        padding: 5px 15px; /* Padding para os itens do menu */
+    }
+
+    .nav-list a {
+        justify-content: flex-start; /* Alinha o conteúdo à esquerda no menu expandido */
+    }
+
+    .nav-center .d-flex {
+        width: 100%;
+    }
+
+    .btn-buscar {
+        width: 100%;
+    }
+
+    /* FAB Button */
+    .fab-bottom-left {
+        display: flex; /* Mostra o botão hamburguer em telas menores */
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .profile-menu {
+        margin-left: 0; /* Remove margem extra */
+    }
+
+    .dropdown {
+        top: calc(100% + 10px); /* Ajuste a posição se necessário */
+        right: 0;
+        left: auto; /* Garante que o dropdown não se estenda para a esquerda indesejadamente */
+        transform: none; /* Remove transform para evitar conflitos */
+    }
+}
+
+/* Celulares Pequenos 480px */
+@media (max-width: 480px) {
+    /* LOGO E TÍTULO (NAV-LEFT) */
+    .header-logo {
+        font-size: 50px;
+    }
+}

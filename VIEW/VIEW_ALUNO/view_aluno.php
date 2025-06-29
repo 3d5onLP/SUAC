@@ -9,74 +9,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SUAC</title>
-  <link rel="icon" href="../icon/logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="../icon/logo.png" type="image/png"> 
+  <link rel="stylesheet" href="../components/css/navbar.css">
   <link rel="stylesheet" href="view_aluno.css">
-<script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body>
-
-  <!-- Navbar (BARRA DE NAVEGAÇÃO) -->
-  <div class="nav-header">
-    <div class="nav-left">
-      <div class="logo">
-        <img src="../icon/logo.png" alt="Logo CIENTIF">
-        <h1 class="header-logo">SUAC</h1>
-      </div>
-    </div>
-
-    <!-- Formulario de busca de alunos -->
-    <div class="nav-center">
-      <form class="d-flex">
-        <input class="btn-buscar" type="search" placeholder="Buscar alunos..." aria-label="Buscar">
-        <button class="btn-green" type="submit">Buscar</button>
-      </form>
-    </div>
-
-    <!-- Botão Hamburgue (APARECE SOMENTE EM TELAS MENORES) -->
-    <button id="fab-menu" class="fab-bottom-left">☰</button>
-
-    <!-- Menu de navegação e perfil -->
-    <div class="nav-right">
-      <ul class="nav-list">
-        <li>
-          <a href="../VIEW_PROJETO/view_projeto.php" class="tooltip-container">
-            <img src="../icon/pesquisa-projeto.png" alt="Alunos" class="tooltip-img">
-            <span class="tooltip-text">Projetos</span>
-          </a>
-        </li>
-        <li>
-          <a href="../VIEW_EDITAL/view_edital.html" target="_blank" class="tooltip-container">
-            <img src="../icon/pesquisa-edital.png" alt="Edital" class="tooltip-img">
-            <span class="tooltip-text">Edital</span>
-          </a>
-        </li>
-        <li>
-          <a href="../VIEW_PROFESSOR/view_professor.html" class="tooltip-container">
-            <img src="../icon/professor-icon.png" alt="Professores" class="tooltip-img">
-            <span class="tooltip-text">Professores</span>
-          </a>
-        </li>
-        <li>
-          <!-- Perfil do usuário -->
-          <div class="profile-menu">
-            <img src="../icon/foto.perfil.jpg" alt="Profile" class="profile-img" id="profileToggle">
-            <div class="dropdown" id="dropdownMenu">
-              <h4>Edson Oliveira</h4>
-              <p>Análise e Desenvolvimento de Sistema</p>
-              <ul>
-                <li><span>👤</span> Meu Perfil</li>
-                <li><span>✏️</span> Editar Perfil</li>
-                <li><a href="../VIEW_DUVIDAS/view_duvidas.html"><span>🛠️</span> Duvidas</a></li>
-                <li><a href="../logout.php"><span>🔓</span> Deslogar</a></li>
-              </ul>
-            </div>
-          </div>
-        </li>
-      </ul>
-
-    </div>
-  </div>
+  <?php require_once '../components/php/navbar.php';?>
 
   <!-- Cards de Alunos -->
   <main class="container">
@@ -176,6 +116,8 @@
     feather.replace();
   </script>
   <script src="view_aluno.js"></script>
+  <script src="../components/js/navbar.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
 
 </body>
 </html>
