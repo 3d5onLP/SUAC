@@ -29,13 +29,13 @@ $curso_usuario = $_SESSION['usuario']['curso'] ?? 'Não informado';
         </a>
       </li>
       <li>
-        <a href="../VIEW_EDITAL/view_edital.html" target="_blank" class="tooltip-container">
+        <a href="../../VIEW_EDITAL/view_edital.php target="_blank" class="tooltip-container">
           <img src="../icon/pesquisa-edital.png" alt="Edital" class="tooltip-img">
           <span class="tooltip-text">Edital</span>
         </a>
       </li>
       <li>
-        <a href="../VIEW_PROFESSOR/view_professor.html" class="tooltip-container">
+        <a href="../VIEW_PROFESSOR/view_professor.php" class="tooltip-container">
           <img src="../icon/professor-icon.png" alt="Professores" class="tooltip-img">
           <span class="tooltip-text">Professores</span>
         </a>
@@ -49,7 +49,7 @@ $curso_usuario = $_SESSION['usuario']['curso'] ?? 'Não informado';
             <ul>
               <li><span>👤</span> Meu Perfil</li>
               <li><span>✏️</span> Editar Perfil</li>
-              <li><a href="../VIEW_DUVIDAS/view_duvidas.html"><span>🛠️</span> Dúvidas</a></li>
+              <li><a href="../VIEW_DUVIDAS/view_duvidas.php"><span>🛠️</span> Dúvidas</a></li>
               <li><a href="../../model/logout.php"><span>🔓</span> Deslogar</a></li>
             </ul>
           </div>

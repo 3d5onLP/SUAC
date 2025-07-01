@@ -9,10 +9,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SUAC</title>
+  <link rel="icon" href="../icon/logo.png" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="icon" href="../icon/logo.png" type="image/png"> 
   <link rel="stylesheet" href="../components/css/navbar.css">
-  <link rel="stylesheet" href="view_aluno.css">
+  <link rel="stylesheet" href="view_professor.css">
 </head>
 
 <body>
@@ -115,7 +115,7 @@
   <script>
     feather.replace();
   </script>
-  <script src="view_aluno.js"></script>
+  <script src="view_professor.js"></script>
   <script src="../components/js/navbar.js"></script>
   <script src="https://unpkg.com/feather-icons"></script>
 
