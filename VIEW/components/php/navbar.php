@@ -29,7 +29,7 @@ $curso_usuario = $_SESSION['usuario']['curso'] ?? 'Não informado';
         </a>
       </li>
       <li>
-        <a href="../../VIEW_EDITAL/view_edital.php target="_blank" class="tooltip-container">
+        <a href="../VIEW_EDITAL/view_edital.php" target="_blank" class="tooltip-container">
           <img src="../icon/pesquisa-edital.png" alt="Edital" class="tooltip-img">
           <span class="tooltip-text">Edital</span>
         </a>

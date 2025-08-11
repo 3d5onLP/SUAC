@@ -1,5 +1,5 @@
 <?php
-require_once '../../model/finish_session.php';
+
 require_once '../../model/conexao.php'; 
 
 // Mensagens de feedback e controle de exibição do formulário

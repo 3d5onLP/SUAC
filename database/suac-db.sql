@@ -134,3 +134,7 @@ INSERT INTO usuarios (matricula, nome, email, senha, tipo, departamento, curso) 
 ('202322170011', 'Iago Bezerra', 'Iago@exemplo.com', '123456', 'aluno', NULL, 'ADS'),
 ('202322170025', 'Vitor Marques', 'Vitor@exemplo.com', '123456', 'aluno', NULL, 'ADS');
 
+ALTER TABLE usuarios
+ADD COLUMN reset_token VARCHAR(255) NULL,
+ADD COLUMN reset_token_expires_at DATETIME NULL;
+

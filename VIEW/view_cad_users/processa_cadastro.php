@@ -101,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 } else {
     // Se não for POST, redireciona para o formulário de cadastro
-    header("Location: view_cadastro.html");
+    header("Location: view_cadastro.php");
     exit();
 }
 ?>
