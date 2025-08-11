@@ -41,6 +41,12 @@ $curso_usuario = $_SESSION['usuario']['curso'] ?? 'Não informado';
         </a>
       </li>
       <li>
+        <a href="../VIEW_ALUNO/view_aluno.php" class="tooltip-container">
+          <img src="../icon/aluno-icon.png" alt="Alunos" class="tooltip-img">
+          <span class="tooltip-text">Alunos</span>
+        </a>
+      </li>
+      <li>
         <div class="profile-menu">
           <img src="../icon/foto.perfil.jpg" alt="Profile" class="profile-img" id="profileToggle">
           <div class="dropdown" id="dropdownMenu">

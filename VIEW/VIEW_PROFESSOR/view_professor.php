@@ -25,7 +25,7 @@
         <div class="poster"><img src="../icon/poster1-img.jpg"alt="Location Unknown"></div>
         <div class="details">
           <h1>Igor Gabriel</h1>
-          <h2>Analise e desenvolvimento de Sistemas</h2>
+          <h2>Matematica</h2>
           <div class="rating">
             <!-- Estrelas de avaliação -->
             <div class="stars" data-rating="4">
@@ -47,7 +47,7 @@
         <div class="poster"><img src="../icon/poster1-img.jpg" alt="Location Unknown"></div>
         <div class="details">
           <h1>Iago Bezerra</h1>
-          <h2>Analise e desenvolvimento de Sistemas</h2>
+          <h2>POO</h2>
           <div class="rating">
             <!-- Estrelas de avaliação -->
             <div class="stars" data-rating="4">
@@ -69,7 +69,7 @@
         <div class="poster"><img src="../icon/poster1-img.jpg" alt="Location Unknown"></div>
         <div class="details">
           <h1>Vitor Marques</h1>
-          <h2>Analise e desenvolvimento de Sistemas</h2>
+          <h2>Linguas</h2>
           <div class="rating">
             <!-- Estrelas de avaliação -->
             <div class="stars" data-rating="3">
@@ -91,7 +91,7 @@
         <div class="poster"><img src="../icon/poster1-img.jpg" alt="Location Unknown"></div>
         <div class="details">
           <h1>Edson Oliveira</h1>
-          <h2>Analise e desenvolvimento de Sistemas</h2>
+          <h2>Desenvolvimento Web</h2>
           <div class="rating">
             <!-- Estrelas de avaliação -->
             <div class="stars" data-rating="5">
