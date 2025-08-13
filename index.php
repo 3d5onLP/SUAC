@@ -1,3 +1,13 @@
+<?php
+// index.php - serve static/index.html se existir na pasta montada
+$staticIndex = __DIR__ . '/static/index.html';
+if (file_exists($staticIndex)) {
+    // Serve o arquivo estático
+    header('Content-Type: text/html; charset=utf-8');
+    readfile($staticIndex);
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -20,7 +30,7 @@
         <p class="loading-text">Carregando, por favor aguarde...</p>
     </div>
 
-    <script>
+  <script>
      
         // Redirecionar para a página desejada após 3 segundos
         setTimeout(() => {
@@ -30,5 +40,6 @@
             }, 1000); // Sincronizar com a animação de fade out
         }, 1000);
     </script>
+    
 </body>
 </html>

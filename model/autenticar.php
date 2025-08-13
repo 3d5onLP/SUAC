@@ -15,14 +15,15 @@ function generateToken($length = 64) {
 
 // --- LÓGICA DE SOLICITAÇÃO DE REDEFINIÇÃO DE SENHA ---
 if (isset($_POST['solicitar_redefinicao'])) {
-    // Captura a matrícula ou e-mail enviado pelo formulário
-    $matricula_ou_email = $_POST['matricula_ou_email'] ?? '';
+    /// Captura a matrícula ou e-mail enviado pelo formulário
+     $matricula_ou_email = isset($_POST['matricula_ou_email']) ? $_POST['matricula_ou_email'] : '';
 
     // Se o campo estiver vazio, redireciona com mensagem de erro
     if (empty($matricula_ou_email)) {
-        header("Location: ../VIEW/view_troca_senha/troca_senha.php?status=error&message=" . urlencode("Por favor, informe sua matrícula ou e-mail."));
-        exit();
-    }
+    // Redireciona para a página de troca de senha com parâmetros de erro na URL
+    header("Location: ../VIEW/view_troca_senha/troca_senha.php?status=error&message=" . urlencode("Por favor, informe sua matrícula ou e-mail."));
+    exit(); // Garante que o script pare aqui após o redirecionamento
+}
 
     // Consulta o usuário no banco por matrícula ou e-mail
     $stmt = $conexao->prepare("SELECT id, email, nome FROM usuarios WHERE matricula = ? OR email = ?");
